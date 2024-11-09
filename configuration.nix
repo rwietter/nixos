@@ -80,8 +80,6 @@
     description = "rwietter";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      brave
-      kitty
       awesome
     ];
   };

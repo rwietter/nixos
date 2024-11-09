@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ lib, pkgs, vars, ... }:
 
 with lib; mkIf(vars.os.desktop == "awesome") {
   # Use tarball for awesome because widgets needs lua modules only available in in awesome-git

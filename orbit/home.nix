@@ -79,6 +79,8 @@
     dconf-editor
     neofetch
     telegram-desktop
+    brave
+    kitty
 
     # nnn # terminal file manager
 
