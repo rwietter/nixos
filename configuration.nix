@@ -10,7 +10,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sys
-      ./atom/awesome.nix
     ];
 
   # nixpkgs.overlays = [ (import ./overlays.nix) ];
