@@ -38,26 +38,52 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
   # Optionally make picom restart after dunst if picom's fadeExclude uses dunst
   # systemd.services.picom.requires = lib.mkIf (config.services.picom.enable && config.services.picom.fadeExclude != null )  [ "dunst.service" ];
 
-  xdg.configFile."dunst/dunstrc".text = ''
-    ${fileContents ../repo/config/dunst/dunstrc}
-      frame_color = "${theme.scheme.colors.bg}"
-      separator_color = "${theme.scheme.colors.altbg}"
+  xdg.configFile = lib.mkForce {
+    "dunst/dunstrc" = {
+      text = ''
+        ${fileContents ../repo/config/dunst/dunstrc}
+        
+        frame_color = "${theme.scheme.colors.bg}"
+        separator_color = "${theme.scheme.colors.altbg}"
 
-    [urgency_low]
-      background = "${theme.scheme.colors.bg}"
-      foreground = "${theme.scheme.colors.primary}"
-      timeout = 10
+        [urgency_low]
+          background = "${theme.scheme.colors.bg}"
+          foreground = "${theme.scheme.colors.primary}"
+          timeout = 10
 
-    [urgency_normal]
-      background = "${theme.scheme.colors.bg}"
-      foreground = "${theme.scheme.colors.primary}"
-      timeout = 15
+        [urgency_normal]
+          background = "${theme.scheme.colors.bg}"
+          foreground = "${theme.scheme.colors.primary}"
+          timeout = 15
 
-    [urgency_critical]
-      background = "${theme.scheme.colors.red}"
-      foreground = "${theme.scheme.colors.bg}"
-      timeout = 20
-  '';
+        [urgency_critical]
+          background = "${theme.scheme.colors.red}"
+          foreground = "${theme.scheme.colors.bg}"
+          timeout = 20
+      '';
+    };
+  };
+
+  # xdg.configFile."dunst/dunstrc".text = ''
+  #   ${fileContents ../repo/config/dunst/dunstrc}
+  #     frame_color = "${theme.scheme.colors.bg}"
+  #     separator_color = "${theme.scheme.colors.altbg}"
+
+  #   [urgency_low]
+  #     background = "${theme.scheme.colors.bg}"
+  #     foreground = "${theme.scheme.colors.primary}"
+  #     timeout = 10
+
+  #   [urgency_normal]
+  #     background = "${theme.scheme.colors.bg}"
+  #     foreground = "${theme.scheme.colors.primary}"
+  #     timeout = 15
+
+  #   [urgency_critical]
+  #     background = "${theme.scheme.colors.red}"
+  #     foreground = "${theme.scheme.colors.bg}"
+  #     timeout = 20
+  # '';
 
   home.packages = with pkgs; [
     libnotify

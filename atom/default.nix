@@ -2,6 +2,6 @@ _:
 
 {
   imports = [
-    ./mimetypes.nix
+    # ./mimetypes.nix
   ];
 }

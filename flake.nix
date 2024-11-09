@@ -24,31 +24,44 @@
   in {
     nixosConfigurations = {
       rwietter = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = { inherit inputs vars mylib theme; };
         modules = [
           ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs vars mylib theme; };
+              users.rwietter = { config, ... }: {
+                home = {
+                  username = "rwietter";
+                  homeDirectory = "/home/rwietter";
+                  stateVersion = "24.05";
+                  enableNixpkgsReleaseCheck = false;
+                };
 
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = false;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs vars mylib theme; };
-            home-manager.users.rwietter = import ./orbit/home.nix;
+                # Explicitly enable home-manager
+                programs.home-manager.enable = true;
+
+                imports = [
+                  ./orbit/home.nix
+                  ./forge
+                  ./shell
+                  ./spark
+                  ./atom
+                ];
+
+                # Ensure symlinks are created
+                # home.activation = {
+                #   linkGeneration = config.lib.dag.entryAfter ["writeBoundary"] ''
+                #     $DRY_RUN_CMD ${pkgs.fish}/bin/fish -c "source ~/.config/fish/config.fish"
+                #   '';
+                # };
+              };
+            };
           }
-        ];
-      };
-    };
-
-    homeConfigurations = {
-      rwietter = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { inherit system; };
-        extraSpecialArgs = { inherit inputs vars mylib theme; };
-        modules = [
-          ./orbit/home.nix
-          ./forge
-          ./shell
-          ./spark
-          ./atom
         ];
       };
     };

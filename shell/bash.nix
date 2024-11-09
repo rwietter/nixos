@@ -21,7 +21,8 @@ with lib; mkIf (vars.os.shell == "bash") {
   # xdg.configFile.".bashrc".text = ''
   #   ${fileContents ../repo/config/bash/.bashrc}
   # '';
-  home.file."fish/config.fish".source = lib.mkForce (builtins.path {
-    path = ../repo/config/bash/.bashrc;
-  });
+  
+  # home.file."fish/config.fish".source = lib.mkForce (builtins.path {
+  #   path = ../repo/config/bash/.bashrc;
+  # });
 }

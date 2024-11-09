@@ -13,6 +13,17 @@ with lib; mkIf (vars.os.shell == "fish") {
     fishPlugins.hydro
   ];
 
+  xdg.configFile = lib.mkForce {
+    "fish/config.fish" = {
+      source = ../repo/config/fish/config.fish;
+    };
+    
+    "fish/functions" = {
+      source = ../repo/config/fish/functions;
+      recursive = true;
+    };
+  };
+
   # Import the fish configuration file
   # xdg.configFile."fish/config.fish".text = lib.mkForce ''
   #   ${builtins.readFile ../repo/config/fish/config.fish}
@@ -26,13 +37,13 @@ with lib; mkIf (vars.os.shell == "fish") {
   # the file is not embedded in the nix file, but is linked to the file in the
   # repository.
   
-  xdg.configFile."fish/config.fish".source = lib.mkForce (builtins.path {
-    path = ../repo/config/fish/config.fish;
-  });
+  # xdg.configFile."fish/config.fish".source = lib.mkForce (builtins.path {
+  #   path = ../repo/config/fish/config.fish;
+  # });
 
-  xdg.configFile."fish/functions" = lib.mkForce({
-    enable = true;
-    source = ../repo/config/fish/functions;
-    recursive = true;
-  });
+  # xdg.configFile."fish/functions" = lib.mkForce({
+  #   enable = true;
+  #   source = ../repo/config/fish/functions;
+  #   recursive = true;
+  # });
 }

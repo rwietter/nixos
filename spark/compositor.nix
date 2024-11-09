@@ -1,6 +1,6 @@
 { lib, pkgs, vars, ... }:
 
-with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
+with lib; mkIf (vars.os.desktop == "awesome") {
   services.picom = {
     enable = true;
     backend = "glx"; # or "egl", "xrender", "xr_glx_hybrid"
@@ -9,18 +9,16 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
     fadeDelta = 10;
     fadeExclude = [
       "class_g = 'Notify-osd'"
-      "class_g = 'Dunst'"  # Example: exclude dunst notifications
+      "class_g = 'Dunst'"
     ];
     fadeSteps = [ 0.03 0.03 ];
     inactiveOpacity = 0.95;
     activeOpacity = 0.95;
     menuOpacity = 0.95;
     opacityRules = [
-      "95:class_g = 'Alacritty'" # Example: Alacritty at 95% opacity
+      "95:class_g = 'Alacritty'"
     ];
-    package = pkgs.picom; # or specify a different package like picom-ibhagwan
-
-    # Example settings (see picom(1) for all options)
+    package = pkgs.picom;
     settings = {
       shadow = true;
       shadow-opacity = 0.6;
@@ -46,33 +44,16 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
         "window_type = 'tooltip'"
         "_GTK_FRAME_EXTENTS@:c" # fix gtk borders in some apps
       ];
-
       transparent-clipping = false;
-
-      # Example wintypes configuration
-       wintypes = {
-        tooltip = {
-          fade = false;
-          shadow = false;
-        };
-      };
-       
-       # Example rounded corners
        corner-radius = 0;
     };
+  };
 
-     # Example wintypes configuration that overrides the default settings
-    wintypes = {
-      tooltip = {
-        fade = false;
-        shadow = false;
-      };
-      dock = {
-         shadow = true;
-      };
+  xdg.configFile = lib.mkForce {
+    "picom/picom.conf" = {
+      text = ''
+        ${fileContents ../repo/config/picom/picom.conf}
+      '';
     };
   };
- # xdg.configFile."picom/picom.conf".text = ''
-  #   ${fileContents ../repo/config/picom/picom.conf}
-  # '';
 }
