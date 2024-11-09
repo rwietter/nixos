@@ -1,0 +1,164 @@
+[user]
+	email = rwietter@zohomail.com
+	name = rwietter
+	# email = mauricio.witter@acad.ufsm.br
+	# name = rwietters
+	defaultBranch = main
+	signingkey = /home/rwietter/.ssh/id_ed25519.pub
+[init]
+	defaultBranch = main
+[editor]
+	editor = code --wait --reuse-window
+[core]
+	excludesfile = /home/rwietter/.gitignore_global
+	editor = code --wait
+	untrackedCache = true
+	fsmonitor = true
+[diff]
+	noprefix = true
+[apply]
+  whitespace = fix # Detect whitespace errors when applying a patch
+[color]
+  ui = auto
+[merge]
+  log = true # Include summaries of merged commits in newly created merge commit messages
+[delta]
+  side-by-side = true
+	line-numbers = true
+[alias]
+	# ----------------------------------------------------------------------------------------------------------------- #
+	# -------------------------------------------- Git config aliases ------------------------------------------------- #
+	# * Git lets you use non-git commands and full sh shell syntax in your aliases if you prefix them with "!".			    #
+	# * Note that aliases prefixed with ! in this way are run from the root directory.
+	# ----------------------------------------------------------------------------------------------------------------- #
+
+	# The checkout command is used to switch between branches in a repository.
+	# Usage: git co <branch>
+	co = checkout
+
+	# Commit changes send to the staging area.
+	# Usage: git cm <message>
+	cm = commit
+
+	# Log ramification tree.
+	# Usage: git lg
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit
+
+	# Log commit tree with date.
+	# Usage: git lgd
+	lgd = log --graph --date-order --all --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %C(green)(%ad) %C(bold cyan)<%an>%Creset' --date=short
+	
+	# Status of the local repository.
+	# Usage: git st
+	st = status -sb
+
+	# Update local repository with remote repository using rebase.
+	# Usage: git up
+	syncstash = pull --rebase --autostash origin main
+
+	# Unstage a file (remove from staging area)
+	# Usage: git unstage <file>
+	unstaged = reset HEAD --
+	
+	# Show last commit
+	# Usage: git last
+	llast = log -1 HEAD
+
+	# List files changed in a commit
+	# Usage: git ldiff <commit>
+	ldiff = diff-tree --no-commit-id --name-only -r
+	
+	# Show commits for a file
+	# Usage: git logf <file>
+	logf = log --pretty=format:'%C(yellow)%h %C(blue)%d | %C(white)%s | %C(cyan)%cn, %C(green)%cr' --follow
+	
+	# List tags with commit hash
+	# Usage: git ltag
+	ltag = for-each-ref --sort=-taggerdate --format='%(tag) %(objectname:short) | %(subject)' refs/tags
+	
+	# Rebase and keep author
+	# Usage: git kpauthor
+	kpauthor = rebase main --exec 'git commit --amend --no-edit --reset-author'
+	
+	# Commit with current date
+	# Usage: git cdate <message> | git commit --date "2021-01-01 00:00:00" -m <message>
+	cdate = !git commit --date "$(date)" -m
+	
+	# Complete cycle: add, commit and push to the current branch
+	# Usage: git vapo
+	vapo = !git add --all && git commit && git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	
+	# List contributors ordered by number of commits
+	# Usage: git lol
+	lol = !git shortlog --summary --numbered --email | awk '{print $1, $2}' | sort -rn | awk '{print $2, $1}' | sed 's/@/ /g'
+	
+	# List git aliases
+	# Usage: git aliases <search>
+	wtf = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+
+	# Ignore file
+	# Usage: git ignore <file>
+	ignore = "!ignore() { echo $1 >> .gitignore; }; ignore"
+
+	# List ignored files
+	# Usage: git ignored
+	ignored = !git ls-files --others --ignored --exclude-standard --directory && git ls-files --others -i --exclude-standard
+
+	# Show incoming commits
+	# Usage: git incoming
+	incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+
+	# Set upstream branch
+	# Usage: git ups <branch>
+	ups = !git branch --set-upstream-to=origin/$1
+
+	# Show outgoing commits
+	# Usage: git outgoing
+	outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+
+	# Unstage all files
+	# Usage: git unstageall
+	unstage = !git reset HEAD -- . && git checkout -- .
+
+	# Count commits not pushed
+	# Usage: git count
+	pr = !git log --branches --not --remotes --oneline | wc -l
+
+	# Show commits not pushed
+	# Usage: git lrep
+	pl = !git log --branches --not --remotes --oneline
+
+	undo = !git checkout -- . # Isso vai desfazer todas as alterações feitas antes de serem adicionadas ao stage (git add).
+	rollback = !git reset --soft HEAD~1 # Isso vai desfazer o último commit, mas as alterações feitas antes de serem adicionadas ao stage (git add) vão continuar no stage.
+
+	fup = !git fetch upstream && git rebase upstream/main # Isso vai atualizar o seu repositório local com o repositório upstream.
+
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[pull]
+	rebase = true
+[rerere]
+	enabled = true # Reuse Recored Resolution (remember fixed conflicts and fix next)
+	autoUpdate = true
+[column]
+	ui = auto
+[gpg]
+	format = ssh
+[maintenance]
+	repo = /home/rwietter/Documentos/dotfiles
+	auto = true
+	strategy = incremental
+[fetch]
+	writeCommitGraph = true
+	parallel = 4
+[credential]
+	helper = store
