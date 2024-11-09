@@ -63,6 +63,8 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
+  # Use tarball for awesome because widgets needs lua modules only available in in awesome-git
+  # Here <https://docs.windswept.digital/nixos/awesomewm-git>
   services.xserver.windowManager.awesome = {
     enable = true;
     luaModules = with pkgs.luaPackages; [

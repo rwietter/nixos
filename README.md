@@ -6,7 +6,7 @@ voltage/
 ├── flake.lock
 ├── README.md
 └── src
-    ├── core            # Configurações essenciais do sistema
+    ├── sys            # Configurações essenciais do sistema
     │   ├── default.nix
     │   ├── boot.nix
     │   ├── network.nix
@@ -14,11 +14,11 @@ voltage/
     │
     ├── atom           # Interface gráfica e ambiente visual
     │   ├── default.nix
-    │   ├── awesome    # AwesomeWM config
-    │   │   ├── default.nix
-    │   │   └── rc.lua
-    │   ├── picom.nix  # Compositor
-    │   └── dunst.nix  # Notificações
+    │   ├── ssh         # Configurações SSH
+    |   ├── dns         # Configurações de DNS
+    │   ├── mimetypes   # Associação de tipos de arquivos
+    │   └── gtk         # Temas e configurações GTK
+    |   └── colorscheme # Esquemas de cores
     │
     ├── shell          # Terminal e shell utilities
     │   ├── default.nix
@@ -274,3 +274,9 @@ nix flake update
 # Limpar gerações antigas
 sudo nix-collect-garbage -d
 ```
+
+---
+
+# Otimizações
+
+- [Storage_optimization](https://nixos.wiki/wiki/Storage_optimization)

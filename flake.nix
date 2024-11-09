@@ -48,6 +48,7 @@
           ./forge
           ./shell
           ./spark
+          ./atom
         ];
       };
     };

@@ -23,13 +23,15 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
     # Example settings (see picom(1) for all options)
     settings = {
       shadow = true;
-      shadowOpacity = 0.6;
-      shadowOffsets = [
+      shadow-opacity = 0.6;
+      shadow-offsets = [
         (-15) (-15)
       ];
-      shadowExclude = [
+      shadow-exclude = [
         "class_g ?= 'Dunst'"
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'" # Exclude sticky windows
+        "override_redirect = true"
+        "class_g = 'xdg-desktop-portal-gnome'"
       ];
       vSync = true;
       blur = {
@@ -37,6 +39,15 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
         strength = 5;
         deviation = 5;
       };
+      blur-background-exclude = [
+        "window_type = 'menu'"
+        "window_type = 'dropdown_menu'"
+        "window_type = 'popup_menu'"
+        "window_type = 'tooltip'"
+        "_GTK_FRAME_EXTENTS@:c" # fix gtk borders in some apps
+      ];
+
+      transparent-clipping = false;
 
       # Example wintypes configuration
        wintypes = {
@@ -50,14 +61,6 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
        corner-radius = 0;
     };
 
-    shadow = true; # Can be overriden in settings
-    shadowExclude = []; # Can be overriden in settings
-    shadowOffsets = [
-      (-15) (-15)
-    ]; # Can be overriden in settings
-    shadowOpacity = 0.6; # Can be overriden in settings
-    vSync = true; # Can be overriden in settings
-
      # Example wintypes configuration that overrides the default settings
     wintypes = {
       tooltip = {
@@ -69,8 +72,7 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
       };
     };
   };
-
- xdg.configFile."picom/picom.conf".text = ''
-    ${fileContents ../repo/config/picom/picom.conf}
-  '';
+ # xdg.configFile."picom/picom.conf".text = ''
+  #   ${fileContents ../repo/config/picom/picom.conf}
+  # '';
 }

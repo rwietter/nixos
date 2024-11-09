@@ -1,0 +1,7 @@
+_:
+
+{
+  imports = [
+    ./mimetypes.nix
+  ];
+}
