@@ -10,6 +10,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sys
+      ./atom/awesome.nix
     ];
 
   # nixpkgs.overlays = [ (import ./overlays.nix) ];
@@ -46,53 +47,7 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Enable hyperland
-  programs.hyprland = {
-   enable = true; 
-   xwayland.enable = true;
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-
-  # Change DPI 
-  services.xserver.dpi = 70;
-
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-
-  # Use tarball for awesome because widgets needs lua modules only available in in awesome-git
-  # Here <https://docs.windswept.digital/nixos/awesomewm-git>
-  services.xserver.windowManager.awesome = {
-    enable = true;
-    luaModules = with pkgs.luaPackages; [
-      luarocks # is the package manager for Lua modules
-      luadbi-mysql # Database abstraction layer
-    ];
-    package = pkgs.awesome.overrideAttrs (old: {
-      version = "1f7ac8f9c7ab9fff7dd93ab4b29514ff3580efcf";
-      src = pkgs.fetchFromGitHub {
-        owner = "awesomeWM";
-        repo = "awesome";
-        rev = "1f7ac8f9c7ab9fff7dd93ab4b29514ff3580efcf";
-        hash = "sha256-D5CTo4FvGk2U3fkDHf/JL5f/O1779i92UcRpPn+lbpw=";
-      };
-      patches = [];
-      postPatch = ''
-        patchShebangs tests/examples/_postprocess.lua
-      '';
-    });
-  };
-
   # services.xserver.displayManager.defaultSession = "awesome";
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "br";
-    variant = "abnt2";
-  };
 
   # Configure console keymap
   console.keyMap = "br-abnt2";

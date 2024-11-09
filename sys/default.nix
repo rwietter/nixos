@@ -5,5 +5,6 @@
     ./gc.nix
     ./dns.nix
     ./nix.nix
+    ./xserver.nix
   ];
 }
