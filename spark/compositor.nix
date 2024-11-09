@@ -69,4 +69,8 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
       };
     };
   };
+
+ xdg.configFile."picom/picom.conf".text = ''
+    ${fileContents ../repo/config/picom/picom.conf}
+  '';
 }

@@ -89,6 +89,8 @@ abbr cc 'xsel --clipboard --input'
 abbr pp 'xsel --clipboard --output'
 
 : '------------ NixOS ---------------- '
-abbr nre 'sudo nixos-rebuild switch --flake .#rwietter'
-abbr hms 'home-manager switch --flake .#rwietter'
-abbr hlp 'command-not-found'
+abbr nx-nre 'sudo nixos-rebuild switch --flake .#rwietter'
+abbr nx-hms 'home-manager switch --flake .#rwietter'
+abbr nx-hlp 'command-not-found'
+abbr nx-sgc 'nix-store --gc --print-roots | egrep -v "^(/nix/var|/run/\w+-system|\{memory)"'
+abbr nx-build "nix-build --no-out-link"

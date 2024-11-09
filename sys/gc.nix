@@ -23,4 +23,12 @@
       };
     };
   };
+  
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = false; # True will run at each compilation and can be slow
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 5d";
+  };
 }
