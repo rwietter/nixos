@@ -4,5 +4,6 @@
   imports = [
     ./gc.nix
     ./dns.nix
+    ./nix.nix
   ];
 }
