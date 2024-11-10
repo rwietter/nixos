@@ -28,7 +28,8 @@
         specialArgs = { inherit inputs vars mylib theme; };
         modules = [
           ./configuration.nix
-          home-manager.nixosModules.home-manager
+          # <home-manager/nixos> # Another way to include home-manager
+          home-manager.nixosModules.home-manager # Home-manager as a NixOS module for flake
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -36,14 +37,14 @@
               extraSpecialArgs = { inherit inputs vars mylib theme; };
               users.rwietter = { config, ... }: {
                 home = {
-                  username = "rwietter";
-                  homeDirectory = "/home/rwietter";
+                  username = vars.os.hostname;
+                  homeDirectory = vars.os.homeDirectory;
                   stateVersion = "24.05";
                   enableNixpkgsReleaseCheck = false;
                 };
 
                 # Explicitly enable home-manager
-                programs.home-manager.enable = true;
+                programs.home-manager.enable = false;
 
                 imports = [
                   ./orbit/home.nix
@@ -51,14 +52,8 @@
                   ./shell
                   ./spark
                   ./atom
+                  ./scroll
                 ];
-
-                # Ensure symlinks are created
-                # home.activation = {
-                #   linkGeneration = config.lib.dag.entryAfter ["writeBoundary"] ''
-                #     $DRY_RUN_CMD ${pkgs.fish}/bin/fish -c "source ~/.config/fish/config.fish"
-                #   '';
-                # };
               };
             };
           }

@@ -102,7 +102,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    home-manager
+    # home-manager
     
     # Xorg
     xorg.xdpyinfo

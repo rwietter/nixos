@@ -7,7 +7,12 @@ with lib; mkIf (vars.os.shell == "fish") {
     shellAbbrs = {
       hlp = "command-not-found";
     };
+    # Fish integration for nix shell or nix develop
+    interactiveShellInit = ''
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+    '';
   };
+
   home.packages = with pkgs; [
     fishPlugins.forgit
     fishPlugins.hydro
