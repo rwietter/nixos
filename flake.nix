@@ -40,19 +40,15 @@
                   username = vars.os.hostname;
                   homeDirectory = vars.os.homeDirectory;
                   stateVersion = "24.05";
-                  enableNixpkgsReleaseCheck = false;
                 };
-
-                # Explicitly enable home-manager
-                programs.home-manager.enable = false;
 
                 imports = [
                   ./orbit/home.nix
-                  ./forge
-                  ./shell
                   ./spark
                   ./atom
                   ./scroll
+                  ./shell
+                  ./forge
                 ];
               };
             };

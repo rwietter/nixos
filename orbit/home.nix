@@ -161,10 +161,7 @@
   # changes in each release.
   home.stateVersion = "24.05";
   
-  #xdg.configFile."awesome/rc.lua".source = ../dots/.config/awesome/rc.lua;
-  #xdg.configFile."fish/config.fish".source = ../dots/.config/fish/config.fish;
-
-  home.enableNixpkgsReleaseCheck = false;
+  home.enableNixpkgsReleaseCheck = true;
   # Let home Manager install and manage itself.
-  # programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }
