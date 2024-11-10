@@ -22,14 +22,14 @@
     vars = import ./environment/vars.nix;
     theme = (import ./atom/colorscheme { inherit mylib vars; }).theme;
   in {
+    # NixOS home-manager integration
     nixosConfigurations = {
       rwietter = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs vars mylib theme; };
         modules = [
           ./configuration.nix
-          # <home-manager/nixos> # Another way to include home-manager
-          home-manager.nixosModules.home-manager # Home-manager as a NixOS module for flake
+          home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -53,6 +53,21 @@
               };
             };
           }
+        ];
+      };
+    };
+    # Independent home-manager configuration
+    homeConfigurations = {
+      rwietter = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { inherit system; };
+        extraSpecialArgs = { inherit inputs vars mylib theme; };
+        modules = [
+          ./orbit/home.nix
+          ./spark
+          ./atom
+          ./scroll
+          ./shell
+          ./forge
         ];
       };
     };
