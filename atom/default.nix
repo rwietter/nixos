@@ -2,7 +2,7 @@ _:
 
 {
   imports = [
-    ./mimetypes.nix
+    ./mimeapps.nix
     ./awesome.nix
   ];
 }

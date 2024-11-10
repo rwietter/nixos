@@ -3,37 +3,38 @@
 with lib; mkIf (vars.os.desktop == "awesome") {
   xdg.configFile = lib.mkForce {
     "awesome/theme/colors/dark.lua" = {
+      force = true;
       text = ''
         local colors = {}
 
-        colors.bg_color = "${theme.scheme.colors.bg}"
-        colors.bg_2 = "${theme.scheme.colors.bg}" .. "99"
-        colors.bg_3 = "${theme.scheme.colors.bg}" .. "66"
-        colors.bg_4 = "${theme.scheme.colors.bg}" .. "33"
+        colors.bg_color = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+        colors.bg_2 = "${theme.scheme.variants."${vars.appearance.theme}".bg.shift}"
+        colors.bg_3 = "${theme.scheme.variants."${vars.appearance.theme}".bg.echo}"
+        colors.bg_4 = "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
 
-        colors.black = "${theme.scheme.colors.bg}"
-        colors.ext_white_bg = "${theme.scheme.colors.fg}"
+        colors.black = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+        colors.ext_white_bg = "${theme.scheme.variants."${vars.appearance.theme}".white.root}"
 
-        colors.foreground = "${theme.scheme.colors.fg}"
-        colors.emphasis = "${theme.scheme.colors.fg}" .. "99"
+        colors.foreground = "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
+        colors.emphasis = "${theme.scheme.variants."${vars.appearance.theme}".fg.echo}"
 
-        colors.green = "${theme.scheme.colors.green}
-        colors.green_2 = "${theme.scheme.colors.green}" .. "99"
-        colors.green_3 = "${theme.scheme.colors.green}" .. "66"
-        colors.green_4 = "${theme.scheme.colors.green}" .. "33"
+        colors.green = "${theme.scheme.variants."${vars.appearance.theme}".green.root}"
+        colors.green_2 = "${theme.scheme.variants."${vars.appearance.theme}".green.shift}"
+        colors.green_3 = "${theme.scheme.variants."${vars.appearance.theme}".green.echo}"
+        colors.green_4 = "${theme.scheme.variants."${vars.appearance.theme}".green.fade}"
 
-        colors.red = ${theme.scheme.colors.red}
-        colors.red_2 = ${theme.scheme.colors.red}" .. "99"
-        colors.red_3 = ${theme.scheme.colors.red}" .. "66"
-        colors.red_4 = ${theme.scheme.colors.red}" .. "33"
-        colors.red_5 = ${theme.scheme.colors.red}" .. "20"
+        colors.red = "${theme.scheme.variants."${vars.appearance.theme}".red.root}"
+        colors.red_2 = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}"
+        colors.red_3 = "${theme.scheme.variants."${vars.appearance.theme}".red.echo}"
+        colors.red_4 = "${theme.scheme.variants."${vars.appearance.theme}".red.fade}"
+        colors.red_5 = "${theme.scheme.variants."${vars.appearance.theme}".red.fade}"
 
-        colors.accent = ${theme.scheme.colors.cyan}
-        colors.accent_2 = ${theme.scheme.colors.cyan}" .. "99"
-        colors.accent_3 = ${theme.scheme.colors.cyan}" .. "66"
-        colors.accent_4 = ${theme.scheme.colors.cyan}" .. "33"
+        colors.accent = "${theme.scheme.variants."${vars.appearance.theme}".cyan.root}"
+        colors.accent_2 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}"
+        colors.accent_3 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.echo}"
+        colors.accent_4 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.fade}"
 
-        colors.purple = ${theme.scheme.colors.primary}
+        colors.purple = "${theme.scheme.variants."${vars.appearance.theme}".magenta.root}"
 
         return colors
       '';

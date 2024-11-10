@@ -12,9 +12,9 @@ with lib; mkIf (vars.os.desktop == "awesome") {
       "class_g = 'Dunst'"
     ];
     fadeSteps = [ 0.03 0.03 ];
-    inactiveOpacity = 0.95;
-    activeOpacity = 0.95;
-    menuOpacity = 0.95;
+    inactiveOpacity = 1;
+    activeOpacity = 1;
+    menuOpacity = 1;
     opacityRules = [
       "95:class_g = 'Alacritty'"
     ];
