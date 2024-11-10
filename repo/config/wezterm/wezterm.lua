@@ -1,3 +1,16 @@
+--[[
+	Wezterm configuration
+	@see https://wezfurlong.org/wezterm/config/files.html
+
+	@author: Maurício Witter <rwietter@duck.com> (@rwietter)
+	@license: MIT
+
+	@docs:
+		- Yaml color scheme: https://wezfurlong.org/wezterm/config/lua/wezterm.color/load_base16_scheme.html
+		- Color schemes: https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-your-weztermlua
+		- Troubleshooting: https://wezfurlong.org/wezterm/troubleshooting.html
+]] --
+
 local wezterm = require("wezterm")
 
 local function font_with_fallback(name, params)
@@ -38,7 +51,11 @@ local themes = {
 }
 
 return {
-	color_scheme = themes.catppuccin_macchiato,
+	-- import from $HOME/.config/wezterm/theme.lua
+	color_schemes = {
+  	['nix'] = require('theme')
+	},
+	color_scheme = "nix",
 
 	-- OpenGL for GPU acceleration, Software for CPU
 	front_end = "WebGpu",--WebGpu - OpenGL
@@ -170,56 +187,6 @@ return {
 	},
 
 	bold_brightens_ansi_colors = true,
-
-	-- colors = {
-	-- 	foreground = "#EFECF4",
-	-- },
-
-	-- dark
-	-- colors = {
-	-- 	foreground = "#EFECF4",
-	-- 	background = "#000000", -- #1E1D2D #0F0F11 #1A2026 #1E1E28
-	-- 	cursor_bg = "#EFECF4",
-	-- 	cursor_fg = "#EFECF4",
-	-- 	cursor_border = "#EFECF4",
-	-- 	selection_fg = "#EFECF4",
-	-- 	selection_bg = "#56687E",
-	-- 	scrollbar_thumb = "#edeff0",
-	-- 	split = "#EFECF4",
-	-- 	ansi = {
-	-- 		"#6E6C7E",
-	-- 		"#F48FB1",
-	-- 		"#A1EFD3",
-	-- 		"#EBDDAA",
-	-- 		"#A4B9EF",
-	-- 		"#BD99FF",
-	-- 		"#87DFEB",
-	-- 		"#DADAE8",
-	-- 	},
-	-- 	brights = {
-	-- 		"#6E6C7E",
-	-- 		"#F48FB1",
-	-- 		"#A1EFD3",
-	-- 		"#EBDDAA",
-	-- 		"#A4B9EF",
-	-- 		"#BD99FF",
-	-- 		"#87DFEB",
-	-- 		"#DADAE8",
-	-- 	},
-	-- 	indexed = { [136] = "#edeff0" },
-	-- 	tab_bar = {
-	-- 		active_tab = {
-	-- 			bg_color = "#1A2026",
-	-- 			fg_color = "#F692B2",
-	-- 			italic = false,
-	-- 		},
-	-- 		background = "#1A2026",
-	-- 		inactive_tab = { bg_color = "#1A2026", fg_color = "#EFECF4" },
-	-- 		inactive_tab_hover = { bg_color = "#1A2026", fg_color = "#EFECF4" },
-	-- 		new_tab = { bg_color = "#1A2026", fg_color = "#EFECF4" },
-	-- 		-- new_tab_hover = { bg_color = "#A1D391", fg_color = "#090909" },
-	-- 	},
-	-- },
 
 	-- Padding
 	window_padding = {

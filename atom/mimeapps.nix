@@ -1,8 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  xdg.configFile."mimeapps.list" = lib.mkForce {
-    force = true;
-    source = ../repo/config/mimeapps.list;
+  xdg.configFile = lib.mkForce {
+    "mimeapps.list" = {
+      force = true;
+      source = ../repo/config/mimeapps.list;
+    };
   };
 }

@@ -43,22 +43,22 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
       text = ''
         ${fileContents ../repo/config/dunst/dunstrc}
         
-        frame_color = "${theme.scheme.colors.bg}"
-        separator_color = "${theme.scheme.colors.altbg}"
+        frame_color = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+        separator_color = "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
 
         [urgency_low]
-          background = "${theme.scheme.colors.bg}"
-          foreground = "${theme.scheme.colors.primary}"
+          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".blue.shift}"
           timeout = 10
 
         [urgency_normal]
-          background = "${theme.scheme.colors.bg}"
-          foreground = "${theme.scheme.colors.primary}"
+          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".primary.shift}"
           timeout = 15
 
         [urgency_critical]
-          background = "${theme.scheme.colors.red}"
-          foreground = "${theme.scheme.colors.bg}"
+          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}"
           timeout = 20
       '';
     };

@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "vesper";  # Or "vesper", "catppuccin", "gruvbox", "eva", etc.
-    theme = "dark"; # Or "light"
+    colorscheme = "argentinian";  # Or "vesper", "argentinian", "eva", etc.
+    theme = "light"; # Or "light"
   };
   git = {
     username = "rwietter";

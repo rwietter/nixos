@@ -1,4 +1,4 @@
-{ lib, pkgs, theme, ... }:
+{ lib, pkgs, vars, theme, ... }:
 
 with lib; {
   programs.zathura = {
@@ -19,32 +19,32 @@ with lib; {
         set guioptions sv
         
         # Colors and theme
-        set default-bg "${theme.scheme.colors.bg}"
-        set default-fg "${theme.scheme.colors.fg}"
-        set statusbar-bg "${theme.scheme.colors.altbg}"
-        set statusbar-fg "${theme.scheme.colors.fg}"
-        set inputbar-bg "${theme.scheme.colors.altbg}"
-        set inputbar-fg "${theme.scheme.colors.fg}"
-        set notification-bg "${theme.scheme.colors.altbg}"
-        set notification-fg "${theme.scheme.colors.fg}"
-        set notification-error-bg "${theme.scheme.colors.red}"
-        set notification-error-fg "${theme.scheme.colors.bg}"
-        set notification-warning-bg "${theme.scheme.colors.yellow}"
-        set notification-warning-fg "${theme.scheme.colors.bg}"
+        set default-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+        set default-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
+        set statusbar-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.echo}"
+        set statusbar-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.echo}"
+        set inputbar-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.echo}"
+        set inputbar-fg ${theme.scheme.variants."${vars.appearance.theme}".fg.echo}
+        set notification-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.shift}"
+        set notification-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.echo}"
+        set notification-error-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.echo}"
+        set notification-error-fg "${theme.scheme.variants."${vars.appearance.theme}".red.root}"
+        set notification-warning-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.echo}"
+        set notification-warning-fg "${theme.scheme.variants."${vars.appearance.theme}".yellow.shift}"
 
-        set highlight-active-color "${theme.scheme.colors.altbg}"
+        set highlight-active-color "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
         set highlight-color "rgba(229, 200, 144, 0.4)"
-        set highlight-fg "${theme.scheme.colors.altbg}"
+        set highlight-fg "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
 
-        set completion-highlight-bg "${theme.scheme.colors.altbg}"
-        set completion-highlight-fg "${theme.scheme.colors.fg}"
+        set completion-highlight-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
+        set completion-highlight-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
 
-        set completion-bg "${theme.scheme.colors.altbg}"
-        set completion-fg "${theme.scheme.colors.fg}"
+        set completion-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
+        set completion-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
         set recolor true
         set recolor-keephue true
-        set recolor-lightcolor "${theme.scheme.colors.bg}"
-        set recolor-darkcolor "${theme.scheme.colors.white}"
+        set recolor-lightcolor "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
+        set recolor-darkcolor "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
         
         # Behavior
         set selection-clipboard clipboard

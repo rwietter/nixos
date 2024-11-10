@@ -5,42 +5,51 @@
 with lib; mkIf (vars.os.term == "wezterm") {
   programs.wezterm = {
     enable = false; # [BUG]: textures broken
-    extraConfig = ''
-      ${fileContents ../repo/config/wezterm/wezterm.lua}
-    '';
   };
 
-  xdg.configFile."wezterm/theme.lua".text = ''
-    return {
-      background = "${theme.scheme.colors.bg}",
-      foreground = "${theme.scheme.colors.fg}",
-      cursor_bg = "${theme.scheme.colors.fg}",
-      cursor_fg = "${theme.scheme.colors.black}",
-      cursor_border = "${theme.scheme.colors.fg}",
-      selection_fg = "${theme.scheme.colors.black}",
-      selection_bg = "${theme.scheme.colors.fg}",
-      scrollbar_thumb = "${theme.scheme.colors.fg}",
-      split = "${theme.scheme.colors.white}",
-      ansi = {
-        "${theme.scheme.colors.bg}",
-        "${theme.scheme.colors.red}",
-        "${theme.scheme.colors.green}",
-        "${theme.scheme.colors.yellow}",
-        "${theme.scheme.colors.blue}",
-        "${theme.scheme.colors.magenta}",
-        "${theme.scheme.colors.cyan}",
-        "${theme.scheme.colors.fg}",
-      },
-      brights = {
-        "${theme.scheme.colors.white}",
-        "${theme.scheme.colors.red}",
-        "${theme.scheme.colors.green}",
-        "${theme.scheme.colors.yellow}",
-        "${theme.scheme.colors.blue}",
-        "${theme.scheme.colors.magenta}",
-        "${theme.scheme.colors.cyan}",
-        "${theme.scheme.colors.bg}",
-      },
-    }
-  '';
+  xdg.configFile = lib.mkForce {
+    "wezterm/theme.lua" = {
+      force = true;
+      text = ''
+        return {
+          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}",
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".fg.echo}",
+          cursor_bg =  "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}",
+          cursor_fg = "${theme.scheme.variants."${vars.appearance.theme}".fg.root}",
+          cursor_border = "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}",
+          selection_fg = "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}",
+          selection_bg = "${theme.scheme.variants."${vars.appearance.theme}".bg.shift}",
+          scrollbar_thumb = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}",
+          split = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}",
+          ansi = {
+            "${theme.scheme.colors.bg}",
+            "${theme.scheme.colors.red}",
+            "${theme.scheme.colors.green}",
+            "${theme.scheme.colors.yellow}",
+            "${theme.scheme.colors.blue}",
+            "${theme.scheme.colors.magenta}",
+            "${theme.scheme.colors.cyan}",
+            "${theme.scheme.colors.fg}",
+          },
+          brights = {
+            "${theme.scheme.colors.white}",
+            "${theme.scheme.colors.red}",
+            "${theme.scheme.colors.green}",
+            "${theme.scheme.colors.yellow}",
+            "${theme.scheme.colors.blue}",
+            "${theme.scheme.colors.magenta}",
+            "${theme.scheme.colors.cyan}",
+            "${theme.scheme.colors.bg}",
+          },
+        }
+      '';
+    };
+    
+    "wezterm/wezterm.lua" = {
+      text = ''
+        ${fileContents ../repo/config/wezterm/wezterm.lua}
+      '';
+      force = true;
+    };
+  };
 }

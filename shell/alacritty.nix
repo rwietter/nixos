@@ -21,7 +21,10 @@ with lib; mkIf (vars.os.term == "alacritty") {
   #   ${fileContents ../repo/config/alacritty/alacritty.yml}
   # '';
 
-  xdg.configFile."alacritty/alacritty.yml".source = lib.mkForce (builtins.path {
-      path = ../repo/config/alacritty/alacritty.yml;
-  });
+  xdg.configFile = lib.mkForce {
+    "alacritty/alacritty.yml" = {
+      source = ../repo/config/alacritty/alacritty.yml;
+      force = true;
+    };
+  };
 }
