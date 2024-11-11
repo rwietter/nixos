@@ -1,7 +1,21 @@
 {
   appearance = {
     colorscheme = "argentinian";  # Or "vesper", "argentinian", "eva", etc.
-    theme = "light"; # Or "light"
+    theme = "light"; # Or "light", "dark", "dim", etc.
+    gtk = {
+      theme = {
+        name = "Qogir-dark";
+        package = "qogir-icon-theme";
+      };
+      iconTheme = {
+        name = "Qogir-dark";
+        package = "qogir-icon-theme";
+      };
+      cursor = {
+        name = "Quintom_Snow";
+        package = "quintom-cursor-theme";
+      };
+    };
   };
   git = {
     username = "rwietter";

@@ -206,8 +206,8 @@ return {
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = {
-		saturation = 0,
-		brightness = 0,
+		saturation = 1,
+		brightness = 1,
 	},
 	window_background_opacity = 1,
 	window_close_confirmation = "NeverPrompt",
