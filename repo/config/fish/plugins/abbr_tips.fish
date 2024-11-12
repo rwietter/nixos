@@ -89,8 +89,12 @@ abbr cc 'xsel --clipboard --input'
 abbr pp 'xsel --clipboard --output'
 
 : '------------ NixOS ---------------- '
-abbr nx-nre 'sudo nixos-rebuild switch --flake .#rwietter'
-abbr nx-hms 'home-manager switch --flake .#rwietter'
-abbr nx-hlp 'command-not-found'
-abbr nx-sgc 'nix-store --gc --print-roots | egrep -v "^(/nix/var|/run/\w+-system|\{memory)"'
-abbr nx-build "nix-build --no-out-link"
+abbr nx-nre 'sudo nixos-rebuild switch --flake .#rwietter &| nom' # Rebuilds and activates the NixOS configuration using a specific flake.
+abbr nx-hms 'home-manager -b backup switch --flake .#rwietter &| nom && awesome-client "awesome.restart()"' # Updates and activates the Home Manager configuration with backup and a specific flake.
+abbr nx-hlp 'command-not-found' # Displays suggestions for unrecognised commands.
+abbr nx-sgc 'nix-store --gc --print-roots | egrep -v "^(/nix/var|/run/\w+-system|\{memory)"' # Performs garbage collection on the Nix store, excluding certain paths.
+abbr nx-build "nix-build --no-out-link &| nom" # Runs a Nix build without creating output links.
+abbr nx-gc "sudo nix-collect-garbage --delete-older-than 5d"
+
+: '------------- FZF ----------------- '
+abbr zat 'fd --exclude 'repo' --type f | grep 'default' | fzf --multi --preview "bat --color=always --style=numbers --line-range=:1000 {}" -- --preview-window=right:70%:wrap'

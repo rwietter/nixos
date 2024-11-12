@@ -34,6 +34,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs vars mylib theme; };
               users.rwietter = { config, ... }: {
                 home = {
@@ -41,14 +42,13 @@
                   homeDirectory = vars.os.homeDirectory;
                   stateVersion = "24.05";
                 };
-
                 imports = [
                   ./orbit/home.nix
                   ./spark
-                  ./atom
                   ./scroll
                   ./shell
                   ./forge
+                  ./atom
                 ];
               };
             };

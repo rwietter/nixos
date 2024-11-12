@@ -38,6 +38,10 @@ with lib; mkIf (vars.os.desktop == "awesome") {
 
         return colors
       '';
+      # Error, because I installed awesome via tarball and not via home-manager
+      # onChange = ''
+      #   awesome-client 'awesome.restart()'
+      # '';
     };
   };
 }

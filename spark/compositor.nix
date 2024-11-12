@@ -7,10 +7,7 @@ with lib; mkIf (vars.os.desktop == "awesome") {
     extraArgs = [];
     fade = true;
     fadeDelta = 10;
-    fadeExclude = [
-      "class_g = 'Notify-osd'"
-      "class_g = 'Dunst'"
-    ];
+    fadeExclude = [ ];
     fadeSteps = [ 0.03 0.03 ];
     inactiveOpacity = 1;
     activeOpacity = 1;
@@ -53,6 +50,9 @@ with lib; mkIf (vars.os.desktop == "awesome") {
     "picom/picom.conf" = {
       text = ''
         ${fileContents ../repo/config/picom/picom.conf}
+      '';
+      onChange = ''
+        pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf &
       '';
     };
   };

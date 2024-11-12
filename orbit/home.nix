@@ -29,126 +29,87 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
-    vscode
-    zotero_7
-    espanso
-    acpid
-    acpi
-    zoxide
-    inxi
-    maim
-    lxappearance
-    nitrogen
-    feh
-    pax-utils
-    pavucontrol
-    stremio
-    stow
-    powerline
-    rofi
-    rsync
-    tree
-    vnstat
-    tig
-    dzen2
-    translate-shell
-    fd
-    bat
-    hyperfine
-    tokei
-    tealdeer
-    curl
-    asciinema
-    ranger
-    obsidian
-    nautilus
-    gnome-keyring
-    inotify-tools
-    playerctl
-    redshift
-    upower
-    dive
-    lf
-    brightnessctl
-    ueberzug
-    w3m
-    viewnior
-    fossil
-    dconf-editor
-    neofetch
-    telegram-desktop
-    brave
-    kitty
+    # Code & Development Tools
+    vscode  # code editor
+    tokei  # code statistics
+    strace  # system call monitoring
+    ltrace  # library call monitoring
+    lsof  # list open files
+    tig  # git log viewer
+    fossil  # distributed version control system
+    hyperfine  # benchmarking tool
+    fd  # find on steroids
+    bat  # cat with wings
+    glow  # markdown previewer
+    jq  # JSON processor
+    eza  # modern replacement for ‘ls’
+    fzf  # fuzzy finder
+    dzen2  # scriptable status bar
+    stow  # manage symlinks
 
-    # nnn # terminal file manager
+    # Command Line Utilities
+    rsync  # file synchronization
+    tree  # list directory structure
+    curl  # HTTP client
+    asciinema  # record terminal sessions
+    ranger  # terminal file manager
+    lf  # terminal file manager
+    neofetch  # system info
+    tealdeer  # tldr client
+    pax-utils  # collection of security utilities
+    inotify-tools  # inotifywait for file system watching
+    translate-shell  # text translation in terminal
+    viewnior  # image viewer
+    zip unzip xz p7zip  # archiving tools
+    xclip # clipboard manager
+    zoxide  # directory jump tool
 
-    # archives
-    zip
-    xz
-    unzip
-    p7zip
+    # Productivity & Note-taking
+    zotero_7  # reference manager and reader
+    obsidian  # note taking
+    espanso  # text expander
 
-    # utils
-    # ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    # yq-go # yaml processor https://github.com/mikefarah/yq
-    eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
+    # System Monitoring & Information
+    inxi  # system info tool
+    vnstat  # network statistics
+    sysstat  # system performance tools
+    lm_sensors  # for `sensors` command
+    pciutils  # provides `lspci`
+    usbutils  # provides `lsusb`
+    acpi  # command-line ACPI tool
+    acpid  # ACPI events daemon
+    upower  # power management tool
 
-    # networking tools
-    # mtr # A network diagnostic tool
-    # iperf3
-    dnsutils  # `dig` + `nslookup`
-    # ldns # replacement of `dig`, it provide the command `drill`
-    # aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    # socat # replacement of openbsd-netcat
-    # nmap # A utility for network discovery and security auditing
-    # ipcalc  # it is a calculator for the IPv4/v6 addresses
+    # Networking Tools
+    dnsutils  # includes `dig` and `nslookup`
 
-    # misc
-    # cowsay
-    # file
-    # which
-    # tree
-    # gnused
-    # gnutar
-    # gawk
-    # zstd
-    # gnupg
+    # Media & Image Tools
+    stremio  # media center
+    pavucontrol  # audio control
+    playerctl  # media player control
+    maim  # screenshot tool
+    feh  # image viewer
+    redshift  # color temperature adjustment
 
-    # nix related
-    #
-    # it provides the command `nom` works just like `nix`
-    # with more details log output
-    nix-output-monitor
+    # File Management & Browsers
+    nautilus  # file manager
+    brave  # web browser
 
-    # productivity
-    glow # markdown previewer
+    # User Interface & Desktop Tools
+    rofi  # application launcher
+    lxappearance  # GTK theme switcher
+    dconf-editor  # GUI for `dconf`
 
-    # development
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-    # gdb # GNU Debugger
-    # valgrind # memory debugging and profiling
-    # perf # performance analysis tools
-    # sysdig # system-level exploration
-    # sysstat # system performance tools
+    # Communication & Social
+    telegram-desktop  # messaging
 
-    # system tools
-    sysstat
-    lm_sensors # for `sensors` command
-    # ethtool
-    pciutils # lspci
-    usbutils # lsusb
+    # Miscellaneous
+    powerline  # status line
+    gpick # color picker
+    nix-output-monitor  # enhanced logging for Nix
 
-    # fonts
-    # (nerdfonts.override {
-    #   fonts = ["JetBrainsMono" "Inconsolata" "ZedMono"]; } # https://nixos.wiki/wiki/Fonts
-    # )
-    # (import ./shells/wezterm.nix).defaultPackage.x86_64-linux
+    # Scripts
+     (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
   ];
 
   # This value determines the home Manager release that your
@@ -160,8 +121,8 @@
   # the home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "24.05";
-  
-  home.enableNixpkgsReleaseCheck = true;
+
+  home.enableNixpkgsReleaseCheck = false;
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

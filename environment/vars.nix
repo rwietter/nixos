@@ -1,21 +1,7 @@
 {
   appearance = {
     colorscheme = "argentinian";  # Or "vesper", "argentinian", "eva", etc.
-    theme = "light"; # Or "light", "dark", "dim", etc.
-    gtk = {
-      theme = {
-        name = "Qogir-dark";
-        package = "qogir-icon-theme";
-      };
-      iconTheme = {
-        name = "Qogir-dark";
-        package = "qogir-icon-theme";
-      };
-      cursor = {
-        name = "Quintom_Snow";
-        package = "quintom-cursor-theme";
-      };
-    };
+    theme = "dark"; # Or "light", "dark", "dim", etc.
   };
   git = {
     username = "rwietter";
@@ -31,7 +17,7 @@
     font = {
       sans = "";
       serif = "";
-      mono = "Geist Mono";
+      mono = "FantasqueSansM Nerd Font";
     };
   };
 }

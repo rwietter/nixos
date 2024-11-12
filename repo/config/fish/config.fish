@@ -7,6 +7,7 @@ set -g fish_complete_select_colorize yes       # Colorize completions
 set -g fish_autosuggestion_enabled 1           # Enable autosuggestions
 
 
+fish_vi_key_bindings                           # Enable vi key bindings
 set -g fish_vi_force_cursor 1                  # Force cursor to be line
 set -g fish_cursor_default line blink          # Set cursor to line and blink
 set -g fish_cursor_insert line blink           # Set cursor to line and blink in insert mode
@@ -16,7 +17,7 @@ set -g fish_cursor_visual line blink           # Set cursor to line and blink in
 
 set -g hydro_fetch true                        # Enable git background fetch
 set -g hydro_multiline false                   # Disable multiline git status
-set -g hydro_symbol_git_dirty " "             # Set git dirty symbol
+# set -g hydro_symbol_git_dirty " "             # Set git dirty symbol
 
 # ----------------- Zellij ---------------------
 # ----------------------------------------------
@@ -62,8 +63,8 @@ set -ag fish_user_paths "$HOME"/.local/bin/rwietter
 # --------------- Environments -----------------
 # ----------------------------------------------
 set -gx TERM wezterm                    # Set terminal to wezterm
-set -gx EDITOR nvim                     # Set editor to nvim
-set -gx VISUAL nvim                     # Set visual editor to nvim
+set -gx EDITOR code                     # Set editor to code
+set -gx VISUAL code                     # Set visual editor to code
 set -gx BROWSER firefox                 # Set browser to firefox
 set -gx LANG en_US.UTF-8                # Set language to pt_BR.UTF-8
 set -gx LC_ALL en_US.UTF-8              # Set locale to pt_BR.UTF-8

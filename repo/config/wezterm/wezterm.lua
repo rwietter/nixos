@@ -21,7 +21,7 @@ end
 local fonts = {
 	pragmata = "PragmataPro for Powerline",
 	iosevka = "Iosevka Nerd Font Mono",
-	fantasque = "Fantasque Sans Mono",
+	fantasque = "FantasqueSansM Nerd Font",
 	aesthetic = "AestheticIosevka Nerd Font Mono",
 	geist = "Geist Mono",
 	danknerd = "DankMono Nerd Font Mono",
@@ -29,9 +29,10 @@ local fonts = {
 	jetnerd = "JetBrainsMono Nerd Font",
 	commitnerd = "CommitMono Nerd Font Mono",
 	cascadia = "Cascadia Mono",
+	intel = "Intel One Mono",
 }
 
-local font_name = fonts.iosevka
+local font_name = fonts.fantasque
 
 local themes = {
 	rose_pine_dark = "rose-pine",
@@ -61,7 +62,12 @@ return {
 	front_end = "WebGpu",--WebGpu - OpenGL
 
 	-- Font config
-	font = font_with_fallback(font_name),
+	font = wezterm.font {
+    family = font_name,
+    stretch = 'Expanded',
+    weight = 'Regular',
+		harfbuzz_features = { 'calt=0', 'clig=1', 'liga=1' },
+  },
 	font_rules = {
 		{
 			italic = true,
@@ -78,8 +84,8 @@ return {
 		},
 	},
 	warn_about_missing_glyphs = true,
-	font_size = 12.5,
-	line_height = 1.4,
+	font_size = 13.5,
+	line_height = 1.6,
 
 	-- Cursor style
 	default_cursor_style = "BlinkingUnderline",
@@ -186,7 +192,7 @@ return {
 		},
 	},
 
-	bold_brightens_ansi_colors = true,
+	bold_brightens_ansi_colors = false,
 
 	-- Padding
 	window_padding = {
@@ -213,6 +219,6 @@ return {
 	window_close_confirmation = "NeverPrompt",
 	window_frame = {
 		active_titlebar_bg = "#090909",
-		font = font_with_fallback(font_name, { bold = true }),
+		font = font_with_fallback(font_name, { bold = false }),
 	},
 }

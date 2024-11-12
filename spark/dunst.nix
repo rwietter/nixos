@@ -12,7 +12,7 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
         height = 350;
         offset = "30x50";
         origin = "top-right";
-        transparency = 10;
+        transparency = 0;
         frame_color = "#eceff1";
         padding = 10;
 
@@ -35,55 +35,34 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
     };
   };
 
-  # Optionally make picom restart after dunst if picom's fadeExclude uses dunst
-  # systemd.services.picom.requires = lib.mkIf (config.services.picom.enable && config.services.picom.fadeExclude != null )  [ "dunst.service" ];
-
   xdg.configFile = lib.mkForce {
     "dunst/dunstrc" = {
       text = ''
         ${fileContents ../repo/config/dunst/dunstrc}
         
-        frame_color = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
-        separator_color = "${theme.scheme.variants."${vars.appearance.theme}".bg.fade}"
+        frame_color = "#00000000"
+        separator_color = "#00000000"
 
         [urgency_low]
-          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".blue.shift}"
+          background = "${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".black.shift}"
           timeout = 10
 
         [urgency_normal]
           background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".primary.shift}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".fg.shift}"
           timeout = 15
 
         [urgency_critical]
-          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}"
+          background = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}"
+          foreground = "${theme.scheme.variants."${vars.appearance.theme}".black.root}"
           timeout = 20
+      '';
+      onChange = ''
+        systemctl --user restart dunst
       '';
     };
   };
-
-  # xdg.configFile."dunst/dunstrc".text = ''
-  #   ${fileContents ../repo/config/dunst/dunstrc}
-  #     frame_color = "${theme.scheme.colors.bg}"
-  #     separator_color = "${theme.scheme.colors.altbg}"
-
-  #   [urgency_low]
-  #     background = "${theme.scheme.colors.bg}"
-  #     foreground = "${theme.scheme.colors.primary}"
-  #     timeout = 10
-
-  #   [urgency_normal]
-  #     background = "${theme.scheme.colors.bg}"
-  #     foreground = "${theme.scheme.colors.primary}"
-  #     timeout = 15
-
-  #   [urgency_critical]
-  #     background = "${theme.scheme.colors.red}"
-  #     foreground = "${theme.scheme.colors.bg}"
-  #     timeout = 20
-  # '';
 
   home.packages = with pkgs; [
     libnotify
