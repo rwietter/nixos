@@ -5,6 +5,5 @@ _:
     ./mimeapps.nix
     ./awesome.nix
     ./gtk.nix
-    ./fonts.nix
   ];
 }

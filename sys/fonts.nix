@@ -2,7 +2,6 @@
 
 {
   fonts = {
-    enableDefaultPackages = true;
     packages = with pkgs; [
       "atkinson-hyperlegible"
       (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })

@@ -8,5 +8,6 @@
     ./xserver.nix
     ./hyprland.nix
     ./awesome.nix
+    ./fonts.nix
   ];
 }
