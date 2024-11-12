@@ -35,7 +35,7 @@
         [Settings]
         gtk-theme-name = ${theme.gtk."${vars.appearance.theme}".theme.name}
         gtk-icon-theme-name = ${theme.gtk."${vars.appearance.theme}".iconTheme.name}
-        gtk-font-name = ${vars.os.font.mono} 12
+        gtk-font-name = ${vars.os.font.sans} 12
         gtk-cursor-theme-size = 24
         gtk-toolbar-style = GTK_TOOLBAR_BOTH_HORIZ
         gtk-toolbar-icon-size = GTK_ICON_SIZE_LARGE_TOOLBAR
@@ -56,7 +56,7 @@
         [Settings]
         gtk-theme-name = ${theme.gtk."${vars.appearance.theme}".theme.name}
         gtk-icon-theme-name = ${theme.gtk."${vars.appearance.theme}".iconTheme.name}
-        gtk-font-name = ${vars.os.font.mono} 12
+        gtk-font-name = ${vars.os.font.sans} 12
         gtk-cursor-theme-size = 24
         gtk-toolbar-style = GTK_TOOLBAR_BOTH_HORIZ
         gtk-toolbar-icon-size = GTK_ICON_SIZE_LARGE_TOOLBAR

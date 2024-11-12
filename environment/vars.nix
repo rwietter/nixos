@@ -15,8 +15,8 @@
     term = "wezterm"; # Or "alacritty", "kitty", "st", etc.
     shell = "fish"; # Or "bash", "zsh", "starship" etc.
     font = {
-      sans = "";
-      serif = "";
+      sans = "Atkinson Hyperlegible";
+      serif = "SpaceGrotesk";
       mono = "FantasqueSansM Nerd Font";
     };
   };
