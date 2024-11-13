@@ -1,13 +1,11 @@
 { lib, pkgs, vars, ... }:
 
 with lib; mkIf(vars.os.desktop == "awesome") {
-  # Use tarball for awesome because widgets needs lua modules only available in in awesome-git
-  # Here <https://docs.windswept.digital/nixos/awesomewm-git>
   services.xserver.windowManager.awesome = {
     enable = true;
     luaModules = with pkgs.luaPackages; [
-      luarocks # is the package manager for Lua modules
-      luadbi-mysql # Database abstraction layer
+      luarocks # era para funcionar, mas não funciona
+      luadbi-mysql
     ];
     package = pkgs.awesome.overrideAttrs (old: {
       version = "1f7ac8f9c7ab9fff7dd93ab4b29514ff3580efcf";
@@ -23,4 +21,22 @@ with lib; mkIf(vars.os.desktop == "awesome") {
       '';
     });
   };
+
+  environment = {
+    systemPackages = with pkgs; [
+      luarocks
+    ];
+    
+    # Não funciona essa droga
+    sessionVariables = {
+      LUA_PATH = "${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?.lua;${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?/init.lua";
+      LUA_CPATH = "${pkgs.luaPackages.luarocks}/lib/lua/${pkgs.lua.luaversion}/?.so";
+      PATH = ["${pkgs.luarocks}/bin"];
+    };
+  };
+
+  # Não funciona essa droga
+  services.xserver.displayManager.sessionCommands = ''
+    export PATH=${pkgs.luarocks}/bin:$PATH
+  '';
 }

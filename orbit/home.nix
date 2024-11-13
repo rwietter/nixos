@@ -96,7 +96,6 @@
     brave  # web browser
 
     # User Interface & Desktop Tools
-    rofi  # application launcher
     lxappearance  # GTK theme switcher
     dconf-editor  # GUI for `dconf`
 

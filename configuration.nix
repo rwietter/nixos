@@ -109,6 +109,7 @@
 
     # Libs
     imlib2 # image loading and rendering library
+    lua54Packages.luarocks
   ];
 
   environment.sessionVariables = {
