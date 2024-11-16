@@ -68,6 +68,7 @@
     zotero_7  # reference manager and reader
     obsidian  # note taking
     espanso  # text expander
+    libreoffice-qt
 
     # System Monitoring & Information
     inxi  # system info tool

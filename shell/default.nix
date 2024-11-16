@@ -7,6 +7,7 @@
     ./bash.nix
     ./alacritty.nix
     ./starship.nix
+    ./direnv.nix
     # ./zsh.nix
   ];
 }

@@ -1,19 +1,19 @@
-{ lib, themes, vars, ...}:
+{ lib, theme, vars, pkgs, ... }:
 
 with lib; {
-  rofi = {
+  programs.rofi = {
     enable = true;
     package = pkgs.rofi;
-  }
+  };
 
   xdg.configFile = mkForce {
     "awesome/misc/rofi/themes/apps.rasi" = {
       force = true;
       text = ''
         configuration {
-          font:							      ${vars.os.font.sans} 12;
+          font:							      "${vars.os.font.sans} 12";
           show-icons:             true;
-          icon-theme: 					  ${themes.gtk."${vars.appearance.theme}".iconTheme.name};
+          icon-theme: 					  "${theme.gtk."${vars.appearance.theme}".iconTheme.name}";
           display-drun: 					"";
           drun-display-format:    "{name}";
           disable-history:        false;
@@ -21,11 +21,11 @@ with lib; {
         }
 
         * {
-            background:            ${themes.gtk."${vars.appearance.theme}".bg.root}BF;
-            background-alt:        ${themes.gtk."${vars.appearance.theme}".bg.fade}00;
-            background-bar:        ${themes.gtk."${vars.appearance.theme}".bg.fade}15;
-            foreground:            ${themes.gtk."${vars.appearance.theme}".fg.shift}EE;
-            accent:			           ${themes.gtk."${vars.appearance.theme}".cyan.shift};
+            background:            ${theme.scheme.variants."${vars.appearance.theme}".bg.root}BF;
+            background-alt:        ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}00;
+            background-bar:        ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}15;
+            foreground:            ${theme.scheme.variants."${vars.appearance.theme}".fg.root}EE;
+            accent:			           ${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}66;
         }
       '';
     };
@@ -33,7 +33,7 @@ with lib; {
     "awesome/misc/rofi/themes/windows.rasi" = {
       text = ''
         configuration {
-          font:						      ${vars.os.font.sans} 12;
+          font:						      "${vars.os.font.sans} 12";
           modes: 								"window";
           sort: 								true;
           hover-select: 				true;
@@ -41,17 +41,17 @@ with lib; {
           window-format: 				"{c}";
           threads: 							4;
           show-icons:            true;
-          icon-theme: 					 ${themes.gtk."${vars.appearance.theme}".iconTheme.name};
+          icon-theme: 					 "${theme.gtk."${vars.appearance.theme}".iconTheme.name}";
           disable-history:       false;
           sidebar-mode: 				 false;
         }
 
         * {
-          background:       ${themes.gtk."${vars.appearance.theme}".bg.root}BF;
-          background-alt:   ${themes.gtk."${vars.appearance.theme}".bg.fade}00;
-          background-bar:   ${themes.gtk."${vars.appearance.theme}".bg.fade}15;
-          foreground:       ${themes.gtk."${vars.appearance.theme}".fg.shift}EE;
-          accent:			      ${themes.gtk."${vars.appearance.theme}".cyan.shift};
+          background:       ${theme.scheme.variants."${vars.appearance.theme}".bg.root}BF;
+          background-alt:   ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}00;
+          background-bar:   ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}15;
+          foreground:       ${theme.scheme.variants."${vars.appearance.theme}".fg.root}EE;
+          accent:			      ${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}66;
         }
       '';
     };

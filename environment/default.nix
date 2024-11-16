@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./var.nix
+    # ./vars.nix
   ];
 }

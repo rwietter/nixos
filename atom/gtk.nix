@@ -1,6 +1,6 @@
 { config, pkgs, theme, lib, vars, ... }:
 
-{
+with lib; {
   gtk = {
     enable = true;
     theme = {
@@ -47,6 +47,7 @@
         gtk-xft-hintstyle = hintfull
         gtk-xft-rgba = rgb
         gtk-cursor-theme-name = ${theme.gtk."${vars.appearance.theme}".cursor.name}
+        gtk-application-prefer-dark-theme="${if vars.appearance.theme == "dark" then "1" else "0"}"
       '';
     };
 
@@ -68,6 +69,7 @@
         gtk-xft-hintstyle = hintfull
         gtk-xft-rgba = rgb
         gtk-cursor-theme-name = ${theme.gtk."${vars.appearance.theme}".cursor.name}
+        gtk-application-prefer-dark-theme="${if vars.appearance.theme == "dark" then "1" else "0"}"
       '';
     };
   };
