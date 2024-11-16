@@ -18,7 +18,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use the latest kernel. 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -90,9 +90,9 @@
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_CACHE_HOME  = "{HOME}/.cache";
-    XDG_DATA_HOME   = "{HOME}/.local/share";
-    XDG_STATE_HOME  = "{HOME}/.local/state";
+    # XDG_CACHE_HOME  = "{HOME}/.cache";
+    # XDG_DATA_HOME   = "{HOME}/.local/share";
+    # XDG_STATE_HOME  = "{HOME}/.local/state";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -11,5 +11,6 @@
     ./fonts.nix
     ./oom.nix
     ./zram.nix
+    ./i18n.nix
   ];
 }
