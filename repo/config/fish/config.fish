@@ -80,6 +80,9 @@ set -Ux ABBR_TIPS_PROMPT "❱ \e[38;2;243;134;48;4;1m{{ .abbr }}\e[0m => \e[38;2
 zoxide init fish | source    # like cd with superpowers
 set --universal zoxide_cmd z
 
+# -- direnv
+direnv hook fish | source
+
 # -- patrickf1/fzf.fish
 set -gx fzf_preview_dir_cmd eza --all --color=always --icons # preview directories with exa
 
