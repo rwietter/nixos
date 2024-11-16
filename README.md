@@ -14,11 +14,11 @@ voltage/
     │
     ├── atom           # Interface gráfica e ambiente visual
     │   ├── default.nix
-    │   ├── ssh         # Configurações SSH
-    |   ├── dns         # Configurações de DNS
-    │   ├── mimetypes   # Associação de tipos de arquivos
-    │   └── gtk         # Temas e configurações GTK
-    |   └── colorscheme # Esquemas de cores
+    │   ├── ssh         
+    |   ├── dns         
+    │   ├── mimetypes   
+    │   └── gtk         
+    |   └── colorscheme 
     │
     ├── shell          # Terminal e shell utilities
     │   ├── default.nix
@@ -33,12 +33,12 @@ voltage/
     │   ├── rust.nix
     │   └── lua.nix
     │
-    ├── scroll        # Aplicativos de conhecimento/documentação
+    ├── scroll        # Aplicativos de conhecimento/documentação/leitura/research
     │   ├── default.nix
     │   ├── obsidian.nix
     │   └── zotero.nix
     │
-    ├── spark         # Utilitários e ferramentas
+    ├── spark         # Utilitários e ferramentas (serviços, scripts, etc)
     │   ├── default.nix
     │   ├── espanso.nix
     │   └── neofetch.nix
@@ -54,149 +54,78 @@ voltage/
 
 ```nix
 {
-  description = "⚡ Voltage - Uma configuração NixOS elegante e modular";
+  description = "⚡ Voltage — rwietter's NixOS settings";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-old.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixos.url = "github:nixos/nixpkgs/nixos-24.05";
+    master.url = "github:nixos/nixpkgs";
+
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.voltage = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./src/core
-        ./src/atom
-        ./src/shell
-        ./src/forge
-        ./src/scroll
-        ./src/spark
-        
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.seu-usuario = import ./src/orbit/home.nix;
-        }
-      ];
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  let
+    system = "x86_64-linux";
+    pkgs = import inputs.nixpkgs { inherit system; };
+    lib = pkgs.lib;
+    mylib = import ./lib { inherit lib builtins; };
+    vars = import ./environment/vars.nix;
+    theme = (import ./atom/colorscheme { inherit mylib vars; }).theme;
+  in {
+    # NixOS home-manager integration
+    nixosConfigurations = {
+      rwietter = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs vars mylib theme; };
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs vars mylib theme; };
+              users.rwietter = { config, ... }: {
+                home = {
+                  username = vars.os.hostname;
+                  homeDirectory = vars.os.homeDirectory;
+                  stateVersion = "24.05";
+                };
+                imports = [
+                  ./orbit/home.nix
+                  ./spark
+                  ./scroll
+                  ./shell
+                  ./forge
+                  ./atom
+                ];
+              };
+            };
+          }
+        ];
+      };
     };
-  };
-}
-```
-
-### src/core/default.nix
-
-```nix
-{ config, pkgs, ... }:
-
-{
-  imports = [
-    ./boot.nix
-    ./network.nix
-    ./users.nix
-  ];
-
-  # Configurações básicas do sistema
-  time.timeZone = "America/Sao_Paulo";
-  i18n.defaultLocale = "pt_BR.UTF-8";
-}
-```
-
-### src/atom/awesome/default.nix
-
-```nix
-{ config, pkgs, ... }:
-
-{
-  services.xserver = {
-    enable = true;
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks
-        luadbi-mysql
-      ];
+    # Independent home-manager configuration
+    homeConfigurations = {
+      rwietter = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { inherit system; };
+        extraSpecialArgs = { inherit inputs vars mylib theme; };
+        modules = [
+          ./orbit/home.nix
+          ./spark
+          ./atom
+          ./scroll
+          ./shell
+          ./forge
+        ];
+      };
     };
-  };
-
-  # Copiar configuração do AwesomeWM
-  home.file.".config/awesome/rc.lua".source = ./rc.lua;
-}
-```
-
-### src/shell/fish.nix
-
-```nix
-{ config, pkgs, ... }:
-
-{
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Desabilita mensagem de boas-vindas
-      
-      # Aliases úteis
-      alias v="nvim"
-      alias g="git"
-      alias ls="exa --icons"
-    '';
-    
-    shellAliases = {
-      rebuild = "sudo nixos-rebuild switch";
-      update = "nix flake update";
-    };
-  };
-}
-```
-
-### src/forge/default.nix
-
-```nix
-{ config, pkgs, ... }:
-
-{
-  imports = [
-    ./node.nix
-    ./go.nix
-    ./rust.nix
-    ./lua.nix
-  ];
-
-  environment.systemPackages = with pkgs; [
-    gcc
-    gnumake
-    cmake
-    git
-    nixfmt
-    nil # Nix LSP
-  ];
-}
-```
-
-### src/orbit/home.nix
-
-```nix
-{ config, pkgs, ... }:
-
-{
-  home.username = "seu-usuario";
-  home.homeDirectory = "/home/seu-usuario";
-  home.stateVersion = "23.11";
-
-  # Programas gerenciados pelo home-manager
-  programs = {
-    brave.enable = true;
-    git.enable = true;
-    fish.enable = true;
-  };
-
-  # Temas e configurações
-  gtk = {
-    enable = true;
-    theme.name = "Dracula";
-    iconTheme.name = "Papirus-Dark";
   };
 }
 ```
@@ -273,6 +202,12 @@ nix flake update
 
 # Limpar gerações antigas
 sudo nix-collect-garbage -d
+```
+
+## Upgrade
+
+```bash
+sudo nix-channel --update && nix flake update nixpkgs && sudo nixos-rebuild switch --flake .#rwietter --upgrade
 ```
 
 ---
