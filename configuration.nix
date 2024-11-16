@@ -4,7 +4,6 @@
 
 { config, pkgs, lib, ... }:
 
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -21,12 +20,6 @@
   # Use the latest kernel. 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Zram is a compressed block device in RAM. It is used to improve I/O performance.
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd"; # https://search.nixos.org/options?channel=24.05&show=zramSwap.algorithm&from=0&size=50&sort=relevance&type=packages&query=zramSwap
-  };
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -37,28 +30,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/Sao_Paulo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "pt_BR.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_BR.UTF-8";
-    LC_IDENTIFICATION = "pt_BR.UTF-8";
-    LC_MEASUREMENT = "pt_BR.UTF-8";
-    LC_MONETARY = "pt_BR.UTF-8";
-    LC_NAME = "pt_BR.UTF-8";
-    LC_NUMERIC = "pt_BR.UTF-8";
-    LC_PAPER = "pt_BR.UTF-8";
-    LC_TELEPHONE = "pt_BR.UTF-8";
-    LC_TIME = "pt_BR.UTF-8";
-  };
-
   # services.xserver.displayManager.defaultSession = "awesome";
-
-  # Configure console keymap
-  console.keyMap = "br-abnt2";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

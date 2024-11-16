@@ -10,5 +10,6 @@
     ./awesome.nix
     ./fonts.nix
     ./oom.nix
+    ./zram.nix
   ];
 }
