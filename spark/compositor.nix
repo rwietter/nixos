@@ -51,9 +51,6 @@ with lib; mkIf (vars.os.desktop == "awesome") {
       text = ''
         ${fileContents ../repo/config/picom/picom.conf}
       '';
-      onChange = ''
-        pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf &
-      '';
     };
   };
 }

@@ -1,9 +1,9 @@
 let 
-  bg_midnight_blue = {
-    bg.root = "#11111b";
-    bg.shift = "#14141F";
-    bg.echo = "#161624";
-    bg.fade = "#191928";
+  bg_monochromatic = {
+    bg.root = "#1A1A1A";
+    bg.shift = "#1F1F1F";
+    bg.echo = "#242424";
+    bg.fade = "#292929";
   };
 
   bg_jet_black = {
@@ -11,13 +11,6 @@ let
     bg.shift = "#151515";
     bg.echo = "#1A1A1A";
     bg.fade = "#1F1F1F";
-  };
-
-  bg_rich_black = {
-    bg.root = "#131C26";
-    bg.shift = "#141E29";
-    bg.echo = "#192331";
-    bg.fade = "#1D2A39";
   };
 
   bg_white = {
@@ -50,7 +43,7 @@ in
       white = "#FEFEFF";
     };
     variants = {
-      dark = bg_jet_black // {
+      dark = bg_monochromatic // {
         fg.root = "#EEECF5";
         fg.shift = "#F0EEF6";
         fg.echo = "#F2F1F7";

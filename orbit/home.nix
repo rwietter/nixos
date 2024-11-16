@@ -94,7 +94,6 @@
 
     # File Management & Browsers
     nautilus  # file manager
-    brave  # web browser
 
     # User Interface & Desktop Tools
     lxappearance  # GTK theme switcher

@@ -3,5 +3,6 @@
 {
   imports = [
     ./zathura.nix
+    ./brave.nix
   ];
 }

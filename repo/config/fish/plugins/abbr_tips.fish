@@ -95,6 +95,8 @@ abbr nx-hlp 'command-not-found' # Displays suggestions for unrecognised commands
 abbr nx-sgc 'nix-store --gc --print-roots | egrep -v "^(/nix/var|/run/\w+-system|\{memory)"' # Performs garbage collection on the Nix store, excluding certain paths.
 abbr nx-build "nix-build --no-out-link &| nom" # Runs a Nix build without creating output links.
 abbr nx-gc "sudo nix-collect-garbage --delete-older-than 5d"
+abbr nx-hup "sudo nix-channel --update && nix flake update nixpkgs && home-manager -b backup switch --flake .#rwietter &| nom" # Updates the Nix channels and Home Manager configuration with backup.
+abbr nx-up "sudo nix-channel --update && nix flake update nixpkgs && sudo nixos-rebuild switch --flake .#rwietter --upgrade" # Updates the Nix channels and NixOS configuration with a specific flake. <https://discourse.nixos.org/t/how-to-get-latest-nixpkgs-unstable-properties/21547/2>
 
 : '------------- FZF ----------------- '
 abbr zat 'fd --exclude 'repo' --type f | grep 'default' | fzf --multi --preview "bat --color=always --style=numbers --line-range=:1000 {}" -- --preview-window=right:70%:wrap'
