@@ -18,6 +18,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use the latest kernel. 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Zram is a compressed block device in RAM. It is used to improve I/O performance.
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd"; # https://search.nixos.org/options?channel=24.05&show=zramSwap.algorithm&from=0&size=50&sort=relevance&type=packages&query=zramSwap
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -84,11 +93,6 @@
     ];
   };
 
-  # fonts.packages = with pkgs; [
-  #  nerdfonts
-  #  meslo-lgs-nf
-  # ];
-
   # Install firefox.
   programs.firefox.enable = false;
 
@@ -105,18 +109,18 @@
     home-manager
     
     # Xorg
-    xorg.xdpyinfo
+    # xorg.xdpyinfo
 
     # Libs
-    imlib2 # image loading and rendering library
-    lua54Packages.luarocks
+    # imlib2 # image loading and rendering library
+    # lua54Packages.luarocks
   ];
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
-    # XDG_CACHE_HOME  = "{HOME}/.cache";
-    # XDG_DATA_HOME   = "{HOME}/.local/share";
-    # XDG_STATE_HOME  = "{HOME}/.local/state";
+    XDG_CACHE_HOME  = "{HOME}/.cache";
+    XDG_DATA_HOME   = "{HOME}/.local/share";
+    XDG_STATE_HOME  = "{HOME}/.local/state";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

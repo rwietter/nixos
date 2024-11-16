@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, vars, ... }:
 
-{
+with lib; mkIf(vars.os.oom == true) {
   users.users.rwietter = {
     packages = with pkgs; [
       earlyoom

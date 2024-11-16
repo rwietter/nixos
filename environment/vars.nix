@@ -14,6 +14,7 @@
     desktop = "awesome";
     term = "wezterm"; # Or "alacritty", "kitty", "st", etc.
     shell = "fish"; # Or "bash", "zsh", "starship" etc.
+    oom = true; # If true, enable earlyoom process killer
     font = {
       sans = "Atkinson Hyperlegible";
       serif = "SpaceGrotesk";
