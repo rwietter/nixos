@@ -49,40 +49,40 @@ in
         fg.echo = "#F2F1F7";
         fg.fade = "#F4F3F8";
 
-        red.root = "#F793B2";
-        red.shift = "#F7A5C1";
-        red.echo = "#F7B7D0";
-        red.fade = "#F7C9E0";
+        red.root = "#febbcc";
+        red.shift = "#ffcccc";
+        red.echo = "#ffddcc";
+        red.fade = "#ffeecc";
 
-        black.root = "#101010";
-        black.shift = "#151515";
-        black.echo = "#1A1A1A";
-        black.fade = "#1F1F1F";
+        black.root = "#787D93";
+        black.shift = "#8D92A5";
+        black.echo = "#8D92A5";
+        black.fade = "#A3A7B8";
 
-        green.root = "#93F7D1";
-        green.shift = "#A5F7D8";
-        green.echo = "#B7F7E0";
-        green.fade = "#C9F7E8";
+        green.root = "#C5DEDD";
+        green.shift = "#CEE2E1";
+        green.echo = "#D8E6E6";
+        green.fade = "#E1EAEA";
 
-        yellow.root = "#A8969C";
-        yellow.shift = "#AF9EA4";
-        yellow.echo = "#B6A7AC";
-        yellow.fade = "#BCAFB3";
+        yellow.root = "#fec89a";
+        yellow.shift = "#ffd7ba";
+        yellow.echo = "#ffe5d9";
+        yellow.fade = "#fff4f8";
 
-        blue.root = "#93B2F7";
-        blue.shift = "#A5C1F7";
-        blue.echo = "#B7D0F7";
-        blue.fade = "#C9E0F7";
+        blue.root = "#b6ccfe";
+        blue.shift = "#c1d3fe";
+        blue.echo = "#ccdbfd";
+        blue.fade = "#d7e3fc";
 
-        magenta.root = "#946CF9";
-        magenta.shift = "#9B76FA";
-        magenta.echo = "#AA89FB";
-        magenta.fade = "#B193FB";
+        magenta.root = "#B295DA";
+        magenta.shift = "#BAA1DC";
+        magenta.echo = "#C1ACDE";
+        magenta.fade = "#C9B8E0";
 
-        cyan.root = "#88c0d0";
-        cyan.shift = "#99c8d8";
-        cyan.echo = "#aacfe0";
-        cyan.fade = "#bbd7e8";
+        cyan.root = "#E3FAFF"; # #EDDCD2
+        cyan.shift = "#ECFCFF"; # #F1E4DC
+        cyan.echo = "#F1FDFF"; # #F4ECE7
+        cyan.fade = "#F6FDFF"; # #F8F4F1
 
         white.root = "#EEECF5";
         white.shift = "#F0EEF6";
@@ -96,10 +96,10 @@ in
         fg.echo = "#828a9f";
         fg.fade = "#929aa5";
 
-        black.root = "#101010";
-        black.shift = "#151515";
-        black.echo = "#1A1A1A";
-        black.fade = "#1F1F1F";
+        black.root = "#1A1A1A";
+        black.shift = "#1F1F1F";
+        black.echo = "#242424";
+        black.fade = "#292929";
 
         red.root = "#FA76A4";
         red.shift = "#FA7DA8";
