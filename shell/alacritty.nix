@@ -1,11 +1,8 @@
 { lib, vars, ... }:
 
-with lib;
-mkIf (vars.os.term == "alacritty") {
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
+lib.mkIf (vars.os.term == "alacritty") {
   programs.alacritty = {
     enable = true;
-    # custom settings
     settings = {
       env.TERM = "xterm-256color";
       font = {
@@ -17,15 +14,7 @@ mkIf (vars.os.term == "alacritty") {
     };
   };
 
-  # Import the alacritty configuration file
-  # xdg.configFile."alacritty/alacritty.yml".text = ''
-  #   ${fileContents ../repo/config/alacritty/alacritty.yml}
-  # '';
-
-  xdg.configFile = lib.mkForce {
-    "alacritty/alacritty.yml" = {
-      source = ../repo/config/alacritty/alacritty.yml;
-      force = true;
-    };
-  };
+  xdg.configFile."alacritty/alacritty.yml".text = ''
+    ${lib.fileContents ../repo/config/alacritty/alacritty.yml}
+  '';
 }

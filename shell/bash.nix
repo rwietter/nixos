@@ -4,8 +4,7 @@
   ...
 }:
 
-with lib;
-mkIf (vars.os.shell == "bash") {
+lib.mkIf (vars.os.shell == "bash") {
   programs.bash = {
     enable = true;
     enableCompletion = false;
@@ -22,12 +21,7 @@ mkIf (vars.os.shell == "bash") {
     shellAliases = { };
   };
 
-  # Import the bash configuration file
-  # xdg.configFile.".bashrc".text = ''
-  #   ${fileContents ../repo/config/bash/.bashrc}
-  # '';
-
-  # home.file."fish/config.fish".source = lib.mkForce (builtins.path {
-  #   path = ../repo/config/bash/.bashrc;
-  # });
+  xdg.configFile.".bashrc".text = ''
+    ${lib.fileContents ../repo/.bashrc}
+  '';
 }

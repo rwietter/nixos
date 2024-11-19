@@ -1,4 +1,9 @@
-{ lib, pkgs, vars, theme, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  ...
+}:
 
 let
   promptConfigs = {
@@ -31,6 +36,11 @@ let
 
   basePackages = [
     pkgs.fishPlugins.forgit
+    pkgs.fishPlugins.fzf-fish
+    pkgs.fishPlugins.sponge
+    pkgs.fishPlugins.puffer
+    # pkgs.fishPlugins.pisces # adds fzf completion
+    pkgs.fishPlugins.async-prompt
   ];
 
 in
@@ -42,13 +52,14 @@ lib.mkIf (vars.os.shell == "fish") {
     interactiveShellInit = '''';
   };
 
-  # Combina os pacotes base com os pacotes do prompt
   home.packages = basePackages ++ promptConfig.packages;
 
   xdg.configFile = lib.mkForce {
     "fish/config.fish" = {
       text = ''
         ${lib.fileContents ../repo/config/fish/config.fish}
+
+        # Prompt
         ${promptConfig.init}
       '';
     };

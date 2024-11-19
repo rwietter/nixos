@@ -1,6 +1,12 @@
-{ lib, pkgs, vars, theme, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  theme,
+  ...
+}:
 
-with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
+lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
   services.dunst = {
     enable = true;
     package = pkgs.dunst;
@@ -38,8 +44,8 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
   xdg.configFile = lib.mkForce {
     "dunst/dunstrc" = {
       text = ''
-        ${fileContents ../repo/config/dunst/dunstrc}
-        
+        ${lib.fileContents ../repo/config/dunst/dunstrc}
+
         frame_color = "#00000000"
         separator_color = "#00000000"
 
@@ -64,8 +70,7 @@ with lib; mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
     };
   };
 
-  home.packages = with pkgs; [
-    libnotify
+  home.packages = [
+    pkgs.libnotify
   ];
 }
-

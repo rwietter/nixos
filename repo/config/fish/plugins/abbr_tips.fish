@@ -2,91 +2,81 @@
  - Create abbreviations in a hierarchy of parameters. The match will be closest to the entered command.
 '
 : ' ------------ GIT DIFF ----------- '
-abbr gds 'git diff --stat'                                       # show changes as statistics
-abbr gdb 'git diff --base'                                       # show changes from base i.e. common ancestor
-abbr gdt 'git diff --theirs'                                     # show changes from theirs i.e. remote
-abbr gdo 'git diff --ours'                                       # show changes from ours i.e. local
-abbr gde 'git diff -- ":!package-lock.json"'                     # show changes excluding package-lock.json
-abbr gdc 'git diff --cached'                                     # show changes in cache
-abbr gdm 'git diff main'                                         # show changes from master
-abbr gdw 'git diff --word-diff'                                  # show changes in words
-abbr gdp 'git diff --patch'                                      # show changes in patch
-abbr gdr 'git diff --raw'                                        # show changes in raw
-abbr gdx 'git diff --exit-code'                                  # show changes in exit code -
-abbr gdn 'git diff --name-status'                                # show changes in name status
+abbr git-diff-stat 'git diff --stat'                         # show changes as statistics
+abbr git-diff-base 'git diff --base'                         # show changes from base i.e. common ancestor
+abbr git-diff-theirs 'git diff --theirs'                     # show changes from theirs i.e. remote
+abbr git-diff-ours 'git diff --ours'                         # show changes from ours i.e. local
+abbr git-diff-else-lock 'git diff -- ":!package-lock.json"'  # show changes excluding package-lock.json
+abbr git-diff-cached 'git diff --cached'                     # show changes in cache
+abbr git-diff-main 'git diff main'                           # show changes from master
+abbr git-diff-word 'git diff --word-diff'                    # show changes in words
+abbr git-diff-patch 'git diff --patch'                       # show changes in patch
+abbr git-diff-raw 'git diff --raw'                           # show changes in raw
+abbr git-diff-exit 'git diff --exit-code'                    # show changes in exit code -
+abbr git-diff-name 'git diff --name-status'                  # show changes in name status
 
-: ' ------------- GIT ADD ----------- '
-abbr ga 'git add .'                                              # add all changes in current directory and subdirectories
+abbr git-add 'git add .'                         # add all changes in current directory and subdirectories
+abbr git-add-all 'git add -A'                    # add all changes in current directory and subdirectories
+abbr git-add-file 'git add'                      # add file changes
+abbr git-add-iter 'git add -p'                   # add changes interactively
+abbr git-add-verbose 'git add -v'                # add changes verbosely
 
-: ' ----------- GIT COMMIT ---------- '
-abbr gcm 'git commit -a --amend'                                 # amend last commit i.e. change commit message
-abbr gc 'git commit -m'                                          # commit with message
 
-: ' ---------- GIT CHECKOUT --------- '
-abbr gu 'git checkout'                                           # checkout to branch
+abbr git-commit-amend 'git commit -a --amend'    # amend last commit i.e. change commit message
+abbr git-commit-m 'git commit -m'                # commit with message
 
-: ' ----------- GIT SWITCH ---------- '
-abbr gwc 'git switch -c'                                         # checkout to new branch
-abbr gw 'git switch'                                             # switch to branch
+abbr git-checkout 'git checkout'                 # checkout to branch
 
-: ' ------------ GIT PULL ----------- '
-abbr gl 'git pull'                                               # pull changes from remote
+abbr git-switch 'git switch'                     # switch to branch
+abbr git-switch-new 'git switch -c'              # checkout to new branch
 
-: ' ------------ GIT PUSH ----------- '
-abbr gph 'git push -u origin $(git rev-parse --abbrev-ref HEAD)' # push changes to remote
-abbr gpa 'git push origin main --all'                            # push changes to remote main
-abbr gpm 'git push origin main'                                  # push changes to remote main
-abbr gp 'git push'                                               # push changes to remote
+abbr git-pull 'git pull'                         # pull changes from remote
 
-: ' ----------- GIT STATUS ----------- '
-abbr gt 'git status'                                             # show git status
+abbr git-push 'git push'                                                    # push changes to remote
+abbr git-push-head 'git push -u origin $(git rev-parse --abbrev-ref HEAD)'  # push changes to remote
+abbr git-push-all 'git push origin main --all'                              # push changes to remote main
+abbr git-push-main 'git push origin main'                                   # push changes to remote main
 
-: ' ------------ GIT RESET ----------- '
-abbr ge 'git reset'                                              # reset added changes to working directory
+abbr git-status 'git status'                                                # show git status
 
-: ' ------------ GIT SHOW ------------ '
-abbr gsw 'git show --word-diff --stat'
-abbr gsc 'git show --color-words'                                # show git commit with color words
-abbr gsd 'git show --word-diff'                                  # show git commit with word diff
-abbr gss 'git show --stat'                                       # show git commit with statistics
-abbr gs 'git show'                                               # show git commit
+abbr git-reset 'git reset'                            # reset added changes to working directory
 
-: ' ----------- GIT BRANCH ----------- '
-abbr gb 'git branch'                                             # show git branches
-abbr gbd 'git branch -D'                                         # delete git branch
-abbr gba 'git branch -a'                                         # show all git branches
-abbr gbm 'git branch -m'                                         # rename git branch
+abbr git-show 'git show'                              # show git commit
+abbr git-show-word 'git show --word-diff --stat'      # show git commit with word diff and statistics
+abbr git-show-color 'git show --color-words'          # show git commit with color words
+abbr git-show-diff 'git show --word-diff'             # show git commit with word diff
+abbr git-show-stat 'git show --stat'                  # show git commit with statistics
 
-: ' ----------- GIT REBASE ----------- '
-abbr gr 'git rebase'                                             # git rebase
-abbr gri 'git rebase -i'                                         # git rebase interactive
-abbr grb 'git rebase origin/$(git rev-parse --abbrev-ref HEAD)'  # git rebase origin current branch
+abbr git-branch 'git branch'                          # show git branches
+abbr git-branch-del 'git branch -D'                   # delete git branch
+abbr git-branch-show 'git branch -a'                  # show all git branches
+abbr git-branch-rename 'git branch -m'                # rename git branch
 
-: ' ------------ GIT GC ------------- '
-abbr gfs 'git fsck'                                               # git check orphaned objects
-abbr ggc 'git gc'                                                 # git garbage collect
+abbr git-rebase 'git rebase'                                                 # git rebase
+abbr git-rebase-iter 'git rebase -i'                                          # git rebase interactive
+abbr git-rebase-head 'git rebase origin/$(git rev-parse --abbrev-ref HEAD)'   # git rebase origin current branch
 
-: ' ---------- GIT PATCH ------------ '
-abbr gpf 'git format-patch'                                       # git format patch e.g (git format-patch HEAD~1..HEAD)
-abbr gap 'git am'                                                 # git apply patch e.g (git am < patch.patch)
+abbr git-fsck 'git fsck'                              # git check orphaned objects
+abbr git-gc 'git gc'                                  # git garbage collect
 
-: '----------- RESET ----------------- '
-abbr guh 'git reset HEAD .'                                       # Use after 'git add'. This will back to working directory
-abbr guu 'git checkout -- .'                                      # This will discard all changes in working directory
-abbr guc 'git clean -f -d'                                        # This will remove all untracked files and directories
+abbr git-patch-format 'git format-patch'              # git format-patch HEAD~1..HEAD)
+abbr git-patch-apply 'git am'                         # git apply patch e.g (git am < patch.patch)
 
-: ' ---------- NEOVIM ---------------- '
-abbr v 'nvim'                                                     # open neovim
+abbr git-reset-back 'git reset HEAD .'                # Use after 'git add'. This will back to working directory
+abbr git-checkout-discard-all 'git checkout -- .'     # This will discard all changes in working directory
+abbr git-clean-fire-untracked 'git clean -f -d'       # This will remove all untracked files and directories
 
 : ' ---------- LINUX ----------------- '
 abbr mk 'mkdir -p'
+abbr free 'free -m -h'
+abbr cc 'xsel --clipboard --input'
+abbr pp 'xsel --clipboard --output'
 
 : '------------ CODE ------------------ '
 abbr . 'code .'
-
-abbr swp 'free -m -h'
-abbr cc 'xsel --clipboard --input'
-abbr pp 'xsel --clipboard --output'
+abbr c 'clear'
+abbr fcf 'fc-list | grep -i <font>'
+abbr fcc 'fc-cache -fv'
 
 : '------------ NixOS ---------------- '
 abbr nx-nre 'sudo nixos-rebuild switch --flake .#rwietter &| nom' # Rebuilds and activates the NixOS configuration using a specific flake.
@@ -103,6 +93,11 @@ abbr nx-sop "nix-store --optimize" # Optimises the Nix store.
 # Flakes
 abbr nx-flake-templates "nix flake show templates" # Lists the available flake templates.
 abbr nx-flake-template "nix flake init -t templates#<template>" # Initialises a new flake using a specific template.
+abbr nx-gen-rm-old "nix-env --delete-generations old" # Removesa all old generations of the Nix store.
+abbr nx-gen-rm-3d "nix-env --delete-generations 3d" # Removes all generations older than 3 days.
+
+# Cleanup
+abbr nx-cleanup "nix-collect-garbage -d && sudo nix-collect-garbage -d && nix-env --delete-generations +3d && nix-store --gc && nix-store --optimize"za
 
 : '------------- FZF ----------------- '
-abbr zat 'fd --exclude 'repo' --type f | grep 'default' | fzf --multi --preview "bat --color=always --style=numbers --line-range=:1000 {}" -- --preview-window=right:70%:wrap'
+abbr zat 'fd . | fzf --multi --preview "bat --color=always --style=numbers --line-range=:1000 {}" -- --preview-window=right:70%:wrap'

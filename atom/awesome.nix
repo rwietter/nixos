@@ -1,7 +1,17 @@
-{ lib, theme, vars, ...}:
+{
+  lib,
+  theme,
+  vars,
+  ...
+}:
 
-with lib; mkIf (vars.os.desktop == "awesome") {
+lib.mkIf (vars.os.desktop == "awesome") {
   xdg.configFile = lib.mkForce {
+    # "awesome" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ../repo/config/awesome;
+    #   recursive = true;
+    #   force = true;
+    # };
     "awesome/theme/colors/dark.lua" = {
       force = true;
       text = ''

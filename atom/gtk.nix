@@ -1,6 +1,14 @@
-{ config, pkgs, theme, lib, vars, ... }:
+{
+  config,
+  pkgs,
+  theme,
+  lib,
+  vars,
+  ...
+}:
 
-with lib; {
+with lib;
+{
   gtk = {
     enable = true;
     theme = {
@@ -74,13 +82,13 @@ with lib; {
     };
   };
 
-    home.file.".profile".text = ''
-      ${fileContents ../repo/.profile}
+  home.file.".profile".text = ''
+    ${fileContents ../repo/.profile}
 
-      export GTK_THEME="${theme.gtk."${vars.appearance.theme}".theme.name}"
-      export GTK_ICON_THEME="${theme.gtk."${vars.appearance.theme}".iconTheme.name}"
-      export GTK_FONT_NAME="${vars.os.font.sans} 12"
-      export GTK_CURSOR_THEME="${theme.gtk."${vars.appearance.theme}".cursor.name}"
-      export GTK_APPLICATION_PREFER_DARK_THEME="${if vars.appearance.theme == "dark" then "1" else "0"}"
+    export GTK_THEME="${theme.gtk."${vars.appearance.theme}".theme.name}"
+    export GTK_ICON_THEME="${theme.gtk."${vars.appearance.theme}".iconTheme.name}"
+    export GTK_FONT_NAME="${vars.os.font.sans} 12"
+    export GTK_CURSOR_THEME="${theme.gtk."${vars.appearance.theme}".cursor.name}"
+    export GTK_APPLICATION_PREFER_DARK_THEME="${if vars.appearance.theme == "dark" then "1" else "0"}"
   '';
 }

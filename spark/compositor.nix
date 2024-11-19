@@ -1,14 +1,22 @@
-{ lib, pkgs, vars, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  ...
+}:
 
-with lib; mkIf (vars.os.desktop == "awesome") {
+lib.mkIf (vars.os.desktop == "awesome") {
   services.picom = {
     enable = true;
     backend = "glx"; # or "egl", "xrender", "xr_glx_hybrid"
-    extraArgs = [];
+    extraArgs = [ ];
     fade = true;
     fadeDelta = 10;
     fadeExclude = [ ];
-    fadeSteps = [ 0.03 0.03 ];
+    fadeSteps = [
+      3.0e-2
+      3.0e-2
+    ];
     inactiveOpacity = 1;
     activeOpacity = 1;
     menuOpacity = 1;
@@ -20,7 +28,8 @@ with lib; mkIf (vars.os.desktop == "awesome") {
       shadow = true;
       shadow-opacity = 0.6;
       shadow-offsets = [
-        (-15) (-15)
+        (-15)
+        (-15)
       ];
       shadow-exclude = [
         "class_g ?= 'Dunst'"
@@ -42,14 +51,14 @@ with lib; mkIf (vars.os.desktop == "awesome") {
         "_GTK_FRAME_EXTENTS@:c" # fix gtk borders in some apps
       ];
       transparent-clipping = false;
-       corner-radius = 0;
+      corner-radius = 0;
     };
   };
 
   xdg.configFile = lib.mkForce {
     "picom/picom.conf" = {
       text = ''
-        ${fileContents ../repo/config/picom/picom.conf}
+        ${lib.fileContents ../repo/config/picom/picom.conf}
       '';
     };
   };

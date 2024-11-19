@@ -1,7 +1,7 @@
-{ lib, pkgs, ...}:
+{ pkgs, ... }:
 
 # Run `espanso service unregister && espanso service register` to register the espanso daemon
-with lib; {
+{
   services.espanso = {
     enable = false; # [BUG]: read-write register error
     package = pkgs.espanso;
@@ -23,12 +23,16 @@ with lib; {
           {
             name = "currentdate";
             type = "date";
-            params = {format = "%d/%m/%Y";};
+            params = {
+              format = "%d/%m/%Y";
+            };
           }
           {
             name = "currenttime";
             type = "date";
-            params = {format = "%R";};
+            params = {
+              format = "%R";
+            };
           }
           {
             name = "language";
