@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sys
     ];
@@ -65,12 +66,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
-  # Enable Fish shell.
-  programs.fish.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -79,7 +74,9 @@
   environment.systemPackages = with pkgs; [
     wget
     home-manager
-    
+    nixfmt-rfc-style
+    nixpkgs-fmt
+
     # Xorg
     # xorg.xdpyinfo
 
@@ -103,7 +100,9 @@
   #   enableSSHSupport = true;
   # };
 
-  # Bluetooth support
+  # Enable/Disable Options
+  programs.firefox.enable = false;
+  programs.fish.enable = true;
   services.blueman.enable = true;
 
   # List services that you want to enable:
@@ -126,6 +125,6 @@
   system.stateVersion = "24.05";
 
   # Upgrade packages automatically.
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 }

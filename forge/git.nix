@@ -7,8 +7,8 @@ with lib; {
     userEmail = vars.git.email;
     extraConfig = {
     init.defaultBranch = "main";
-    safe.directory = [ ("/home/" + vars.os.hostname + "/flakies")
-                      ("/home/" + vars.os.hostname + "/flakies/.git") ];
+    safe.directory = [ ("/home/" + vars.os.hostname + "/Voltage")
+                      ("/home/" + vars.os.hostname + "/Voltage/.git") ];
     };
   };
 

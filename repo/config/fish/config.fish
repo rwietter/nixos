@@ -15,10 +15,6 @@ set -g fish_cursor_replace_one line blink      # Set cursor to line and blink in
 set -g fish_cursor_external line blink         # Set cursor to line and blink in external mode
 set -g fish_cursor_visual line blink           # Set cursor to line and blink in visual mode
 
-set -g hydro_fetch true                        # Enable git background fetch
-set -g hydro_multiline false                   # Disable multiline git status
-# set -g hydro_symbol_git_dirty " "             # Set git dirty symbol
-
 # ----------------- Zellij ---------------------
 # ----------------------------------------------
 # if status is-interactive
@@ -37,7 +33,7 @@ set --universal pure_check_for_new_release false
 # ----------------- Source ---------------------
 # ----------------------------------------------
 function source_aliases
-    for file in (find ~/flakies/repo/config/fish/functions -type f -name '*.fish')
+    for file in (find ~/Voltage/repo/config/fish/functions -type f -name '*.fish')
         source $file
     end
 end
@@ -82,13 +78,16 @@ set --universal zoxide_cmd z
 
 # -- direnv
 direnv hook fish | source
+set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
+# set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command
+# set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior
 
 # -- patrickf1/fzf.fish
 set -gx fzf_preview_dir_cmd eza --all --color=always --icons # preview directories with exa
 
 # --------------- Abbreviations ----------------
 # -- gazorby/fish-abbreviation-tips
-source "$HOME"/flakies/repo/config/fish/plugins/abbr_tips.fish
+source "$HOME"/Voltage/repo/config/fish/plugins/abbr_tips.fish
 
 function abbr_update_keys_and_values
      __abbr_tips_init

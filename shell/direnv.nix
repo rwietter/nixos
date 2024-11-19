@@ -1,13 +1,23 @@
-{ lib, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  programs.direnv = {
-    enable = true;
-    enableFishIntegration = true;
-    package = pkgs.direnv;
-    nix-direnv = {
+  options = {
+    direnv.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable direnv";
+    };
+  };
+
+  config = lib.mkIf config.direnv.enable {
+    programs.direnv = {
       enable = true;
-      package = pkgs.nix-direnv;
+      enableFishIntegration = true;
+      package = pkgs.direnv;
+      nix-direnv = {
+        enable = true;
+        package = pkgs.nix-direnv;
+      };
     };
   };
 }

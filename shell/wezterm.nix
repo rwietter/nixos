@@ -5,7 +5,7 @@ let
 in
 # Use lastest version; fixed textures issue
 # nix profile install 'github:wez/wezterm/main?dir=nix'
-with lib; mkIf (vars.os.term == "wezterm") {
+lib.mkIf (vars.os.term == "wezterm") {
   programs.wezterm = {
     enable = false; # [BUG]: textures broken
   };
@@ -50,7 +50,7 @@ with lib; mkIf (vars.os.term == "wezterm") {
     
     "wezterm/wezterm.lua" = {
       text = ''
-        ${fileContents ../repo/config/wezterm/wezterm.lua}
+        ${lib.fileContents ../repo/config/wezterm/wezterm.lua}
       '';
       force = true;
     };

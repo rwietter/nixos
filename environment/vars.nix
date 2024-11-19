@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "argentinian";  # Or "vesper", "argentinian", "eva", etc.
-    theme = "dark"; # Or "light", "dark", "dim", etc.
+    colorscheme = "argentinian"; # Or "argentinian", "eva".
+    theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
     username = "rwietter";
@@ -12,9 +12,10 @@
     hostname = "rwietter";
     homeDirectory = "/home/rwietter";
     desktop = "awesome";
-    term = "wezterm"; # Or "alacritty", "kitty", "st", etc.
+    term = "wezterm"; # Or "alacritty", "kitty", "st".
     shell = "fish"; # Or "bash", "zsh", "starship" etc.
-    oom = true; # If true, enable earlyoom process killer
+    prompt = "starship"; # Or "default", "hydro", "powerline", "starship".
+    oom = true; # Enable process killer
     font = {
       sans = "Atkinson Hyperlegible";
       serif = "SpaceGrotesk";

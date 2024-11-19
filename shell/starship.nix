@@ -1,7 +1,7 @@
 { lib, vars, pkgs, ... }:
 
 # starship - an customizable prompt for any shell
-with lib; mkIf (vars.os.shell == "starship") {
+with lib; mkIf (vars.os.prompt == "starship") {
   programs.starship = {
     enable = true;
     package = pkgs.starship;

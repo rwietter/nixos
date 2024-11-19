@@ -63,6 +63,7 @@
     zip unzip xz p7zip  # archiving tools
     xclip # clipboard manager
     zoxide  # directory jump tool
+    bc # arbitrary precision calculator
 
     # Productivity & Note-taking
     zotero_7  # reference manager and reader
@@ -110,6 +111,10 @@
     # Scripts
      (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
   ];
+
+  # Enable/Disable Options
+  direnv.enable = true;
+  brave.enable = true;
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
