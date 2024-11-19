@@ -1,6 +1,7 @@
 { lib, vars, ... }:
 
-with lib; mkIf (vars.os.term == "alacritty") {
+with lib;
+mkIf (vars.os.term == "alacritty") {
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;

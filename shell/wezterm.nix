@@ -1,4 +1,9 @@
-{ vars, lib, theme, ... }:
+{
+  vars,
+  lib,
+  theme,
+  ...
+}:
 
 let
   colors = theme.scheme.variants."${vars.appearance.theme}";
@@ -47,7 +52,7 @@ lib.mkIf (vars.os.term == "wezterm") {
         }
       '';
     };
-    
+
     "wezterm/wezterm.lua" = {
       text = ''
         ${lib.fileContents ../repo/config/wezterm/wezterm.lua}

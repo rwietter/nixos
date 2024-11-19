@@ -74,8 +74,6 @@
   environment.systemPackages = with pkgs; [
     wget
     home-manager
-    nixfmt-rfc-style
-    nixpkgs-fmt
 
     # Xorg
     # xorg.xdpyinfo

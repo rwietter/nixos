@@ -1,6 +1,11 @@
-{ lib, vars, pkgs, ...}:
+{
+  lib,
+  vars,
+  ...
+}:
 
-with lib; mkIf (vars.os.shell == "bash") {
+with lib;
+mkIf (vars.os.shell == "bash") {
   programs.bash = {
     enable = true;
     enableCompletion = false;
@@ -14,14 +19,14 @@ with lib; mkIf (vars.os.shell == "bash") {
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
-    shellAliases = {};
+    shellAliases = { };
   };
 
   # Import the bash configuration file
   # xdg.configFile.".bashrc".text = ''
   #   ${fileContents ../repo/config/bash/.bashrc}
   # '';
-  
+
   # home.file."fish/config.fish".source = lib.mkForce (builtins.path {
   #   path = ../repo/config/bash/.bashrc;
   # });

@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ...}: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   options = {
     nil.enable = lib.mkOption {
       type = lib.types.bool;
@@ -10,6 +16,8 @@
   config = lib.mkIf config.nil.enable {
     home.packages = [
       pkgs.nil
+      pkgs.nixfmt-rfc-style
+      pkgs.nixpkgs-fmt
     ];
   };
 }
