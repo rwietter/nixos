@@ -39,7 +39,7 @@ let
     pkgs.fishPlugins.fzf-fish
     pkgs.fishPlugins.sponge
     pkgs.fishPlugins.puffer
-    # pkgs.fishPlugins.pisces # adds fzf completion
+    # pkgs.fishPlugins.pisces # bug :: adds fzf completion
     pkgs.fishPlugins.async-prompt
   ];
 
