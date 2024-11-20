@@ -1,7 +1,17 @@
 : '
  - Create abbreviations in a hierarchy of parameters. The match will be closest to the entered command.
 '
-: ' ------------ GIT DIFF ----------- '
+
+: ' ----------- GIT FORGIT------------ '
+
+abbr fg-add 'git-forgit add'
+abbr fg-branch-del 'git-forgit branch_delete'
+abbr fg-cherrypick 'git-forgit cherry_pick_from_branch'
+abbr fg-checkout-file 'git-forgit checkout_file'
+abbr fg-diff 'git-forgit diff'
+abbr fg-fixup 'git-forgit fixup'
+
+: ' --------------- GIT -------------- '
 abbr git-diff-stat 'git diff --stat'                         # show changes as statistics
 abbr git-diff-base 'git diff --base'                         # show changes from base i.e. common ancestor
 abbr git-diff-theirs 'git diff --theirs'                     # show changes from theirs i.e. remote
@@ -20,7 +30,6 @@ abbr git-add-all 'git add -A'                    # add all changes in current di
 abbr git-add-file 'git add'                      # add file changes
 abbr git-add-iter 'git add -p'                   # add changes interactively
 abbr git-add-verbose 'git add -v'                # add changes verbosely
-
 
 abbr git-commit-amend 'git commit -a --amend'    # amend last commit i.e. change commit message
 abbr git-commit-m 'git commit -m'                # commit with message
@@ -58,6 +67,8 @@ abbr git-rebase-head 'git rebase origin/$(git rev-parse --abbrev-ref HEAD)'   # 
 
 abbr git-fsck 'git fsck'                              # git check orphaned objects
 abbr git-gc 'git gc'                                  # git garbage collect
+
+abbr git-log "git log --pretty=format:'%C(yellow)%h %C(blue)%d %C(white)%s %C(cyan)%cn %C(green)%ad' --graph --date=format:'%Y-%m-%d %H:%M:%S'"  # git log pretty format
 
 abbr git-patch-format 'git format-patch'              # git format-patch HEAD~1..HEAD)
 abbr git-patch-apply 'git am'                         # git apply patch e.g (git am < patch.patch)
