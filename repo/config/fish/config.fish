@@ -81,6 +81,9 @@ set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on ever
 # --- forgit
 source "$HOME"/Voltage/repo/config/fish/conf.d/forgit.plugin.fish
 
+# --- Pisces
+set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»' '+,+' '=,='
+
 # -- patrickf1/fzf.fish
 set -gx fzf_preview_dir_cmd eza --all --color=always --icons # preview directories with exa
 
@@ -91,7 +94,6 @@ source "$HOME"/Voltage/repo/config/fish/plugins/abbr_tips.fish
 function abbr_update_keys_and_values
      __abbr_tips_init
 end
-# abbr_update_keys_and_values # Update __ABBR_TIPS_KEYS and __ABBR_TIPS_VALUES
 
 # ---------------- Keybindings -----------------
 # ----------------------------------------------
@@ -99,10 +101,10 @@ bind -M insert \cb backward-kill-path-component  # For each path component, dele
 bind -M insert \cz undo                          # Undo any typed command
 
 # -- git
-bind -M insert \cs fcp    # Ctrl + S -> git cherry-pick
-bind -M insert \ca fad    # Ctrl + A -> git add
-bind -M insert \cd fdf    # Ctrl + D -> git diff
-bind -M insert \el flo    # Alt + L -> git log
+# bind -M insert \cs fcp    # Ctrl + S -> git cherry-pick
+# bind -M insert \ca fad    # Ctrl + A -> git add
+# bind -M insert \cd fdf    # Ctrl + D -> git diff
+# bind -M insert \el flo    # Alt + L -> git log
 
 # -- zellij
 bind -M insert \ea zellij toggle                 # Toggle zellij
