@@ -41,6 +41,7 @@
     xclip # clipboard manager
     zoxide # directory jump tool
     bc # arbitrary precision calculator
+    just # A handy way to save and run project-specific commands
 
     # Productivity & Note-taking
     zotero_7 # reference manager and reader

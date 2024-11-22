@@ -1,6 +1,6 @@
 {
   appearance = {
-    colorscheme = "argentinian"; # Or "argentinian", "eva".
+    colorscheme = "catppuccin-mocha"; # Or "argentinian", "catppuccin-mocha".
     theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
