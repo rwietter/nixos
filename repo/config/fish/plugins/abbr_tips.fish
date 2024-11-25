@@ -101,6 +101,8 @@ abbr nx-up "sudo nix-channel --update && nix flake update nixpkgs && sudo nixos-
 abbr nx-stc "nix-store --gc" # Performs garbage collection on the Nix store.
 abbr nx-sop "nix-store --optimize" # Optimises the Nix store.
 
+abbr nx-nh-up "nh os switch -D "nvd diff" -H rwietter -u ."
+
 # Flakes
 abbr nx-flake-templates "nix flake show templates" # Lists the available flake templates.
 abbr nx-flake-template "nix flake init -t templates#<template>" # Initialises a new flake using a specific template.

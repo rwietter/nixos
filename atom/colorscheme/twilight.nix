@@ -1,49 +1,25 @@
-let 
-  bg_monochromatic = {
-    bg.root = "#1A1A1A";
-    bg.shift = "#1F1F1F";
-    bg.echo = "#242424";
-    bg.fade = "#292929";
-  };
-
-  bg_jet_black = {
-    bg.root = "#101010";
-    bg.shift = "#151515";
-    bg.echo = "#1A1A1A";
-    bg.fade = "#1F1F1F";
-  };
-
-  bg_white = {
-    bg.root = "#FEFEFF";
-    bg.shift = "#F8F8F8";
-    bg.echo = "#EBEBEB";
-    bg.fade = "#E4E4E4";
-  };
-
-  bg_ice = {
-    bg.root = "#EEECF5";
-    bg.shift = "#F0EEF6";
-    bg.echo = "#F2F1F7";
-    bg.fade = "#F4F3F8";
-  };
-in
 {
   scheme = {
     colors = {
-      primary = "#885DF8";
-      bg = "#11111b";
-      fg = "#FEFEFF";
-      black = "#191928";
-      red = "#FA6296";
-      green = "#45F5B7";
-      yellow = "#F7B244";
-      blue = "#45A6F6";
-      magenta = "#885DF8";
-      cyan = "#88c0d0";
-      white = "#FEFEFF";
+      primary = "#B295DA";
+      bg = "#1A1A1A";
+      fg = "#EEECF5";
+      black = "#787D93";
+      red = "#febbcc";
+      green = "#C5DEDD";
+      yellow = "#fec89a";
+      blue = "#b6ccfe";
+      magenta = "#B295DA";
+      cyan = "#E3FAFF";
+      white = "#EEECF5";
     };
     variants = {
-      dark = bg_monochromatic // {
+      dark = {
+        bg.root = "#1A1A1A";
+        bg.shift = "#1F1F1F";
+        bg.echo = "#242424";
+        bg.fade = "#292929";
+
         fg.root = "#EEECF5";
         fg.shift = "#F0EEF6";
         fg.echo = "#F2F1F7";
@@ -90,11 +66,16 @@ in
         white.fade = "#F4F3F8";
       };
 
-      light = bg_ice // {
+      light = {
         fg.root = "#626880";
         fg.shift = "#727a90";
         fg.echo = "#828a9f";
         fg.fade = "#929aa5";
+
+        bg.root = "#EEECF5";
+        bg.shift = "#F0EEF6";
+        bg.echo = "#F2F1F7";
+        bg.fade = "#F4F3F8";
 
         black.root = "#1A1A1A";
         black.shift = "#1F1F1F";

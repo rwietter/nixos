@@ -2,14 +2,14 @@
 
 with mylib;
 {
-  theme = utils.match { colorscheme = vars.appearance.colorscheme or "vesper"; } [
+  theme = utils.match { colorscheme = vars.appearance.colorscheme or "twilight"; } [
     [
-      { colorscheme = "argentinian"; }
-      (import ./argentinian.nix)
+      { colorscheme = "twilight"; }
+      (import ./twilight.nix)
     ]
     [
-      { colorscheme = "catppuccin-mocha"; }
-      (import ./catppuccin-mocha.nix)
+      { colorscheme = "umbrosus"; }
+      (import ./umbrosus.nix)
     ]
   ];
 }

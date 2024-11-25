@@ -1,4 +1,4 @@
-{ lib, pkgs, ...}:
+{ ... }:
 
 {
   imports = [
@@ -12,5 +12,6 @@
     ./oom.nix
     ./zram.nix
     ./i18n.nix
+    ./nh.nix
   ];
 }

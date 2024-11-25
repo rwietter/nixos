@@ -1,6 +1,9 @@
 { pkgs, ... }:
+
+let
+  lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
+in
 {
-  # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # Development Tools
     vscode # vscode
@@ -86,5 +89,7 @@
 
     # Scripts
     (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
+
+    # lazyorg
   ];
 }
