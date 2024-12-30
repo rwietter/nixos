@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "umbrosus"; # Or "twilight", "umbrosus".
-    theme = "dark"; # Or "light", "dark", "dim".
+    colorscheme = "everforest"; # Or "twilight", "umbrosus".
+    theme = "light"; # Or "light", "dark", "dim".
   };
   git = {
     username = "rwietter";
@@ -14,7 +14,7 @@
     desktop = "awesome";
     term = "wezterm"; # Or "alacritty", "kitty", "st".
     shell = "fish"; # Or "bash", "zsh", "starship" etc.
-    prompt = "starship"; # Or "default", "hydro", "powerline", "starship".
+    prompt = "hydro"; # Or "default", "hydro", "powerline", "starship".
     oom = true; # Enable process killer
     font = {
       sans = "Atkinson Hyperlegible";

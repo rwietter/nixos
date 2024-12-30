@@ -2,10 +2,10 @@
 
 with mylib;
 {
-  theme = utils.match { colorscheme = vars.appearance.colorscheme or "twilight"; } [
+  theme = utils.match { colorscheme = vars.appearance.colorscheme or "everforest"; } [
     [
-      { colorscheme = "twilight"; }
-      (import ./twilight.nix)
+      { colorscheme = "everforest"; }
+      (import ./everforest.nix)
     ]
     [
       { colorscheme = "umbrosus"; }

@@ -43,12 +43,7 @@ source_aliases
 
 # ------------------ Paths ---------------------
 # ----------------------------------------------
-set -ag fish_user_paths "$HOME"/.npm-global/bin
-set -ag fish_user_paths "$HOME"/.cargo/blink
-set -ag fish_user_paths "$HOME"/.spicetify
-set -ag fish_user_paths "$HOME"/Downloads/roc_nightly-linux_x86_64-2024-01-20-ebfcd71
 set -ag fish_user_paths "$HOME"/.local/bin
-set -ag fish_user_paths "$HOME"/go/bin
 set -ag fish_user_paths "$HOME"/.local/bin/rwietter
 # set -ag fish_user_paths "$HOME"/.local/bin/busybox
 
@@ -82,7 +77,7 @@ set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on ever
 source "$HOME"/Voltage/repo/config/fish/conf.d/forgit.plugin.fish
 
 # --- Pisces
-set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»' '+,+' '=,='
+# set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»' '+,+' '=,='
 
 # -- patrickf1/fzf.fish
 set -gx fzf_preview_dir_cmd eza --all --color=always --icons # preview directories with exa
@@ -119,10 +114,3 @@ bind -M insert \ea zellij toggle                 # Toggle zellij
 # - [Fish Language](https://fishshell.com/docs/current/language.html)
 # - [Commands](https://fishshell.com/docs/current/commands.html)
 # - [Set](https://fishshell.com/docs/current/cmds/set.html)
-
-# pnpm
-set -gx PNPM_HOME "/home/rwietter/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end

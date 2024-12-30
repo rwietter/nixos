@@ -35,12 +35,12 @@ let
   promptConfig = promptConfigs.${vars.os.prompt} or promptConfigs.default;
 
   basePackages = [
-    pkgs.fishPlugins.forgit
-    pkgs.fishPlugins.fzf-fish
-    pkgs.fishPlugins.sponge
+    pkgs.fishPlugins.forgit # git aliases
+    pkgs.fishPlugins.fzf-fish # fzf
+    # pkgs.fishPlugins.sponge
     pkgs.fishPlugins.puffer
     # pkgs.fishPlugins.pisces # bug :: adds fzf completion
-    pkgs.fishPlugins.async-prompt
+    # pkgs.fishPlugins.async-prompt
   ];
 
 in
@@ -49,23 +49,22 @@ lib.mkIf (vars.os.shell == "fish") {
   programs.fish = {
     enable = true;
     package = pkgs.fish;
-    interactiveShellInit = '''';
   };
 
   home.packages = basePackages ++ promptConfig.packages;
 
-  xdg.configFile = lib.mkForce {
-    "fish/config.fish" = {
-      text = ''
-        ${lib.fileContents ../repo/config/fish/config.fish}
+  # xdg.configFile = lib.mkForce {
+  #   "fish/config.fish" = {
+  #     text = ''
+  #       ${lib.fileContents ../repo/config/fish/config.fish}
 
-        # Prompt
-        ${promptConfig.init}
-      '';
-    };
-    "fish/functions" = {
-      source = ../repo/config/fish/functions;
-      recursive = true;
-    };
-  };
+  #       # Prompt
+  #       ${promptConfig.init}
+  #     '';
+  #   };
+  #   "fish/functions" = {
+  #     source = ../repo/config/fish/functions;
+  #     recursive = true;
+  #   };
+  # };
 }

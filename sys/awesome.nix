@@ -1,10 +1,16 @@
-{ lib, pkgs, vars, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  ...
+}:
 
-with lib; mkIf(vars.os.desktop == "awesome") {
+with lib;
+mkIf (vars.os.desktop == "awesome") {
   services.xserver.windowManager.awesome = {
     enable = true;
     luaModules = with pkgs.luaPackages; [
-      luarocks # era para funcionar, mas não funciona
+      luarocks
       luadbi-mysql
     ];
     package = pkgs.awesome.overrideAttrs (old: {
@@ -15,7 +21,7 @@ with lib; mkIf(vars.os.desktop == "awesome") {
         rev = "1f7ac8f9c7ab9fff7dd93ab4b29514ff3580efcf";
         hash = "sha256-D5CTo4FvGk2U3fkDHf/JL5f/O1779i92UcRpPn+lbpw=";
       };
-      patches = [];
+      patches = [ ];
       postPatch = ''
         patchShebangs tests/examples/_postprocess.lua
       '';
@@ -26,12 +32,12 @@ with lib; mkIf(vars.os.desktop == "awesome") {
     systemPackages = with pkgs; [
       luarocks
     ];
-    
+
     # Não funciona essa droga
     sessionVariables = {
       LUA_PATH = "${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?.lua;${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?/init.lua";
       LUA_CPATH = "${pkgs.luaPackages.luarocks}/lib/lua/${pkgs.lua.luaversion}/?.so";
-      PATH = ["${pkgs.luarocks}/bin"];
+      PATH = [ "${pkgs.luarocks}/bin" ];
     };
   };
 

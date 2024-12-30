@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 let
   lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
@@ -50,6 +50,8 @@ in
     zotero_7 # reference manager and reader
     obsidian # note taking
     espanso # text expander
+    anki # Spaced repetition flashcard program
+    yarr # rss reader
     # libreoffice-qt
 
     # System Monitoring & Information
@@ -65,12 +67,17 @@ in
 
     # Networking Tools
     dnsutils # includes `dig` and `nslookup`
+    networkmanagerapplet # GUI for NetworkManager
 
     # Media & Image Tools
     pavucontrol # audio control
     maim # screenshot tool
     feh # image viewer
     redshift # color temperature adjustment
+    reaper # audio editing
+    ardour # digital audio workstation
+    clapper # GNOME media player built using GTK4 toolkit and powered by GStreamer with OpenGL rendering
+    mpv # General-purpose media player, fork of MPlayer and mplayer2
 
     # File Management & Browsers
     nautilus # file manager
@@ -86,6 +93,7 @@ in
     # powerline # status line
     gpick # color picker
     nix-output-monitor # enhanced logging for Nix
+    torrential # torrent client
 
     # Scripts
     (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
