@@ -15,6 +15,7 @@
   ];
 
   # nixpkgs.overlays = [ (import ./overlays.nix) ];
+  # nixpkgs.config.allowUnsupportedSystem = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -104,9 +105,10 @@
   # };
 
   # Enable/Disable Options
-  programs.firefox.enable = false;
-  programs.fish.enable = true;
-  services.blueman.enable = true;
+  programs.firefox.enable = false; # Firefox
+  programs.fish.enable = true; # Fish shell
+  services.blueman.enable = true; # Bluetooth manager
+  services.yarr.enable = true; # Yet Another RSS Reader (YARR)
 
   # List services that you want to enable:
 

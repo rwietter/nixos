@@ -23,6 +23,8 @@ in
     dzen2 # scriptable status bar
     stow # manage symlinks
     dconf # Needed when gtk is enabled
+    insomnia # The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.
+    # inshellisense # A Microsoft's IDE style command line auto complete
 
     # Command Line Utilities
     rsync # file synchronization
@@ -51,7 +53,6 @@ in
     obsidian # note taking
     espanso # text expander
     anki # Spaced repetition flashcard program
-    yarr # rss reader
     # libreoffice-qt
 
     # System Monitoring & Information
@@ -78,6 +79,7 @@ in
     ardour # digital audio workstation
     clapper # GNOME media player built using GTK4 toolkit and powered by GStreamer with OpenGL rendering
     mpv # General-purpose media player, fork of MPlayer and mplayer2
+    stremio # p2p video streaming
 
     # File Management & Browsers
     nautilus # file manager

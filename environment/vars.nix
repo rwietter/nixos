@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "everforest"; # Or "twilight", "umbrosus".
-    theme = "light"; # Or "light", "dark", "dim".
+    colorscheme = "umbrosus"; # Or "everforest", "umbrosus".
+    theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
     username = "rwietter";

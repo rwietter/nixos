@@ -14,5 +14,6 @@
     ./i18n.nix
     ./nh.nix
     ./nftables.nix
+    ./yarr.nix
   ];
 }
