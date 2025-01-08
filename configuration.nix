@@ -66,6 +66,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       awesome
@@ -132,4 +133,11 @@
   # Upgrade packages automatically.
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;
+
+  # Virtualization
+  virtualisation.docker.enable = true; # Install Docker
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }

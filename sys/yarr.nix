@@ -6,6 +6,13 @@
   ...
 }:
 
+/**
+  * Reference: https://landchad.net/yarr/
+  * Future:
+  * - Deploy and hosting with docker or nixops
+  * - https://hub.docker.com/r/maskalicz/yarr
+  * - https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/
+*/
 let
   address = "0.0.0.0:7070"; # Address and port to bind Yarr
   authFile = "${vars.os.homeDirectory}/.config/yarr/auth.conf"; # Path to the authentication file
