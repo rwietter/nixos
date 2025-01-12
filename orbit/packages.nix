@@ -11,13 +11,16 @@ in
     strace # system call monitoring
     ltrace # library call monitoring
     lsof # list open files
+    rclone # Command line program to sync files and directories to and from major cloud storage
     tig # git log viewer
     fossil # distributed version control system
     hyperfine # benchmarking tool
+    duf # Disk Usage/Free Utility
     fd # find on steroids
     bat # cat with wings
     glow # markdown previewer
     jq # JSON processor
+    pv # monitor the progress of data through a pipe
     eza # modern replacement for ‘ls’
     docker-compose # container orchestration
     fzf # fuzzy finder
@@ -36,6 +39,8 @@ in
     lf # terminal file manager
     neofetch # system info
     tealdeer # tldr client
+    onefetch # Git repository summary
+    age # simple, modern and secure file encryption tool
     pax-utils # collection of security utilities
     inotify-tools # inotifywait for file system watching
     translate-shell # text translation in terminal
