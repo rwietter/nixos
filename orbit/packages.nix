@@ -19,12 +19,13 @@ in
     glow # markdown previewer
     jq # JSON processor
     eza # modern replacement for ‘ls’
+    docker-compose # container orchestration
     fzf # fuzzy finder
     dzen2 # scriptable status bar
     stow # manage symlinks
     dconf # Needed when gtk is enabled
     insomnia # The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.
-    # inshellisense # A Microsoft's IDE style command line auto complete
+    beekeeper-studio # Cross-platform SQL editor and database manager
 
     # Command Line Utilities
     rsync # file synchronization
@@ -47,6 +48,7 @@ in
     zoxide # directory jump tool
     bc # arbitrary precision calculator
     just # A handy way to save and run project-specific commands
+    reader # Lightweight tool offering better readability of web pages on the CLI
 
     # Productivity & Note-taking
     zotero_7 # reference manager and reader

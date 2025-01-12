@@ -14,7 +14,7 @@
   * - https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/
 */
 let
-  address = "0.0.0.0:7070"; # Address and port to bind Yarr
+  address = "127.0.0.1:7070"; # Address and port to bind Yarr
   authFile = "${vars.os.homeDirectory}/.config/yarr/auth.conf"; # Path to the authentication file
   dbFile = "${vars.os.homeDirectory}/.config/yarr/storage.db"; # Path to the database file
   logFile = "${vars.os.homeDirectory}/.config/yarr/access.log"; # Path to the log file

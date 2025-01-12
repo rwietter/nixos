@@ -24,7 +24,7 @@
   # Use the latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -116,11 +116,24 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
+  # Firewall configuration.
   networking.firewall.enable = true;
+  # Open ports in the firewall.
+  networking.firewall = {
+    allowedTCPPorts = [
+      53
+      3000
+      3003
+      8443
+    ];
+    allowedUDPPorts = [
+      53
+      8443
+    ];
+  };
+
+  # Polkit
+  security.polkit.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -137,7 +150,31 @@
   # Virtualization
   virtualisation.docker.enable = true; # Install Docker
   virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
+    enable = false;
+    setSocketVariable = false;
   };
+
+  # Tailscale
+  services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "both";
+  networking.firewall.checkReversePath = "loose";
+  networking.nameservers = [
+    "100.100.100.100"
+    "8.8.8.8"
+    "1.1.1.1"
+  ];
+  networking.search = [ "tailaf1430.ts.net" ];
+  /**
+    * Resolved and Adguard Home listen on the same port (53).
+      services.resolved = {
+        enable = true;
+        dnssec = "true";
+        domains = [ "~." ];
+        fallbackDns = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
+        dnsovertls = "true";
+      };
+  */
 }

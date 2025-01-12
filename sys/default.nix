@@ -3,7 +3,7 @@
 {
   imports = [
     ./gc.nix
-    ./dns.nix
+    # ./dns.nix
     ./nix.nix
     ./xserver.nix
     ./hyprland.nix
@@ -13,7 +13,6 @@
     ./zram.nix
     ./i18n.nix
     ./nh.nix
-    ./nftables.nix
     ./yarr.nix
   ];
 }
