@@ -8,11 +8,12 @@
     ./xserver.nix
     ./hyprland.nix
     ./awesome.nix
-    # ./fonts.nix
+    ./fonts.nix
     ./oom.nix
     ./zram.nix
     ./i18n.nix
     ./nh.nix
     ./yarr.nix
+    ./niri.nix
   ];
 }

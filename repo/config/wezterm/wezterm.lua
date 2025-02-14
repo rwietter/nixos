@@ -14,7 +14,7 @@
 local wezterm = require("wezterm")
 
 local function font_with_fallback(name, params)
-	local names = { name, "Apple Color Emoji", "azuki_font" }
+	local names = {name, "Apple Color Emoji", "azuki_font"}
 	return wezterm.font_with_fallback(names, params)
 end
 
@@ -27,12 +27,13 @@ local fonts = {
 	danknerd = "DankMono Nerd Font Mono",
 	berkeley = "Berkeley Mono",
 	jetnerd = "JetBrainsMono Nerd Font",
-	commitnerd = "CommitMono Nerd Font Mono",
+	commit = "CommitMono",
 	cascadia = "Cascadia Mono",
-	intel = "Intel One Mono",
+	MesloLGS = "MesloLGS NF",
+	intel = "Intel One Mono"
 }
 
-local font_name = fonts.fantasque
+local font_name = fonts.commit
 
 local themes = {
 	rose_pine_dark = "rose-pine",
@@ -48,48 +49,45 @@ local themes = {
 	sequoia_monochrome = "Sequoia Monochrome",
 	sequoia_moonlight = "Sequoia Moonlight",
 	atelier_cave_light = "Atelier Cave Light (base16)",
-	banana_blueberry = "Banana Blueberry",
+	banana_blueberry = "Banana Blueberry"
 }
 
 return {
 	-- import from $HOME/.config/wezterm/theme.lua
 	color_schemes = {
-  	['nix'] = require('theme')
+		["nix"] = require("theme")
 	},
 	color_scheme = "nix",
-
 	-- OpenGL for GPU acceleration, Software for CPU
-	front_end = "WebGpu",--WebGpu - OpenGL
-
+	front_end = "WebGpu",
+	--WebGpu - OpenGL
 	-- Font config
 	font = wezterm.font {
-    family = font_name,
-    stretch = 'Expanded',
-    weight = 'Regular',
-		harfbuzz_features = { 'calt=0', 'clig=1', 'liga=1' },
-  },
+		family = font_name,
+		stretch = "Expanded",
+		weight = "Regular",
+		harfbuzz_features = {"calt=0", "clig=1", "liga=1"}
+	},
 	font_rules = {
 		{
 			italic = true,
-			font = font_with_fallback(font_name, { italic = true }),
+			font = font_with_fallback(font_name, {italic = true})
 		},
 		{
 			italic = true,
 			intensity = "Bold",
-			font = font_with_fallback(font_name, { italic = true, bold = true }),
+			font = font_with_fallback(font_name, {italic = true, bold = true})
 		},
 		{
 			intensity = "Bold",
-			font = font_with_fallback(font_name, { bold = true }),
-		},
+			font = font_with_fallback(font_name, {bold = true})
+		}
 	},
 	warn_about_missing_glyphs = true,
-	font_size = 13.5,
+	font_size = 12.5,
 	line_height = 1.6,
-
 	-- Cursor style
 	default_cursor_style = "BlinkingUnderline",
-
 	-- X11
 	-- enable_wayland = false,
 
@@ -99,126 +97,126 @@ return {
 		{
 			key = [[\]],
 			mods = "CTRL|ALT",
-			action = wezterm.action({
-				SplitHorizontal = { domain = "CurrentPaneDomain" },
-			}),
+			action = wezterm.action(
+				{
+					SplitHorizontal = {domain = "CurrentPaneDomain"}
+				}
+			)
 		},
 		{
 			key = [[/]],
 			mods = "CTRL",
-			action = wezterm.action({
-				SplitVertical = { domain = "CurrentPaneDomain" },
-			}),
+			action = wezterm.action(
+				{
+					SplitVertical = {domain = "CurrentPaneDomain"}
+				}
+			)
 		},
 		{
 			key = "q",
 			mods = "CTRL",
-			action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
+			action = wezterm.action({CloseCurrentPane = {confirm = false}})
 		},
 		{
 			key = "h",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Left" }),
+			action = wezterm.action({ActivatePaneDirection = "Left"})
 		},
 		{
 			key = "l",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Right" }),
+			action = wezterm.action({ActivatePaneDirection = "Right"})
 		},
 		{
 			key = "k",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Up" }),
+			action = wezterm.action({ActivatePaneDirection = "Up"})
 		},
 		{
 			key = "j",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Down" }),
+			action = wezterm.action({ActivatePaneDirection = "Down"})
 		},
 		{
 			key = "h",
 			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Left", 1 } }),
+			action = wezterm.action({AdjustPaneSize = {"Left", 1}})
 		},
 		{
 			key = "l",
 			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Right", 1 } }),
+			action = wezterm.action({AdjustPaneSize = {"Right", 1}})
 		},
 		{
 			key = "k",
 			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Up", 1 } }),
+			action = wezterm.action({AdjustPaneSize = {"Up", 1}})
 		},
 		{
 			key = "j",
 			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
+			action = wezterm.action({AdjustPaneSize = {"Down", 1}})
 		},
-		-- {
-		-- 	key = "n",
-		-- 	mods = "CTRL",
-		-- 	action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
-		-- },
+		{
+			key = "n",
+			mods = "CTRL",
+			action = wezterm.action({SpawnTab = "CurrentPaneDomain"})
+		},
 		{
 			key = "F2",
 			mods = "CTRL",
-			action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
+			action = wezterm.action({CloseCurrentTab = {confirm = false}})
 		},
 		{
 			key = "Tab",
 			mods = "CTRL",
-			action = wezterm.action({ ActivateTabRelative = 1 }),
+			action = wezterm.action({ActivateTabRelative = 1})
 		},
 		{
 			key = "Tab",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivateTabRelative = -1 }),
+			action = wezterm.action({ActivateTabRelative = -1})
 		},
 		{
 			key = "M",
 			mods = "CTRL",
-			action = "ActivateCopyMode",
+			action = "ActivateCopyMode"
 		},
 		{
 			key = "v",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ PasteFrom = "Clipboard" }),
+			action = wezterm.action({PasteFrom = "Clipboard"})
 		},
 		{
 			key = "c",
 			mods = "CTRL|SHIFT",
-			action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
-		},
+			action = wezterm.action({CopyTo = "ClipboardAndPrimarySelection"})
+		}
 	},
-
 	bold_brightens_ansi_colors = false,
-
 	-- Padding
 	window_padding = {
 		left = 20,
 		right = 20,
 		top = 20,
-		bottom = 20,
+		bottom = 20
 	},
-
 	-- Tab Bar
 	enable_tab_bar = true,
 	hide_tab_bar_if_only_one_tab = true,
 	show_tab_index_in_tab_bar = true,
 	tab_bar_at_bottom = true,
 	use_fancy_tab_bar = true,
-
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = {
 		saturation = 1,
-		brightness = 1,
+		brightness = 1
 	},
 	window_background_opacity = 1,
 	window_close_confirmation = "NeverPrompt",
 	window_frame = {
 		active_titlebar_bg = "#090909",
-		font = font_with_fallback(font_name, { bold = false }),
-	},
+		font = font_with_fallback(font_name, {bold = false})
+	}
 }

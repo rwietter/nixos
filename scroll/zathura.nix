@@ -1,6 +1,13 @@
-{ lib, pkgs, vars, theme, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  theme,
+  ...
+}:
 
-with lib; {
+with lib;
+{
   programs.zathura = {
     enable = true;
   };
@@ -17,7 +24,7 @@ with lib; {
         set statusbar-basename true
         set statusbar-home-tilde true
         set guioptions sv
-        
+
         # Colors and theme
         set default-bg "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
         set default-fg "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
@@ -45,7 +52,7 @@ with lib; {
         set recolor-keephue true
         set recolor-lightcolor "${theme.scheme.variants."${vars.appearance.theme}".bg.root}"
         set recolor-darkcolor "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
-        
+
         # Behavior
         set selection-clipboard clipboard
         set pages-per-row 1
@@ -56,8 +63,11 @@ with lib; {
         set zoom-max 1000
         set window-title-home-tilde true
         set adjust-open "best-fit"
-        set font "JetBrainsMono Nerd Font"
-        
+        set font "monospace normal 9"
+        set adjust-open width
+        # set guioptions none
+        set statusbar-page-percent  "true"
+
         # Key mappings
         map <C-Tab> toggle_statusbar
         map [normal] <C-b> scroll left
@@ -66,19 +76,28 @@ with lib; {
         map [normal] <C-d> scroll half-down
         map [normal] <C-y> scroll up
         map [normal] <C-e> scroll down
-        
+
         map [normal] <C-i> zoom in
         map [normal] <C-o> zoom out
         map [normal] <C-0> zoom default
-        
+
         map [normal] r rotate
         map [normal] R rotate cw
-        
+
+        # map [normal]     h adjust_window best-fit
+        # map [fullscreen] h adjust_window best-fit
+        map [normal]     w adjust_window width
+        map [fullscreen] w adjust_window width
+
         map [normal] i recolor
-        
+
         map [normal] f toggle_fullscreen
         map [fullscreen] f toggle_fullscreen
-        
+
+        # map [fullscreen] b toggle_statusbar
+        # map [normal] b toggle_statusbar
+        # map <C-b> toggle_statusbar
+
         # Extra settings
         set render-loading true
         set scroll-step 50

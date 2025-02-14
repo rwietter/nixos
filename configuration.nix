@@ -67,6 +67,9 @@
       "networkmanager"
       "wheel"
       "docker"
+      "storage"
+      "audio"
+      "sudo"
     ];
     packages = with pkgs; [
       awesome
@@ -110,6 +113,7 @@
   programs.fish.enable = true; # Fish shell
   services.blueman.enable = true; # Bluetooth manager
   services.yarr.enable = true; # Yet Another RSS Reader (YARR)
+  programs.niri.enable = true; # Niri
 
   # List services that you want to enable:
 
@@ -177,4 +181,17 @@
         dnsovertls = "true";
       };
   */
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "0 */5 * * *  rwietter cd $HOME/.local/share/nap && git add . && git commit -m 'cron' && git push"
+    ];
+  };
+
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
+  services.atd.enable = true;
 }

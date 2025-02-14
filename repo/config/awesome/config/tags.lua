@@ -32,10 +32,25 @@ local l = awful.layout.suit
 -- **************
 
 -- default tags
+-- tag.connect_signal(
+-- 	"request::default_layouts",
+-- 	function()
+-- 		awful.layout.append_default_layouts({ l.tile, l.floating, lmachi.default_layout, equal, mstab, deck })
+-- 	end
+-- )
+
 tag.connect_signal(
 	"request::default_layouts",
 	function()
-		awful.layout.append_default_layouts({ l.tile, l.floating, lmachi.default_layout, equal, mstab, deck })
+		awful.layout.append_default_layouts({
+			l.tile, -- default (vertical)
+			l.tile.bottom, -- stack (horizontal)
+			l.floating, -- floating layout
+			lmachi.default_layout, -- layout machi
+			equal, -- layout equalarea (bling)
+			mstab, -- layout mstab (bling)
+			deck -- layout deck (bling)
+		})
 	end
 )
 
@@ -49,6 +64,7 @@ screen.connect_signal(
 			top = 0,
 			bottom = 0
 		}
-		awful.tag(names, s, awful.layout.layouts[1])
+		-- awful.tag(names, s, awful.layout.layouts[1])
+		awful.tag(names, s, l.tile.bottom) -- layout padrão horizontal
 	end
 )

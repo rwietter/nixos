@@ -1,6 +1,6 @@
 {
   appearance = {
-    colorscheme = "umbrosus"; # Or "everforest", "umbrosus".
+    colorscheme = "lovelace"; # Or "amarena", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral", "lovelace", "manta", "skyall", "aphelion"
     theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
@@ -19,7 +19,7 @@
     font = {
       sans = "Atkinson Hyperlegible";
       serif = "SpaceGrotesk";
-      mono = "FantasqueSansM Nerd Font";
+      mono = "MesloLGS NF"; # FantasqueSansM Nerd Font
     };
   };
 }

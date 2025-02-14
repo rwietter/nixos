@@ -11,5 +11,37 @@ with mylib;
       { colorscheme = "umbrosus"; }
       (import ./umbrosus.nix)
     ]
+    [
+      { colorscheme = "moonstars"; }
+      (import ./moonstars.nix)
+    ]
+    [
+      { colorscheme = "catppuccin-macchiato"; }
+      (import ./catppuccin-macchiato.nix)
+    ]
+    [
+      { colorscheme = "amarena"; }
+      (import ./amarena.nix)
+    ]
+    [
+      { colorscheme = "ephemeral"; }
+      (import ./ephemeral.nix)
+    ]
+    [
+      { colorscheme = "lovelace"; }
+      (import ./lovelace.nix)
+    ]
+    [
+      { colorscheme = "manta"; }
+      (import ./manta.nix)
+    ]
+    [
+      { colorscheme = "skyall"; }
+      (import ./skyall.nix)
+    ]
+    [
+      { colorscheme = "aphelion"; }
+      (import ./aphelion.nix)
+    ]
   ];
 }

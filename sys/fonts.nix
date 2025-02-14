@@ -5,7 +5,12 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       atkinson-hyperlegible
-      nerd-fonts.fantasque-sans-mono
+      meslo-lgs-nf
+      (nerdfonts.override {
+        fonts = [
+          "FantasqueSansMono"
+        ];
+      })
     ];
     fontconfig = {
       defaultFonts = {
@@ -13,7 +18,7 @@
           "Space Grotesk"
           "Liberation Serif"
         ];
-        sansSerif = [ "Atkinson Hyperlegible" ];
+        sansSerif = [ "MesloLGS NF" ]; # Atkinson Hyperlegible
         monospace = [ "Fantasque Sans Mono" ];
       };
     };

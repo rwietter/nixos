@@ -1,17 +1,17 @@
 {
   scheme = {
     colors = {
-      primary = "#D699B6"; # Purple for primary accent
-      bg = "#2D353B"; # Base background
-      fg = "#D3C6AA"; # Base foreground
-      black = "#7A8478"; # Grey0 for muted elements
-      red = "#E67E80"; # Red accent
-      green = "#A7C080"; # Green accent
-      yellow = "#DBBC7F"; # Yellow accent
-      blue = "#7FBBB3"; # Blue accent
-      magenta = "#D699B6"; # Purple accent
-      cyan = "#83C092"; # Aqua accent
-      white = "#D3C6AA"; # Base foreground for light text
+      primary = "#D699B6";
+      bg = "#2D353B";
+      fg = "#D3C6AA";
+      black = "#7A8478";
+      red = "#E67E80";
+      green = "#A7C080";
+      yellow = "#DBBC7F";
+      blue = "#7FBBB3";
+      magenta = "#D699B6";
+      cyan = "#83C092";
+      white = "#D3C6AA";
     };
     variants = {
       dark = {
