@@ -1,0 +1,128 @@
+# Based on original "amarena" theme:
+# @author: "Mauricio Witter <@rwietter>"
+
+# Usage: This file is used by the `lscolors` package to generate a LS_COLORS. To use it, use vivid and generate with the following command:
+# `export LS_COLORS="$(vivid generate amarena.yml)"
+
+colors:
+  # Core Colors from amarena.nix
+  background_color: "1A2026"
+  black: "242D35"
+  red: "FFB5C9"
+  green: "B8E6B9"
+  yellow: "FFD1E3"
+  blue: "B7E4EF"
+  magenta: "E5B7E1"
+  cyan: "B7F0E4"
+  white: "FFFFFF"
+
+  light_black: "526170"
+  light_red: "FFC7D6"
+  light_green: "CAEFCB"
+
+  gray: "526170"
+  lightgray: "DCDDD9"
+
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+
+  directory:
+    foreground: blue
+
+  symlink:
+    foreground: magenta
+
+  multi_hard_link: {}
+
+  fifo:
+    foreground: black
+    background: blue
+
+  socket:
+    foreground: black
+    background: magenta
+
+  door:
+    foreground: black
+    background: magenta
+
+  block_device:
+    foreground: black
+    background: red
+
+  character_device:
+    foreground: black
+    background: green
+
+  broken_symlink:
+    foreground: black
+    background: red
+
+  missing_symlink_target:
+    foreground: black
+    background: red
+
+  setuid: {}
+
+  setgid: {}
+
+  file_with_capability: {}
+
+  sticky_other_writable: {}
+
+  other_writable: {}
+
+  sticky: {}
+
+  executable_file:
+    foreground: red
+    font-style: bold
+
+text:
+  special:
+    foreground: black
+    background: yellow
+
+  todo:
+    font-style: bold
+
+  licenses:
+    foreground: gray
+
+  configuration:
+    foreground: yellow
+
+  other:
+    foreground: yellow
+
+markup:
+  foreground: yellow
+
+programming:
+  source:
+    foreground: green
+
+  tooling:
+    foreground: light_green
+
+    continuous-integration:
+      foreground: green
+
+media:
+  foreground: magenta
+
+office:
+  foreground: red
+
+archives:
+  foreground: green
+  font-style: underline
+
+executable:
+  foreground: red
+  font-style: bold
+
+unimportant:
+  foreground: lightgray

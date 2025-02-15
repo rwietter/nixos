@@ -18,7 +18,7 @@
     vscode.enable = lib.mkIf config.vscode.enable {
       programas.vscode = {
         enable = true;
-        package = unstable.vscode;
+        package = pkgs.vscode;
         extensions = [
           pkgs.vscode-extension-yoavbls-pretty-ts-errors
           pkgs.vscode-extension-biomejs-biome

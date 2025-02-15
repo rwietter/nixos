@@ -3,7 +3,6 @@
 let
   # lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
   unstablePackages = [
-    unstable.vscode # Visual Studio Code
     unstable.yt-dlp # YouTube downloader
     unstable.zellij # Terminal multiplexer
   ];
@@ -45,6 +44,7 @@ in
       dconf # Needed when gtk is enabled
       insomnia # The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.
       beekeeper-studio # Cross-platform SQL editor and database manager
+      vscode # Visual Studio Code - Code editor
 
       # Command Line Utilities
       rsync # file synchronization
@@ -59,6 +59,8 @@ in
       tealdeer # tldr client
       onefetch # Git repository summary
       age # simple, modern and secure file encryption tool
+      mpd # server music client
+      ncmpcpp # music client visualizer
       pax-utils # collection of security utilities
       inotify-tools # inotifywait for file system watching
       translate-shell # text translation in terminal

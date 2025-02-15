@@ -5,12 +5,12 @@
       bg = "#1A2026";
       fg = "#FFFFFF";
       black = "#242D35";
-      red = "#FB6396";
-      green = "#94CF95";
-      yellow = "#F692B2";
-      blue = "#6EC1D6";
-      magenta = "#CD84C8";
-      cyan = "#7FE4D2";
+      red = "#FFB5C9"; # Pastel pink instead of vibrant red
+      green = "#B8E6B9"; # Softer pastel green
+      yellow = "#FFD1E3"; # Soft pastel pink-yellow
+      blue = "#B7E4EF"; # Pastel blue
+      magenta = "#E5B7E1"; # Pastel purple
+      cyan = "#B7F0E4"; # Pastel cyan
       white = "#FFFFFF";
     };
     variants = {
@@ -30,10 +30,10 @@
         };
 
         red = {
-          root = "#FB6396";
-          shift = "#F92D72";
-          echo = "#FA477F";
-          fade = "#FB618C";
+          root = "#FFB5C9"; # Pastel pink base
+          shift = "#FFA3BC"; # Slightly deeper
+          echo = "#FFB5C9"; # Base color
+          fade = "#FFC7D6"; # Lighter variant
         };
 
         black = {
@@ -44,38 +44,38 @@
         };
 
         green = {
-          root = "#94CF95";
-          shift = "#6CCB6E";
-          echo = "#7DD17F";
-          fade = "#8ED790";
+          root = "#B8E6B9"; # Pastel green base
+          shift = "#A6DCA7"; # Slightly deeper
+          echo = "#B8E6B9"; # Base color
+          fade = "#CAEFCB"; # Lighter variant
         };
 
         yellow = {
-          root = "#F692B2";
-          shift = "#F26190";
-          echo = "#F477A1";
-          fade = "#F58DB2";
+          root = "#FFD1E3"; # Pastel pink-yellow base
+          shift = "#FFC1D8"; # Slightly deeper
+          echo = "#FFD1E3"; # Base color
+          fade = "#FFE1EE"; # Lighter variant
         };
 
         blue = {
-          root = "#6EC1D6";
-          shift = "#4CB9D6";
-          echo = "#5ABFDA";
-          fade = "#68C5DE";
+          root = "#B7E4EF"; # Pastel blue base
+          shift = "#A5DBE8"; # Slightly deeper
+          echo = "#B7E4EF"; # Base color
+          fade = "#C9EDF5"; # Lighter variant
         };
 
         magenta = {
-          root = "#CD84C8";
-          shift = "#C269BC";
-          echo = "#C576C0";
-          fade = "#C983C4";
+          root = "#E5B7E1"; # Pastel purple base
+          shift = "#DCA5D8"; # Slightly deeper
+          echo = "#E5B7E1"; # Base color
+          fade = "#EEC9EA"; # Lighter variant
         };
 
         cyan = {
-          root = "#7FE4D2";
-          shift = "#58D6BF";
-          echo = "#69DAC5";
-          fade = "#7ADECC";
+          root = "#B7F0E4"; # Pastel cyan base
+          shift = "#A5E8DA"; # Slightly deeper
+          echo = "#B7F0E4"; # Base color
+          fade = "#C9F8EE"; # Lighter variant
         };
 
         white = {
@@ -102,10 +102,10 @@
         };
 
         red = {
-          root = "#F92D72";
-          shift = "#FA477F";
-          echo = "#FB618C";
-          fade = "#FC7B99";
+          root = "#FFB5C9"; # Pastel pink base for light theme
+          shift = "#FFA3BC";
+          echo = "#FFB5C9";
+          fade = "#FFC7D6";
         };
 
         black = {
@@ -116,38 +116,38 @@
         };
 
         green = {
-          root = "#6CCB6E";
-          shift = "#7DD17F";
-          echo = "#8ED790";
-          fade = "#9FDCA1";
+          root = "#B8E6B9"; # Pastel green base for light theme
+          shift = "#A6DCA7";
+          echo = "#B8E6B9";
+          fade = "#CAEFCB";
         };
 
         yellow = {
-          root = "#F26190";
-          shift = "#F477A1";
-          echo = "#F58DB2";
-          fade = "#F6A3C3";
+          root = "#FFD1E3"; # Pastel pink-yellow base for light theme
+          shift = "#FFC1D8";
+          echo = "#FFD1E3";
+          fade = "#FFE1EE";
         };
 
         blue = {
-          root = "#4CB9D6";
-          shift = "#5ABFDA";
-          echo = "#68C5DE";
-          fade = "#76CBE2";
+          root = "#B7E4EF"; # Pastel blue base for light theme
+          shift = "#A5DBE8";
+          echo = "#B7E4EF";
+          fade = "#C9EDF5";
         };
 
         magenta = {
-          root = "#C269BC";
-          shift = "#C576C0";
-          echo = "#C983C4";
-          fade = "#CD90C8";
+          root = "#E5B7E1"; # Pastel purple base for light theme
+          shift = "#DCA5D8";
+          echo = "#E5B7E1";
+          fade = "#EEC9EA";
         };
 
         cyan = {
-          root = "#58D6BF";
-          shift = "#69DAC5";
-          echo = "#7ADECC";
-          fade = "#8BE2D2";
+          root = "#B7F0E4"; # Pastel cyan base for light theme
+          shift = "#A5E8DA";
+          echo = "#B7F0E4";
+          fade = "#C9F8EE";
         };
 
         white = {
@@ -168,8 +168,8 @@
         package = "layan-gtk-theme";
       };
       iconTheme = {
-        name = "BeautySolar"; # Qogir-dark
-        package = "qogir-icon-theme"; # qogir-icon-theme
+        name = "BeautySolar";
+        package = "qogir-icon-theme";
       };
       cursor = {
         name = "Quintom_Snow";
@@ -182,8 +182,8 @@
         package = "layan-gtk-theme";
       };
       iconTheme = {
-        name = "BeautySolar"; # Qogir-light
-        package = "qogir-icon-theme"; # qogir-icon-theme
+        name = "BeautySolar";
+        package = "qogir-icon-theme";
       };
       cursor = {
         name = "Quintom_Snow";

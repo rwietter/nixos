@@ -1,6 +1,6 @@
 {
   appearance = {
-    colorscheme = "lovelace"; # Or "amarena", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral", "lovelace", "manta", "skyall", "aphelion"
+    colorscheme = "amarena"; # Or "amarena", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral", "lovelace", "manta", "skyall", "aphelion"
     theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
