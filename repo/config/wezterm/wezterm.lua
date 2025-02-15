@@ -91,7 +91,7 @@ return {
 		}
 	},
 	warn_about_missing_glyphs = true,
-	font_size = 12,
+	font_size = 11,
 	line_height = 1.6,
 	-- Cursor style
 	default_cursor_style = "SteadyBlock",

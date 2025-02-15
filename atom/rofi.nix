@@ -6,7 +6,9 @@
   pkgs,
   ...
 }:
-
+let
+  colorscheme = if vars.appearance.theme == "dark" then "lovelace" else "yousai";
+in
 {
   options = {
     rofi.enable = lib.mkOption {
@@ -24,52 +26,27 @@
     };
 
     xdg.configFile = lib.mkForce {
-      "awesome/misc/rofi/themes/apps.rasi" = {
+      "/awesome/misc/rofi/themes/colors.rasi" = {
         force = true;
         text = ''
-          configuration {
-            font:							      "${vars.os.font.mono} 12";
-            show-icons:             true;
-            icon-theme: 					  "${theme.gtk."${vars.appearance.theme}".iconTheme.name}";
-            display-drun: 					"";
-            drun-display-format:    "{name}";
-            disable-history:        false;
-            sidebar-mode: 					false;
-          }
+          /**
+          *
+          * Author : Aditya Shakya (adi1090x)
+          * Github : @adi1090x
+          * 
+          * Colors
+          *
+          * Available Colors Schemes
+          *
+          * adapta    catppuccin    everforest    navy       paper
+          * arc       cyberpunk     gruvbox       nord       solarized
+          * black     dracula       lovelace      onedark    yousai
+          *
+          **/
 
-          * {
-              background:            ${theme.scheme.variants."${vars.appearance.theme}".bg.root}BF;
-              background-alt:        ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}00;
-              background-bar:        ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}15;
-              foreground:            ${theme.scheme.variants."${vars.appearance.theme}".fg.root}EE;
-              accent:			           ${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}66;
-          }
-        '';
-      };
+          /* Import color-scheme from `colors` directory */
 
-      "awesome/misc/rofi/themes/windows.rasi" = {
-        text = ''
-          configuration {
-            font:						      "${vars.os.font.sans} 12";
-            modes: 								"window";
-            sort: 								true;
-            hover-select: 				true;
-            auto-select: 					true;
-            window-format: 				"{c}";
-            threads: 							4;
-            show-icons:            true;
-            icon-theme: 					 "${theme.gtk."${vars.appearance.theme}".iconTheme.name}";
-            disable-history:       false;
-            sidebar-mode: 				 false;
-          }
-
-          * {
-            background:       ${theme.scheme.variants."${vars.appearance.theme}".bg.root}BF;
-            background-alt:   ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}00;
-            background-bar:   ${theme.scheme.variants."${vars.appearance.theme}".fg.fade}15;
-            foreground:       ${theme.scheme.variants."${vars.appearance.theme}".fg.root}EE;
-            accent:			      ${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}66;
-          }
+          @import "../vivid/${colorscheme}.rasi";
         '';
       };
     };
