@@ -1,7 +1,7 @@
 {
   scheme = {
     colors = {
-      primary = "#1A2026";
+      primary = "#141D26"; # `#0F1319`, `#1A2026`, `#141D26`
       bg = "#1A2026";
       fg = "#FFFFFF";
       black = "#242D35";
@@ -16,10 +16,16 @@
     variants = {
       dark = {
         bg = {
+          # Darker background
           root = "#1A2026";
           shift = "#1F262D";
           echo = "#242D35";
           fade = "#526170";
+          # Blueish background
+          # root = "#141D26";
+          # shift = "#1A2026";
+          # echo = "#141D26";
+          # fade = "#1A2026";
         };
 
         fg = {

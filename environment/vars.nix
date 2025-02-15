@@ -1,7 +1,7 @@
 {
   appearance = {
     colorscheme = "amarena"; # Or "amarena", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral", "lovelace", "manta", "skyall", "aphelion"
-    theme = "light"; # Or "light", "dark", "dim".
+    theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
     username = "rwietter";
