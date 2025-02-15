@@ -6,11 +6,11 @@
       fg = "#FFFFFF";
       black = "#242D35";
       red = "#FFB5C9"; # Pastel pink instead of vibrant red
-      green = "#B8E6B9"; # Softer pastel green
+      green = "#C1EED6"; # Verde Primavera - softer pastel green
       yellow = "#FFD1E3"; # Soft pastel pink-yellow
-      blue = "#B7E4EF"; # Pastel blue
+      blue = "#BCE8F7"; # Azul Céu de Primavera - pastel blue
       magenta = "#E5B7E1"; # Pastel purple
-      cyan = "#B7F0E4"; # Pastel cyan
+      cyan = "#BBF0EC"; # Cyan Aurora - pastel cyan
       white = "#FFFFFF";
     };
     variants = {
@@ -44,10 +44,10 @@
         };
 
         green = {
-          root = "#B8E6B9"; # Pastel green base
-          shift = "#A6DCA7"; # Slightly deeper
-          echo = "#B8E6B9"; # Base color
-          fade = "#CAEFCB"; # Lighter variant
+          root = "#C1EED6"; # Verde Primavera base
+          shift = "#AEE5CA"; # Slightly deeper
+          echo = "#C1EED6"; # Base color
+          fade = "#D4F7E2"; # Lighter variant
         };
 
         yellow = {
@@ -58,10 +58,10 @@
         };
 
         blue = {
-          root = "#B7E4EF"; # Pastel blue base
-          shift = "#A5DBE8"; # Slightly deeper
-          echo = "#B7E4EF"; # Base color
-          fade = "#C9EDF5"; # Lighter variant
+          root = "#BCE8F7"; # Azul Céu de Primavera base
+          shift = "#A9DCEF"; # Slightly deeper
+          echo = "#BCE8F7"; # Base color
+          fade = "#CFF2FD"; # Lighter variant
         };
 
         magenta = {
@@ -72,10 +72,10 @@
         };
 
         cyan = {
-          root = "#B7F0E4"; # Pastel cyan base
-          shift = "#A5E8DA"; # Slightly deeper
-          echo = "#B7F0E4"; # Base color
-          fade = "#C9F8EE"; # Lighter variant
+          root = "#BBF0EC"; # Cyan Aurora base
+          shift = "#A8E7E3"; # Slightly deeper
+          echo = "#BBF0EC"; # Base color
+          fade = "#CEF9F5"; # Lighter variant
         };
 
         white = {
@@ -102,10 +102,10 @@
         };
 
         red = {
-          root = "#FFB5C9"; # Pastel pink base for light theme
-          shift = "#FFA3BC";
-          echo = "#FFB5C9";
-          fade = "#FFC7D6";
+          root = "#F591AA"; # Enhanced contrast pastel pink
+          shift = "#F27F9B";
+          echo = "#F591AA";
+          fade = "#F8A3B8";
         };
 
         black = {
@@ -116,38 +116,38 @@
         };
 
         green = {
-          root = "#B8E6B9"; # Pastel green base for light theme
-          shift = "#A6DCA7";
-          echo = "#B8E6B9";
-          fade = "#CAEFCB";
+          root = "#8ED3B7"; # Enhanced contrast pastel green
+          shift = "#7BC5A7";
+          echo = "#8ED3B7";
+          fade = "#A1DCC3";
         };
 
         yellow = {
-          root = "#FFD1E3"; # Pastel pink-yellow base for light theme
-          shift = "#FFC1D8";
-          echo = "#FFD1E3";
-          fade = "#FFE1EE";
+          root = "#F5A3BC"; # Enhanced contrast pastel pink-yellow
+          shift = "#F291AD";
+          echo = "#F5A3BC";
+          fade = "#F8B5CB";
         };
 
         blue = {
-          root = "#B7E4EF"; # Pastel blue base for light theme
-          shift = "#A5DBE8";
-          echo = "#B7E4EF";
-          fade = "#C9EDF5";
+          root = "#7FCAE2"; # Enhanced contrast pastel blue
+          shift = "#6CBED8";
+          echo = "#7FCAE2";
+          fade = "#92D6EC";
         };
 
         magenta = {
-          root = "#E5B7E1"; # Pastel purple base for light theme
-          shift = "#DCA5D8";
-          echo = "#E5B7E1";
-          fade = "#EEC9EA";
+          root = "#D191CC"; # Enhanced contrast pastel purple
+          shift = "#C77FC0";
+          echo = "#D191CC";
+          fade = "#DBA3D8";
         };
 
         cyan = {
-          root = "#B7F0E4"; # Pastel cyan base for light theme
-          shift = "#A5E8DA";
-          echo = "#B7F0E4";
-          fade = "#C9F8EE";
+          root = "#7CD9D4"; # Enhanced contrast pastel cyan
+          shift = "#69CBC5";
+          echo = "#7CD9D4";
+          fade = "#8FE7E3";
         };
 
         white = {
