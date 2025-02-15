@@ -28,7 +28,7 @@
         force = true;
         text = ''
           configuration {
-            font:							      "${vars.os.font.sans} 12";
+            font:							      "${vars.os.font.mono} 12";
             show-icons:             true;
             icon-theme: 					  "${theme.gtk."${vars.appearance.theme}".iconTheme.name}";
             display-drun: 					"";

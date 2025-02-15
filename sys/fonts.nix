@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  vars,
+  ...
+}:
 
 {
   fonts = {
@@ -15,11 +20,10 @@
     fontconfig = {
       defaultFonts = {
         serif = [
-          "Space Grotesk"
-          "Liberation Serif"
+          vars.os.font.serif
         ];
-        sansSerif = [ "MesloLGS NF" ]; # Atkinson Hyperlegible
-        monospace = [ "Fantasque Sans Mono" ];
+        sansSerif = [ vars.os.font.sans ];
+        monospace = [ vars.os.font.mono ];
       };
     };
   };

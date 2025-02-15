@@ -23,17 +23,12 @@ local fonts = {
 	iosevka = "Iosevka Nerd Font Mono",
 	fantasque = "FantasqueSansM Nerd Font",
 	aesthetic = "AestheticIosevka Nerd Font Mono",
-	geist = "Geist Mono",
-	danknerd = "DankMono Nerd Font Mono",
-	berkeley = "Berkeley Mono",
-	jetnerd = "JetBrainsMono Nerd Font",
-	commit = "CommitMono",
-	cascadia = "Cascadia Mono",
 	MesloLGS = "MesloLGS NF",
-	intel = "Intel One Mono"
+	intel = "Intel One Mono",
+	jet = "JetBrainsMono Nerd Font Mono"
 }
 
-local font_name = fonts.commit
+local font_name = fonts.jet
 
 local themes = {
 	rose_pine_dark = "rose-pine",
@@ -62,11 +57,23 @@ return {
 	front_end = "WebGpu",
 	--WebGpu - OpenGL
 	-- Font config
+	font_shaper = "Harfbuzz",
 	font = wezterm.font {
 		family = font_name,
 		stretch = "Expanded",
 		weight = "Regular",
-		harfbuzz_features = {"calt=0", "clig=1", "liga=1"}
+		harfbuzz_features = {
+			"calt=0",
+			"clig=1",
+			"liga=1",
+			"ss01=1",
+			"ss02=1",
+			"ss03=1",
+			"ss04=1",
+			"ss05=1",
+			"ss06=1",
+			"ss07=1"
+		}
 	},
 	font_rules = {
 		{
@@ -84,10 +91,10 @@ return {
 		}
 	},
 	warn_about_missing_glyphs = true,
-	font_size = 12.5,
+	font_size = 12,
 	line_height = 1.6,
 	-- Cursor style
-	default_cursor_style = "BlinkingUnderline",
+	default_cursor_style = "SteadyBlock",
 	-- X11
 	-- enable_wayland = false,
 
