@@ -19,7 +19,7 @@
     font = {
       sans = "Atkinson Hyperlegible";
       serif = "SpaceGrotesk";
-      mono = "MesloLGS NF"; # FantasqueSansM Nerd Font
+      mono = "IntoneMono Nerd Font"; # FantasqueSansM Nerd Font, MesloLGS NF
     };
   };
 }

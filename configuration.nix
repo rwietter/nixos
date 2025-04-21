@@ -68,6 +68,8 @@
       "wheel"
       "docker"
       "storage"
+      "render"
+      "video"
       "audio"
       "sudo"
     ];
@@ -181,6 +183,12 @@
         dnsovertls = "true";
       };
   */
+
+  networking.extraHosts = ''
+    # For Glances and Homepage
+    127.0.0.1 host.docker.internal
+    # 127.0.0.1 glaces
+  '';
 
   services.cron = {
     enable = true;

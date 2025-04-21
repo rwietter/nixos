@@ -64,6 +64,7 @@ in
       pax-utils # collection of security utilities
       inotify-tools # inotifywait for file system watching
       translate-shell # text translation in terminal
+      gpu-screen-recorder # screen recorder
       viewnior # image viewer
       zip # A compression and file packaging utility
       unzip # list, test and extract compressed files in a ZIP archive
@@ -102,12 +103,14 @@ in
       pavucontrol # audio control
       maim # screenshot tool
       feh # image viewer
+      cameractrls-gtk4 # Camera controls for Linux
       redshift # color temperature adjustment
       reaper # audio editing
       ardour # digital audio workstation
       clapper # GNOME media player built using GTK4 toolkit and powered by GStreamer with OpenGL rendering
       mpv # General-purpose media player, fork of MPlayer and mplayer2
       stremio # p2p video streaming
+      spotify # Play music from the Spotify music service
 
       # File Management & Browsers
       nautilus # file manager

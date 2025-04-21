@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   vars,
   ...
@@ -14,6 +13,7 @@
       (nerdfonts.override {
         fonts = [
           "FantasqueSansMono"
+          "IntelOneMono"
         ];
       })
     ];
