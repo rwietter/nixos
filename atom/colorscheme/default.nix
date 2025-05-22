@@ -43,5 +43,9 @@ with mylib;
       { colorscheme = "aphelion"; }
       (import ./aphelion.nix)
     ]
+    [
+      { colorscheme = "hypfrost"; }
+      (import ./hypfrost.nix)
+    ]
   ];
 }

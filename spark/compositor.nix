@@ -17,8 +17,6 @@ lib.mkIf (vars.os.desktop == "awesome") {
       3.0e-2
       3.0e-2
     ];
-    inactiveOpacity = 1;
-    activeOpacity = 1;
     menuOpacity = 1;
     opacityRules = [
       "95:class_g = 'Alacritty'"

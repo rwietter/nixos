@@ -28,10 +28,10 @@ lib.mkIf (vars.os.desktop == "awesome") {
         colors.foreground = "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"
         colors.emphasis = "${theme.scheme.variants."${vars.appearance.theme}".fg.echo}"
 
-        colors.green = "${theme.scheme.variants."${vars.appearance.theme}".green.root}"
-        colors.green_2 = "${theme.scheme.variants."${vars.appearance.theme}".green.shift}"
-        colors.green_3 = "${theme.scheme.variants."${vars.appearance.theme}".green.echo}"
-        colors.green_4 = "${theme.scheme.variants."${vars.appearance.theme}".green.fade}"
+        colors.green = "${theme.scheme.variants."${vars.appearance.theme}".cyan.root}"
+        colors.green_2 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}"
+        colors.green_3 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.echo}"
+        colors.green_4 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.fade}"
 
         colors.red = "${theme.scheme.variants."${vars.appearance.theme}".red.root}"
         colors.red_2 = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}"
@@ -39,10 +39,10 @@ lib.mkIf (vars.os.desktop == "awesome") {
         colors.red_4 = "${theme.scheme.variants."${vars.appearance.theme}".red.fade}"
         colors.red_5 = "${theme.scheme.variants."${vars.appearance.theme}".red.fade}"
 
-        colors.accent = "${theme.scheme.variants."${vars.appearance.theme}".cyan.root}"
-        colors.accent_2 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}"
-        colors.accent_3 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.echo}"
-        colors.accent_4 = "${theme.scheme.variants."${vars.appearance.theme}".cyan.fade}"
+        colors.accent = "${theme.scheme.variants."${vars.appearance.theme}".yellow.root}"
+        colors.accent_2 = "${theme.scheme.variants."${vars.appearance.theme}".yellow.shift}"
+        colors.accent_3 = "${theme.scheme.variants."${vars.appearance.theme}".yellow.echo}"
+        colors.accent_4 = "${theme.scheme.variants."${vars.appearance.theme}".yellow.fade}"
 
         colors.purple = "${theme.scheme.variants."${vars.appearance.theme}".magenta.root}"
 
