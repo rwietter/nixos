@@ -16,7 +16,8 @@ if string.lower(ui_vars.color_scheme) ~= ("light" or "dark") then
 	ui_vars.color_scheme = "dark"
 end
 
-local colors = require("theme.colors." .. string.lower(ui_vars.color_scheme))
+-- local colors = require("theme.colors." .. string.lower(ui_vars.color_scheme))
+local colors = require("theme.colors.nixos-generated")
 
 -- misc/vars
 -- ~~~~~~~~~

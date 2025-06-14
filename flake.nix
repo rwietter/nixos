@@ -2,12 +2,12 @@
   description = "rwietter's NixOS settings";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     master.url = "github:nixos/nixpkgs";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -73,7 +73,7 @@
                     home = {
                       username = vars.os.hostname;
                       homeDirectory = vars.os.homeDirectory;
-                      stateVersion = "24.05";
+                      stateVersion = "25.05";
                     };
                     imports = [
                       ./orbit/home.nix

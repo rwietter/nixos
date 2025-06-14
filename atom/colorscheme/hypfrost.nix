@@ -161,33 +161,36 @@
   };
 
   # GTK theme and icon configurations
+  # Themes <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-gtk-theme>
+  # Icons <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-icon-theme>
+  # Cursors <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-cursor-theme>
   gtk = {
     dark = {
       theme = {
-        name = "juno-mirage";
-        package = "juno-theme";
+        name = "Tokyo Night";
+        package = "tokyonight-gtk-theme";
       };
       iconTheme = {
-        name = "BeautySolar";
-        package = "qogir-icon-theme";
+        name = "Reversal Icons";
+        package = "reversal-icon-theme";
       };
       cursor = {
-        name = "Quintom_Snow";
-        package = "quintom-cursor-theme";
+        name = "Nordzy Cursor";
+        package = "nordzy-cursor-theme";
       };
     };
     light = {
       theme = {
-        name = "juno";
-        package = "juno-theme";
+        name = "Rose Pine";
+        package = "rose-pine-gtk-theme";
       };
       iconTheme = {
-        name = "BeautySolar";
-        package = "qogir-icon-theme";
+        name = "Rose Pine Icons";
+        package = "rose-pine-icon-theme";
       };
       cursor = {
-        name = "Quintom_Snow";
-        package = "quintom-cursor-theme";
+        name = "Nordzy Cursor";
+        package = "nordzy-cursor-theme";
       };
     };
   };

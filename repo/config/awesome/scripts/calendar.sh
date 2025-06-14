@@ -1,5 +1,3 @@
-#!/bin/bash
-
 TODAY=$(expr $(date +'%d') + 0)
 (
 	echo "^fg(#cdd6f4)^fn('PragmataPro:pixelsize=16:antialias=true:autohint=true'C)"

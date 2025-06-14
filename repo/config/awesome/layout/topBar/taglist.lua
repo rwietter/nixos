@@ -54,7 +54,7 @@ local get_taglist = function(s)
 			fg_focus = beautiful.fg_color,
 		},
 		layout = {
-			spacing = dpi(-15),
+			spacing = dpi(-5),
 			spacing_widget = {
 				color = beautiful.fg_color,
 				shape = gears.shape.powerline,

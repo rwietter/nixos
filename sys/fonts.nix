@@ -9,13 +9,15 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       atkinson-hyperlegible
-      meslo-lgs-nf
-      (nerdfonts.override {
-        fonts = [
-          "FantasqueSansMono"
-          "IntelOneMono"
-        ];
-      })
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.agave
+      nerd-fonts.anonymice
+      nerd-fonts.arimo
+      nerd-fonts.geist-mono
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.monaspace
+      nerd-fonts.zed-mono
+      nerd-fonts.symbols-only
     ];
     fontconfig = {
       defaultFonts = {

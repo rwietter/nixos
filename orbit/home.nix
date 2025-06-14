@@ -35,7 +35,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 
   # Determines whether to check for release version mismatch between Home Manager and Nixpkgs. Recommended to enable.
   home.enableNixpkgsReleaseCheck = true;

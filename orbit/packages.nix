@@ -43,7 +43,7 @@ in
       stow # manage symlinks
       dconf # Needed when gtk is enabled
       insomnia # The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.
-      beekeeper-studio # Cross-platform SQL editor and database manager
+      # beekeeper-studio # Cross-platform SQL editor and database manager
       vscode # Visual Studio Code - Code editor
 
       # Command Line Utilities
@@ -75,7 +75,9 @@ in
       bc # arbitrary precision calculator
       just # A handy way to save and run project-specific commands
       reader # Lightweight tool offering better readability of web pages on the CLI
-
+      nitch # A system fetch utility that displays system information in a visually appealing way
+      xorg.xdpyinfo # X11 display information utility
+      
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
       obsidian # note taking

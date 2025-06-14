@@ -35,7 +35,7 @@ set --universal pure_check_for_new_release false
 alias ls "exa --icons -l -o --group-directories-first --color=always" # ls with icons
 
 function source_aliases
-    for file in (find ~/Voltage/repo/config/fish/functions -type f -name '*.fish')
+    for file in (find ~/.config/fish/functions -type f -name '*.fish')
         source $file
     end
 end
@@ -74,7 +74,7 @@ set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on ever
 # set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior
 
 # --- forgit
-source "$HOME"/Voltage/repo/config/fish/conf.d/forgit.plugin.fish
+source "$HOME"/.config/fish/conf.d/forgit.plugin.fish
 
 # --- Pisces
 # set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»' '+,+' '=,='
@@ -84,7 +84,7 @@ set -gx fzf_preview_dir_cmd eza --all --color=always --icons # preview directori
 
 # --------------- Abbreviations ----------------
 # -- gazorby/fish-abbreviation-tips
-source "$HOME"/Voltage/repo/config/fish/plugins/abbr_tips.fish
+source "$HOME"/.config/fish/plugins/abbr_tips.fish
 
 function abbr_update_keys_and_values
      __abbr_tips_init

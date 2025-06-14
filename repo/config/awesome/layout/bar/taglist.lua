@@ -47,7 +47,7 @@ local get_taglist = function(s)
 		filter = awful.widget.taglist.filter.all,
 		style = {
 			shape = small_rounded_border_shape,
-			spacing = dpi(12),
+			spacing = dpi(10),
 			border_width = dpi(0),
 			widget = wibox.container.background,
 			bg = beautiful.bg_color,
@@ -70,7 +70,7 @@ local get_taglist = function(s)
 		},
 		layout = {
 			spacing = dpi(10),
-			layout = wibox.layout.fixed.vertical -- wibox.layout.fixed.horizontal
+			layout = wibox.layout.fixed.vertical, -- wibox.layout.fixed.horizontal
 		},
 		widget_template = {
 			{
@@ -80,19 +80,21 @@ local get_taglist = function(s)
 							id = "icon_role",
 							widget = wibox.widget.imagebox,
 						},
-						margins = dpi(12),
+						margins = dpi(0),
 						widget = wibox.container.margin,
 					},
 					{
 						id = "text_role",
 						widget = wibox.widget.textbox,
 					},
-					spacing = dpi(8),
+					spacing = dpi(0),
 					layout = wibox.layout.fixed.vertical, -- wibox.layout.fixed.horizontal,
 				},
-				left = dpi(5),
-				right = dpi(5),
-				widget = wibox.container.background,
+				left = dpi(10),
+				right = dpi(10),
+				top = dpi(5),
+				bottom = dpi(5),
+				widget = wibox.container.margin,
 			},
 			id = "background_role",
 			bg = beautiful.bg_color,
@@ -140,7 +142,7 @@ local get_taglist = function(s)
 		buttons = taglist_buttons
 	}
 
-	return wibox.container.margin(the_taglist, dpi(0), dpi(0), dpi(5), dpi(5))
+	return wibox.container.margin(the_taglist, dpi(0), dpi(0), dpi(0), dpi(0))
 end
 
 

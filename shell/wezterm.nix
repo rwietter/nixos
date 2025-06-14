@@ -10,7 +10,7 @@ let
 in
 # Use lastest version; fixed textures issue
 # nix profile install 'github:wez/wezterm/main?dir=nix'
-lib.mkIf (vars.os.term == "wezterm") {
+ {
   programs.wezterm = {
     enable = false; # [BUG]: textures broken
   };

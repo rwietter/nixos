@@ -53,18 +53,34 @@ lib.mkIf (vars.os.shell == "fish") {
 
   home.packages = basePackages ++ promptConfig.packages;
 
-  # xdg.configFile = lib.mkForce {
-  #   "fish/config.fish" = {
-  #     text = ''
-  #       ${lib.fileContents ../repo/config/fish/config.fish}
+  xdg.configFile = lib.mkForce {
+    "fish" = {
+      source = ../repo/config/fish;
+      recursive = true;
+      force = true;
+    };
+  };
+  # home.activation = {
+  #   installFisherPluginManager = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  #     echo "Running post-installation script for Fish plugins..."
 
-  #       # Prompt
-  #       ${promptConfig.init}
-  #     '';
-  #   };
-  #   "fish/functions" = {
-  #     source = ../repo/config/fish/functions;
-  #     recursive = true;
-  #   };
+  #     echo "Installing Fisher plugin manager..."
+  #     # Baixa o script de instalação do Fisher para um arquivo temporário
+  #     # Usamos pkgs.coreutils para mktemp e rm para garantir que estejam disponíveis
+  #     FISHER_INSTALLER=$(${pkgs.coreutils}/bin/mktemp)
+  #     ${pkgs.curl}/bin/curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish > "$FISHER_INSTALLER"
+
+  #     # Executa o script de instalação usando fish, e em seguida já instala o plugin do fisher.
+  #     # O comando 'source' precisa ser executado dentro de um shell fish.
+  #     # Encadeamos o comando 'fisher install' para garantir que ele rode logo após Fisher ser carregado.
+  #     ${pkgs.fish}/bin/fish -c "source \"$FISHER_INSTALLER\" && fisher install jorgebucaran/fisher" || {
+  #       echo "Error installing Fisher or its self-plugin. Check logs." >&2
+  #       ${pkgs.coreutils}/bin/rm -f "$FISHER_INSTALLER"
+  #       exit 1
+  #     }
+  #     ${pkgs.coreutils}/bin/rm -f "$FISHER_INSTALLER"
+  #     echo "Fisher installed successfully."
+  #     echo "Fish plugin setup complete."
+  #   '';
   # };
 }

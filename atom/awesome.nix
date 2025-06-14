@@ -7,12 +7,12 @@
 
 lib.mkIf (vars.os.desktop == "awesome") {
   xdg.configFile = lib.mkForce {
-    # "awesome" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink ../repo/config/awesome;
-    #   recursive = true;
-    #   force = true;
-    # };
-    "awesome/theme/colors/dark.lua" = {
+    "awesome" = {
+      source = ../repo/config/awesome;
+      recursive = true;
+      force = true;
+    };
+    "awesome/theme/colors/nixos-generated.lua" = {
       force = true;
       text = ''
         local colors = {}
@@ -48,10 +48,6 @@ lib.mkIf (vars.os.desktop == "awesome") {
 
         return colors
       '';
-      # Error, because I installed awesome via tarball and not via home-manager
-      # onChange = ''
-      #   awesome-client 'awesome.restart()'
-      # '';
     };
   };
 }

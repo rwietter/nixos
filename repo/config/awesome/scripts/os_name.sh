@@ -1,4 +1,2 @@
-#!/bin/bash
-
-os_name="$(cat /etc/os-release | awk 'NR==1' | sed 's/"/\n/g' | awk 'NR==2')"
+os_name="$(cat /etc/os-release | awk 'NR==13' | awk -F '=' '{print $2}')"
 echo $os_name

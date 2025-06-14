@@ -40,7 +40,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -86,6 +86,7 @@
   environment.systemPackages = with pkgs; [
     wget
     home-manager
+    wezterm
 
     # Xorg
     # xorg.xdpyinfo
@@ -114,7 +115,7 @@
   programs.firefox.enable = false; # Firefox
   programs.fish.enable = true; # Fish shell
   services.blueman.enable = true; # Bluetooth manager
-  services.yarr.enable = true; # Yet Another RSS Reader (YARR)
+  services.rss.enable = false; # Yet Another RSS Reader (YARR)
   programs.niri.enable = true; # Niri
 
   # List services that you want to enable:

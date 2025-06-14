@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-
 # [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
 # dir="${XDG_PICTURES_DIR:-${HOME}/img}"
-dir="${HOME}/Images/Walls/"
+dir="${HOME}/Imagens/Wallpapers/"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
-default="$dir/8579cdf9-c136-45e6-8a7e-dc61bced0d35.jpg"
-ultima="/home/rwietter/Images/Walls/clay-banks-u27Rrbs9Dwc-unsplash.jpg"
+default="$dir/Know yourself 4k.png"
+ultima="/home/rwietter/Imagens/Wallpapers/wallhaven-vq7v78_1366x768.png"
 modo="--bg-fill"
 indice=0
 i=0
@@ -15,17 +13,17 @@ y=$(xdpyinfo | grep dimensions | awk '{print $2}' | awk -F'x' '{print $2}')
 
 ajustar() {
 	if [ -f "$1" ]; then
-		# sed -i "s|^ultima=.*|ultima=\"${1}\"|g" $0
+		sed -i "s|^ultima=.*|ultima=\"${1}\"|g" $0
 		feh $modo "$1" 2>&1
-		# echo "$1" > ~/Images/Walls/$(basename $1)
+		# echo "$1" > ~/Imagens/Wallpapers/$(basename $1)
 	fi
 }
 
-# if [ "$2" ]; then
-# 	[ -d $2 ] && dir=$2
-# else
-# 	[ ! -d $dir ] && mkdir -p $dir
-# fi
+if [ "$2" ]; then
+	[ -d $2 ] && dir=$2
+else
+	[ ! -d $dir ] && mkdir -p $dir
+fi
 
 # [ ! -d $unsplash_dir ] && mkdir -p $unsplash_dir
 # [ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
@@ -37,6 +35,9 @@ done < <(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg
 
 cont=${#imagens[@]}
 total=$(($cont-1))
+
+echo "Total de imagens: $total"
+echo "Contagem: $cont"
 
 if [ $total -gt 0 ]; then
 	for i in "${!imagens[@]}"; do
@@ -51,17 +52,6 @@ fi
 
 if [ ! $1 ]; then
 	img=${imagens[$RANDOM % ${#imagens[@]} ]}
-elif [ "$1" == "d" ]; then
-	img="$unsplash_dir/unsplash-$$.jpg"
-	curl -L -s "https://unsplash.it/${x}/${y}?random" > $img
-	notify-send "Sucesso" "Imagem <b>$img</b> baixada."
-elif [ "$1" == "dd" ]; then
-	apagar=$(echo -e "Sim\nNão" | rofi -p "Apagar $(find ~/Imagens/unsplash -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) | sort -n)?" -dmenu -bw 0 -lines 2 -width 400 -separator-style none -location 0 -hide-scrollbar -padding 5)
-	if [ "$apagar" == "Sim" ]; then
-		rm $(find ~/Imagens/unsplash -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) | sort -n)
-		notify-send "Sucesso" "Imagem <b>$(find ~/Imagens/unsplash -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) | sort -n)</b> apagada."
-		hsetroot -solid "#2e3440"
-	fi
 elif [ "$1" == "a" ]; then
 	if [ $indice -gt 0 ]; then
 		((indice--))
@@ -78,10 +68,10 @@ elif [ "$1" == "p" ]; then
 	echo ${imagens[$indice]} $indice
 	img=${imagens[$indice]}
 elif [ "$1" == "r" ]; then
-	if [ ! -f $HOME/Images/Walls ] || [ ! -f $(cat $HOME/Images/Walls) ]; then
-		echo $default > $HOME/Images/Walls
+	if [ ! -f $HOME/Imagens/Wallpapers ] || [ ! -f $(cat $HOME/Imagens/Wallpapers) ]; then
+		echo $default > $HOME/Imagens/Wallpapers
 	fi
-	img=$(cat $HOME/Images/Walls)
+	img=$(cat $HOME/Imagens/Wallpapers)
 fi
 
 ajustar "$img"

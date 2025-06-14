@@ -74,7 +74,7 @@ awful.keyboard.append_global_keybindings({
 		group = "launcher",
 	}),
 	awful.key({ modkey }, "w", function()
-		awful.spawn(home_var .. "/.config/awesome/scripts/wallpaper p", {
+		awful.spawn(home_var .. "/.config/awesome/scripts/wallpaper a", {
 			args = { "x" },
 		}, false)
 	end, {

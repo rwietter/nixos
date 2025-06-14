@@ -33,7 +33,6 @@ mkIf (vars.os.desktop == "awesome") {
       luarocks
     ];
 
-    # Não funciona essa droga
     sessionVariables = {
       LUA_PATH = "${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?.lua;${pkgs.luaPackages.luarocks}/share/lua/${pkgs.lua.luaversion}/?/init.lua";
       LUA_CPATH = "${pkgs.luaPackages.luarocks}/lib/lua/${pkgs.lua.luaversion}/?.so";
@@ -41,7 +40,6 @@ mkIf (vars.os.desktop == "awesome") {
     };
   };
 
-  # Não funciona essa droga
   services.xserver.displayManager.sessionCommands = ''
     export PATH=${pkgs.luarocks}/bin:$PATH
   '';

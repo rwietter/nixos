@@ -22,7 +22,7 @@ let
 in
 {
   options = {
-    services.yarr.enable = lib.mkOption {
+    services.rss.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable Yarr";
