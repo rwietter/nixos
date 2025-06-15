@@ -29,7 +29,7 @@ in
     };
   };
 
-  config = lib.mkIf config.services.yarr.enable {
+  config = lib.mkIf config.services.rss.enable {
     systemd.services.yarr = {
       description = "Yarr";
       wantedBy = [ "multi-user.target" ];

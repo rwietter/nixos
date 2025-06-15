@@ -167,15 +167,15 @@
   gtk = {
     dark = {
       theme = {
-        name = "Tokyo Night";
-        package = "tokyonight-gtk-theme";
+        name = "Colloid";
+        package = "colloid-gtk-theme";
       };
       iconTheme = {
-        name = "Reversal Icons";
+        name = "Reversal";
         package = "reversal-icon-theme";
       };
       cursor = {
-        name = "Nordzy Cursor";
+        name = "Nordzy";
         package = "nordzy-cursor-theme";
       };
     };
@@ -185,11 +185,11 @@
         package = "rose-pine-gtk-theme";
       };
       iconTheme = {
-        name = "Rose Pine Icons";
+        name = "Rose Pine";
         package = "rose-pine-icon-theme";
       };
       cursor = {
-        name = "Nordzy Cursor";
+        name = "Nordzy";
         package = "nordzy-cursor-theme";
       };
     };

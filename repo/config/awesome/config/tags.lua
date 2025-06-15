@@ -14,42 +14,41 @@ local mstab = bling.layout.mstab
 local equal = bling.layout.equalarea
 local deck = bling.layout.deck
 
+local tile = awful.layout.suit.tile -- default tiling layout, where main window is on the left and all other windows are on the right
+local tilebottom = awful.layout.suit.tile.bottom -- similar to tile, but window are stacked horizontally at the bottom of the screen
+local titleFloating = awful.layout.suit.floating -- floating layout, where windows can be moved and resized freely
+local fair = awful.layout.suit.fair -- fair layout, where windows are arranged in a fair manner
+local spiral = awful.layout.suit.spiral -- spiral layout, where windows are arranged in a spiral pattern
+local horizontal = awful.layout.suit.fair.horizontal -- horizontal fair layout, where windows are arranged in a fair manner horizontally
+local vertical = awful.layout.suit.fair.vertical -- vertical fair layout, where windows are arranged in a fair manner vertically
+
 -- layout machi  
 lmachi.editor.nested_layouts = {
-	[""] = awful.layout.suit.floating,
-	[""] = awful.layout.suit.spiral,
-	[""] = deck,
-	[""] = awful.layout.suit.fair,
-	[""] = awful.layout.suit.fair.horizontal,
-	[""] = awful.layout.suit.fair.vertical,
+	[""] = tile,
+	[""] = vertical,
+	[""] = horizontal,
+	[""] = fair,
+	[""] = spiral,
+	[""] = deck,
 }
 
 -- names/numbers of layouts
 local names = { "", "", "", "", "", "" }
-local l = awful.layout.suit
 
 -- Configurations
 -- **************
-
--- default tags
--- tag.connect_signal(
--- 	"request::default_layouts",
--- 	function()
--- 		awful.layout.append_default_layouts({ l.tile, l.floating, lmachi.default_layout, equal, mstab, deck })
--- 	end
--- )
 
 tag.connect_signal(
 	"request::default_layouts",
 	function()
 		awful.layout.append_default_layouts({
-			l.tile, -- default (vertical)
-			l.tile.bottom, -- stack (horizontal)
-			l.floating, -- floating layout
+			tile, -- default (vertical)
+			tilebottom, -- stack (horizontal)
+			titleFloating, -- floating layout
 			lmachi.default_layout, -- layout machi
 			equal, -- layout equalarea (bling)
-			mstab, -- layout mstab (bling)
-			deck -- layout deck (bling)
+			mstab, -- layout mstab (bling) like a tabbed browser
+			deck -- layout deck (bling) like a deck of cards
 		})
 	end
 )
@@ -65,6 +64,6 @@ screen.connect_signal(
 			bottom = 0
 		}
 		-- awful.tag(names, s, awful.layout.layouts[1])
-		awful.tag(names, s, l.tile.bottom) -- layout padrão horizontal
+		awful.tag(names, s, tile) -- layout padrão horizontal
 	end
 )

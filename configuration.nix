@@ -115,7 +115,7 @@
   programs.firefox.enable = false; # Firefox
   programs.fish.enable = true; # Fish shell
   services.blueman.enable = true; # Bluetooth manager
-  services.rss.enable = false; # Yet Another RSS Reader (YARR)
+  services.rss.enable = true; # Yet Another RSS Reader (YARR)
   programs.niri.enable = true; # Niri
 
   # List services that you want to enable:

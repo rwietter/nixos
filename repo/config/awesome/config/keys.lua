@@ -314,7 +314,7 @@ awful.keyboard.append_global_keybindings({
 		description = "select previous",
 		group = "layout",
 	}), -- layout machi
-	awful.key({ modkey }, ".", function()
+	awful.key({ modkey }, "g", function()
 		lmachi.default_editor.start_interactive()
 	end, {
 		description = "edit current layout",

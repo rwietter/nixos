@@ -48,6 +48,7 @@ with lib;
         gtk-toolbar-style = GTK_TOOLBAR_BOTH_HORIZ
         gtk-toolbar-icon-size = GTK_ICON_SIZE_LARGE_TOOLBAR
         gtk-button-images = 1
+        gtk-xft-dpi = 71680
         gtk-menu-images = 1
         gtk-enable-event-sounds = 1
         gtk-xft-antialias = 1
@@ -82,13 +83,37 @@ with lib;
     };
   };
 
-  home.file.".profile".text = ''
-    ${fileContents ../repo/.profile}
+  # Para GNOME/GTK-based DEs que usam gsettings
+  dconf.settings = lib.mkForce {
+    "org/gnome/desktop/interface" = {
+      gtk-theme = theme.gtk."${vars.appearance.theme}".theme.name;
+      icon-theme = theme.gtk."${vars.appearance.theme}".iconTheme.name;
+      cursor-theme = theme.gtk."${vars.appearance.theme}".cursor.name;
+      font-name = "${vars.os.font.sans} 12";
+      monospace-font-name = "${vars.os.font.mono} 12";
+      color-scheme = if vars.appearance.theme == "dark" then "prefer-dark" else "default";
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      # Para o tema do Window Manager (border, title bar)
+      theme = theme.gtk."${vars.appearance.theme}".theme.name;
+    };
+  };
 
-    export GTK_THEME="${theme.gtk."${vars.appearance.theme}".theme.name}"
-    export GTK_ICON_THEME="${theme.gtk."${vars.appearance.theme}".iconTheme.name}"
-    export GTK_FONT_NAME="${vars.os.font.sans} 12"
-    export GTK_CURSOR_THEME="${theme.gtk."${vars.appearance.theme}".cursor.name}"
-    export GTK_APPLICATION_PREFER_DARK_THEME="${if vars.appearance.theme == "dark" then "1" else "0"}"
-  '';
+  home.sessionVariables = {
+    GTK_THEME = theme.gtk."${vars.appearance.theme}".theme.name;
+    GTK_ICON_THEME = theme.gtk."${vars.appearance.theme}".iconTheme.name;
+    GTK_FONT_NAME = "${vars.os.font.sans} 12";
+    GTK_CURSOR_THEME = theme.gtk."${vars.appearance.theme}".cursor.name;
+    GTK_APPLICATION_PREFER_DARK_THEME = if vars.appearance.theme == "dark" then "1" else "0";
+  };
+
+  # home.file.".profile".text = ''
+  #   ${fileContents ../repo/.profile}
+
+  #   export GTK_THEME="${theme.gtk."${vars.appearance.theme}".theme.name}"
+  #   export GTK_ICON_THEME="${theme.gtk."${vars.appearance.theme}".iconTheme.name}"
+  #   export GTK_FONT_NAME="${vars.os.font.sans} 12"
+  #   export GTK_CURSOR_THEME="${theme.gtk."${vars.appearance.theme}".cursor.name}"
+  #   export GTK_APPLICATION_PREFER_DARK_THEME="${if vars.appearance.theme == "dark" then "1" else "0"}"
+  # '';
 }
