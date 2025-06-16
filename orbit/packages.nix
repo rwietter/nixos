@@ -134,7 +134,7 @@ in
       fuzzel # Wayland-native application launcher, similar to rofi’s drun mode
 
       # Scripts
-      (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
+      # (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
 
       # lazyorg
     ]

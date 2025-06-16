@@ -167,8 +167,8 @@
   gtk = {
     dark = {
       theme = {
-        name = "Colloid";
-        package = "colloid-gtk-theme";
+        name = "Omni";
+        package = "omni-gtk-theme"; # colloid-gtk-theme
       };
       iconTheme = {
         name = "Reversal";

@@ -47,5 +47,9 @@ with mylib;
       { colorscheme = "hypfrost"; }
       (import ./hypfrost.nix)
     ]
+    [
+      { colorscheme = "eink"; }
+      (import ./eink.nix)
+    ]
   ];
 }

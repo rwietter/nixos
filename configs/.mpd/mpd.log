@@ -2358,3 +2358,26 @@ Note: Hit end of (available) data during resync.
 2025-06-15T23:44:54 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Main Title Theme - Westworld.mp3"
 2025-06-15T23:48:39 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Memories.mp3"
 2025-06-15T23:51:48 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Pariah.mp3"
+2025-06-16T12:48:53 config: option "path" on line 26 was not recognized
+2025-06-16T12:49:02 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Armada.mp3"
+2025-06-16T12:49:02 config: option "path" on line 26 was not recognized
+2025-06-16T12:49:26 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Arrakeen.mp3"
+2025-06-16T12:49:27 config: option "path" on line 26 was not recognized
+2025-06-16T12:51:44 alsa_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-16T12:51:44 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Arrakeen.mp3"
+2025-06-16T12:55:38 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Bene Gesserit.mp3"
+2025-06-16T12:58:07 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Blood for Blood.mp3"
+2025-06-16T13:02:12 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Burning Palms.mp3"
+2025-06-16T13:05:20 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Dream of Arrakis.mp3"
+2025-06-16T13:07:21 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Gom Jabbar.mp3"
+2025-06-16T13:12:22 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Herald of the Change.mp3"
+2025-06-16T13:16:42 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Holy War.mp3"
+2025-06-16T13:18:38 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Leaving Caladan.mp3"
+2025-06-16T13:22:30 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] My Road Leads into the Desert.mp3"
+2025-06-16T13:24:25 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Ornithopter.mp3"
+2025-06-16T13:27:55 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Premonition.mp3"
+2025-06-16T13:33:10 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Ripples in the Sand.mp3"
+2025-06-16T13:35:00 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Sanctuary.mp3"
+2025-06-16T13:37:35 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Sandstorm.mp3"
+2025-06-16T13:43:06 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Stillsuits.mp3"
+2025-06-16T13:44:05 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Stranded.mp3"

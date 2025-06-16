@@ -164,8 +164,8 @@
   gtk = {
     dark = {
       theme = {
-        name = "Layan-Dark";
-        package = "layan-gtk-theme";
+        name = "Lavanda";
+        package = "lavanda-gtk-theme";
       };
       iconTheme = {
         name = "BeautySolar"; # Qogir-dark
@@ -178,8 +178,8 @@
     };
     light = {
       theme = {
-        name = "Layan-Light";
-        package = "layan-gtk-theme";
+        name = "Lavanda";
+        package = "lavanda-gtk-theme";
       };
       iconTheme = {
         name = "BeautySolar"; # Qogir-light
