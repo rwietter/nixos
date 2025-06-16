@@ -147,32 +147,6 @@ awful.screen.connect_for_each_screen(
 			}
 		)
 
-		-- Dashboard
-		local dashboard =
-			wibox.widget(
-			{
-				markup = "D",
-				font = beautiful.icon_var .. "17",
-				valign = "center",
-				align = "center",
-				widget = wibox.widget.textbox
-			}
-		)
-
-		dashboard:buttons(
-			{
-				gears.table.join(
-					awful.button(
-						{},
-						1,
-						function()
-							dash_toggle(s)
-						end
-					)
-				)
-			}
-		)
-
 		--------------------
 		-- battery widget
 		local bat_icon =
@@ -333,15 +307,15 @@ awful.screen.connect_for_each_screen(
 		awful.placement.top(s.wibar_wid, { margins = dpi(0) })
 		s.wibar_wid:struts({ top = s.wibar_wid.height + beautiful.useless_gap - 4, left = dpi(10), right = 0, bottom = 0 })
 
+		beautiful.systray_icon_spacing = dpi(10)
 		local systray =
 			wibox.widget {
 			{
 				widget = wibox.widget.systray,
-				systray_icon_spacing = dpi(5),
 				bg_systray = beautiful.bg_4,
-				base_size = 15
+				base_size = dpi(16),
 			},
-			top = dpi(10),
+			top = dpi(12),
 			widget = wibox.container.margin
 		}
 
@@ -391,20 +365,8 @@ awful.screen.connect_for_each_screen(
 							margins = {top = dpi(0), bottom = dpi(0), left = dpi(0), right = dpi(0)},
 							layout = wibox.layout.fixed.horizontal
 						},
-						-- {
-						-- 	systray,
-						-- 	margins = { top = dpi(0), bottom = dpi(0), left = dpi(40), right = dpi(0) },
-						-- 	layout = wibox.layout.fixed.horizontal,
-						-- 	spacing = dpi(-10),
-						-- 	widget = wibox.container.margin,
-						-- },
 						{
 							panel_system,
-							margins = {top = dpi(0), bottom = dpi(0)},
-							layout = wibox.layout.fixed.horizontal
-						},
-						{
-							dashboard,
 							margins = {top = dpi(0), bottom = dpi(0)},
 							layout = wibox.layout.fixed.horizontal
 						},
@@ -424,6 +386,13 @@ awful.screen.connect_for_each_screen(
 							layout = wibox.layout.fixed.horizontal,
 							spacing = dpi(15)
 						},
+						-- {
+						-- 	systray,
+						-- 	margins = { top = dpi(0), bottom = dpi(0), left = dpi(40), right = dpi(0) },
+						-- 	layout = wibox.layout.fixed.horizontal,
+						-- 	spacing = dpi(0),
+						-- 	widget = wibox.container.margin,
+						-- },
 						layout = wibox.layout.fixed.horizontal,
 						spacing = dpi(20)
 					},

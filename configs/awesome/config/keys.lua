@@ -102,6 +102,14 @@ awful.keyboard.append_global_keybindings({
 		description = "screenshot",
 		group = "launcher",
 	}),
+
+	awful.key({ modkey, alt }, "d", function()
+		dash_toggle()
+	end, {
+		description = "screenshot",
+		group = "launcher",
+	}),
+	
 })
 
 -- control/media
