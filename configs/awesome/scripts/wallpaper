@@ -4,7 +4,7 @@
 dir="${HOME}/Imagens/Wallpapers/"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/Know yourself 4k.png"
-ultima="/home/rwietter/Imagens/Wallpapers/wallhaven-vq7v78_1366x768.png"
+ultima="/home/rwietter/Imagens/Wallpapers/eye.png"
 modo="--bg-fill"
 indice=0
 i=0

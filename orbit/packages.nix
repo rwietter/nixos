@@ -79,13 +79,13 @@ in
       xorg.xdpyinfo # X11 display information utility
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
       rmpc # Modern and configurable terminal based Music Player Daemon client.
+     
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
       obsidian # note taking
       chromium # Web Browser
       espanso # text expander
       anki # Spaced repetition flashcard program
-      spacedrive # Cross-platform file manager
       # libreoffice-qt
 
       # System Monitoring & Information
@@ -114,7 +114,7 @@ in
       clapper # GNOME media player built using GTK4 toolkit and powered by GStreamer with OpenGL rendering
       mpv # General-purpose media player, fork of MPlayer and mplayer2
       stremio # p2p video streaming
-      spotify # Play music from the Spotify music service
+      # spotify # Play music from the Spotify music service
 
       # File Management & Browsers
       nautilus # file manager
@@ -130,8 +130,8 @@ in
       # powerline # status line
       gpick # color picker
       nix-output-monitor # enhanced logging for Nix
-      torrential # torrent client
-      fuzzel # Wayland-native application launcher, similar to rofi’s drun mode
+      # torrential # torrent client
+      # fuzzel # Wayland-native application launcher, similar to rofi’s drun mode
 
       # Scripts
       # (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))

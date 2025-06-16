@@ -1,6 +1,207 @@
 {
   scheme = {
     colors = {
+      primary = "#F5F2E9"; # Soft paper white with warm tint
+      bg = "#F5F2E9";
+      fg = "#333230"; # Very dark gray with slight warmth
+      black = "#333230";
+      red = "#695652"; # Extremely subtle reddish gray
+      green = "#5A6259"; # Extremely subtle greenish gray
+      yellow = "#6B6557"; # Extremely subtle sepia/yellowish gray
+      blue = "#565A61"; # Extremely subtle bluish gray
+      magenta = "#615A61"; # Extremely subtle purplish gray
+      cyan = "#596161"; # Extremely subtle teal gray
+      white = "#F5F2E9"; # Paper white
+    };
+    variants = {
+      dark = {
+        # Dark mode is inverted - dark paper with light text
+        bg = {
+          root = "#2A2A2A"; # Dark paper
+          shift = "#333333";
+          echo = "#3D3D3D";
+          fade = "#474747";
+        };
+
+        fg = {
+          root = "#F8F6F1"; # Light text on dark paper
+          shift = "#E8E6E1";
+          echo = "#D8D6D1";
+          fade = "#C8C6C1";
+        };
+
+        red = {
+          root = "#8A7D7A"; # Very subtle red
+          shift = "#827573";
+          echo = "#7A6E6C";
+          fade = "#726765";
+        };
+
+        black = {
+          root = "#2D2C2A";
+          shift = "#333231";
+          echo = "#3A3938";
+          fade = "#41403F";
+        };
+
+        green = {
+          root = "#7D857C"; # Very subtle green
+          shift = "#757D75";
+          echo = "#6E766E";
+          fade = "#676F67";
+        };
+
+        yellow = {
+          root = "#8A8578"; # Very subtle yellow/sepia
+          shift = "#827D71";
+          echo = "#7A756A";
+          fade = "#726D63";
+        };
+
+        blue = {
+          root = "#7A7F85"; # Very subtle blue
+          shift = "#73777D";
+          echo = "#6C7075";
+          fade = "#65696E";
+        };
+
+        magenta = {
+          root = "#857D85"; # Very subtle purple
+          shift = "#7D757D";
+          echo = "#756E75";
+          fade = "#6D676D";
+        };
+
+        cyan = {
+          root = "#7D8585"; # Very subtle teal
+          shift = "#757D7D";
+          echo = "#6E7575";
+          fade = "#676D6D";
+        };
+
+        white = {
+          root = "#F5F2E9"; # Paper white
+          shift = "#E8E5DC";
+          echo = "#DBD8CF";
+          fade = "#CEC9C2";
+        };
+      };
+
+      light = {
+        # Light mode - paper with dark text (default e-ink look)
+        bg = {
+          root = "#F8F6F1"; # Paper white with slight cream tint
+          shift = "#F0EEE9"; # Slightly darker paper
+          echo = "#E8E6E1"; # More aged paper look
+          fade = "#E0DED9"; # Most aged paper look
+        };
+
+        fg = {
+          root = "#2A2A2A"; # Dark gray text
+          shift = "#333333";
+          echo = "#3D3D3D";
+          fade = "#474747";
+        };
+
+        red = {
+          root = "#695652"; # Extremely subtle reddish gray
+          shift = "#615250";
+          echo = "#594D4B";
+          fade = "#514846";
+        };
+
+        black = {
+          root = "#333230";
+          shift = "#3A3937";
+          echo = "#41403E";
+          fade = "#484745";
+        };
+
+        green = {
+          root = "#5A6259"; # Extremely subtle greenish gray
+          shift = "#545C54";
+          echo = "#4E564E";
+          fade = "#485048";
+        };
+
+        yellow = {
+          root = "#6B6557"; # Extremely subtle sepia/yellowish gray
+          shift = "#635E52";
+          echo = "#5B574C";
+          fade = "#535047";
+        };
+
+        blue = {
+          root = "#565A61"; # Extremely subtle bluish gray
+          shift = "#51555B";
+          echo = "#4B4F55";
+          fade = "#45494F";
+        };
+
+        magenta = {
+          root = "#615A61"; # Extremely subtle purplish gray
+          shift = "#5A555A";
+          echo = "#544F54";
+          fade = "#4E494E";
+        };
+
+        cyan = {
+          root = "#596161"; # Extremely subtle teal gray
+          shift = "#545B5B";
+          echo = "#4E5555";
+          fade = "#484F4F";
+        };
+
+        white = {
+          root = "#F5F2E9"; # Paper white
+          shift = "#E8E5DC";
+          echo = "#DBD8CF";
+          fade = "#CEC9C2";
+        };
+      };
+    };
+  };
+
+  # GTK theme and icon configurations
+  # Themes <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-gtk-theme>
+  # Icons <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-icon-theme>
+  # Cursors <https://search.nixos.org/packages?channel=unstable&from=0&size=200&sort=relevance&type=packages&query=-cursor-theme>
+  gtk = {
+    dark = {
+      theme = {
+        name = "Graphite";
+        package = "graphite-gtk-theme";
+      };
+      iconTheme = {
+        name = "Paper";
+        package = "paper-icon-theme";
+      };
+      cursor = {
+        name = "Vanilla-DMZ";
+        package = "vanilla-dmz";
+      };
+    };
+    light = {
+      theme = {
+        name = "Graphite";
+        package = "graphite-gtk-theme";
+      };
+      iconTheme = {
+        name = "Paper";
+        package = "paper-icon-theme";
+      };
+      cursor = {
+        name = "Vanilla-DMZ";
+        package = "vanilla-dmz";
+      };
+    };
+  };
+}
+
+/*
+{
+  scheme = {
+    colors = {
       primary = "#F8F6F1"; # Paper white with slight cream tint
       bg = "#F8F6F1";
       fg = "#2A2A2A"; # Dark gray, not pure black for less eye strain
@@ -197,3 +398,4 @@
     };
   };
 }
+*/
