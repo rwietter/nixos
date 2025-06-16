@@ -20,6 +20,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # Use the latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
@@ -33,8 +34,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # services.xserver.displayManager.defaultSession = "awesome";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -74,7 +73,7 @@
       "sudo"
     ];
     packages = with pkgs; [
-      awesome
+      # awesome
     ];
   };
 
@@ -92,8 +91,8 @@
     # xorg.xdpyinfo
 
     # Libs
-    # imlib2 # image loading and rendering library
-    # lua54Packages.luarocks
+    imlib2 # image loading and rendering library
+    lua54Packages.luarocks
   ];
 
   environment.sessionVariables = {

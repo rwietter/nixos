@@ -29,7 +29,7 @@
   devenv.enable = true; # Composable Developer Environments using Nix
   brave.enable = true; # A privacy-focused web browser
   nil.enable = true; # A Nix Language Server
-  playerctl.enable = false; # media player control
+  playerctl.enable = true; # media player control
   vscode.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
 

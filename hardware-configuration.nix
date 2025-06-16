@@ -30,8 +30,18 @@
     fsType = "ext4";
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D820-B7CB";
+#  fileSystems."/boot" = {
+#    device = "/dev/disk/by-uuid/D820-B7CB";
+#    fsType = "vfat";
+#    options = [
+#      "fmask=0077"
+#      "dmask=0077"
+#    ];
+#  };
+
+  # Show uuid with `blkid` command
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/E834-B967";
     fsType = "vfat";
     options = [
       "fmask=0077"

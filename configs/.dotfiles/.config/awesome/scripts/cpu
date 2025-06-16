@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Função para obter os valores de idle e total do /proc/stat
+get_cpu_stats() {
+  # Lê a primeira linha do /proc/stat
+  # Exemplo: cpu  user nice system idle iowait irq softirq steal guest guest_nice
+  # Queremos: user, nice, system, idle
+  read -r _ user nice system idle iowait irq softirq steal guest guest_nice <<< "$(head -n 1 /proc/stat)"
+
+  # Calcula o total como a soma de user, nice, system, idle
+  # Ignoramos iowait, irq, softirq, steal, guest, guest_nice para seguir a lógica do seu script Ruby
+  local current_total=$((user + nice + system + idle))
+  local current_idle=$idle
+
+  echo "$current_idle $current_total"
+}
+
+# Obtém os valores iniciais da CPU
+read -r prev_idle prev_total <<< "$(get_cpu_stats)"
+
+# Espera um curto período (0.5 segundos)
+sleep 0.5
+
+# Obtém os valores atuais da CPU
+read -r cur_idle cur_total <<< "$(get_cpu_stats)"
+
+# Calcula as diferenças
+# Diff_total: total de ticks de CPU no intervalo
+# Diff_idle: ticks de CPU ociosos no intervalo
+diff_total=$((cur_total - prev_total))
+diff_idle=$((cur_idle - prev_idle))
+
+# Calcula o uso da CPU em porcentagem
+# (total_trabalhado / total_de_ticks) * 100
+# total_trabalhado = diff_total - diff_idle
+if (( diff_total > 0 )); then
+  cpu_usage=$(( ( (diff_total - diff_idle) * 100 ) / diff_total ))
+else
+  cpu_usage=0 # Evita divisão por zero se não houver mudança nos ticks
+fi
+
+# Imprime o uso da CPU
+echo "$cpu_usage"

@@ -7,13 +7,12 @@
 
 lib.mkIf (vars.os.desktop == "awesome") {
   xdg.configFile = lib.mkForce {
-    "awesome" = {
-      source = ../repo/config/awesome;
-      recursive = true;
-      force = true;
-    };
+    # "awesome" = {
+    #   source = ../repo/config/awesome;
+    #   recursive = true;
+    #   force = true;
+    # };
     "awesome/theme/colors/nixos-generated.lua" = {
-      force = true;
       text = ''
         local colors = {}
 
@@ -48,6 +47,7 @@ lib.mkIf (vars.os.desktop == "awesome") {
 
         return colors
       '';
+      force = true;
     };
   };
 }

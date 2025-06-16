@@ -1,0 +1,517 @@
+info_begin
+format: 2
+mpd_version: 0.24.3
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumSort
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: TitleSort
+tag: Track
+tag: Name
+tag: Genre
+tag: Mood
+tag: Date
+tag: OriginalDate
+tag: Composer
+tag: ComposerSort
+tag: Performer
+tag: Conductor
+tag: Work
+tag: Movement
+tag: MovementNumber
+tag: ShowMovement
+tag: Ensemble
+tag: Location
+tag: Grouping
+tag: Disc
+tag: Label
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+tag: MUSICBRAINZ_RELEASETRACKID
+tag: MUSICBRAINZ_WORKID
+tag: MUSICBRAINZ_RELEASEGROUPID
+info_end
+directory: [SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)
+mtime: 1750037097
+begin: [SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)
+song_begin: [SPOTDOWNLOADER.COM] Armada.mp3
+Time: 309.40500000000003
+Artist: Hans Zimmer
+Title: Armada
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047086
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Arrakeen.mp3
+Time: 136.161
+Artist: Hans Zimmer
+Title: Arrakeen
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047030
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Bene Gesserit.mp3
+Time: 234.453
+Artist: Hans Zimmer
+Title: Bene Gesserit
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 48000:16:2
+mtime: 1750046954
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Blood for Blood.mp3
+Time: 149.42000000000002
+Artist: Hans Zimmer
+Title: Blood for Blood
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047118
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Burning Palms.mp3
+Time: 244.181
+Artist: Hans Zimmer
+Title: Burning Palms
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047100
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Dream of Arrakis.mp3
+Time: 188.731
+Artist: Hans Zimmer
+Title: Dream of Arrakis
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 48000:16:2
+mtime: 1750046930
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Gom Jabbar.mp3
+Time: 120.465
+Artist: Hans Zimmer
+Title: Gom Jabbar
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750046978
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Herald of the Change.mp3
+Time: 301.023
+Artist: Hans Zimmer
+Title: Herald of the Change
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750046944
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Holy War.mp3
+Time: 260.527
+Artist: Hans Zimmer
+Title: Holy War
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047154
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Leaving Caladan.mp3
+Time: 115.194
+Artist: Hans Zimmer
+Title: Leaving Caladan
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047008
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] My Road Leads into the Desert.mp3
+Time: 232.199
+Artist: Hans Zimmer
+Title: My Road Leads into the Desert
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047230
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Ornithopter.mp3
+Time: 115.008
+Artist: Hans Zimmer
+Title: Ornithopter
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047186
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Premonition.mp3
+Time: 210.094
+Artist: Hans Zimmer
+Title: Premonition
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047176
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Ripples in the Sand.mp3
+Time: 314.839
+Artist: Hans Zimmer
+Title: Ripples in the Sand
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047044
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Sanctuary.mp3
+Time: 109.992
+Artist: Hans Zimmer
+Title: Sanctuary
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047164
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Sandstorm.mp3
+Time: 155.155
+Artist: Hans Zimmer
+Title: Sandstorm
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047206
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Stillsuits.mp3
+Time: 331.046
+Artist: Hans Zimmer
+Title: Stillsuits
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047218
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Stranded.mp3
+Time: 58.909
+Artist: Hans Zimmer
+Title: Stranded
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047110
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] The Fall.mp3
+Time: 152.369
+Artist: Hans Zimmer
+Title: The Fall
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047130
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] The One.mp3
+Time: 150.651
+Artist: Hans Zimmer
+Title: The One
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750046992
+added: 1750038095
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Visions of Chani.mp3
+Time: 267.331
+Artist: Hans Zimmer
+Title: Visions of Chani
+Album: Dune (Original Motion Picture Soundtrack)
+Date: 2021
+Format: 44100:16:2
+mtime: 1750047056
+added: 1750038095
+song_end
+end: [SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)
+directory: [SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)
+mtime: 1750037101
+begin: [SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)
+song_begin: [SPOTDOWNLOADER.COM] A Forest.mp3
+Time: 168.935
+Artist: Ramin Djawadi
+Title: A Forest
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047086
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Back to Black.mp3
+Time: 118.212
+Artist: Ramin Djawadi
+Title: Back to Black
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047330
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Bicameral Mind.mp3
+Time: 265.729
+Artist: Ramin Djawadi
+Title: Bicameral Mind
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047508
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Black Hole Sun.mp3
+Time: 149.211
+Artist: Ramin Djawadi
+Title: Black Hole Sun
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750046956
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Do They Dream.mp3
+Time: 108.971
+Artist: Ramin Djawadi
+Title: Do They Dream
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047468
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Dr. Ford.mp3
+Time: 330.396
+Artist: Ramin Djawadi
+Title: Dr. Ford
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047064
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Fake Plastic Trees.mp3
+Time: 134.16400000000002
+Artist: Ramin Djawadi
+Title: Fake Plastic Trees
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047192
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] House of the Rising Sun.mp3
+Time: 84.59
+Artist: Ramin Djawadi
+Title: House of the Rising Sun
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047242
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Main Title Theme - Westworld.mp3
+Time: 102.121
+Artist: Ramin Djawadi
+Title: Main Title Theme - Westworld
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750046918
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Memories.mp3
+Time: 224.978
+Artist: Ramin Djawadi
+Title: Memories
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047366
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] MIB.mp3
+Time: 186.22400000000002
+Artist: Ramin Djawadi
+Title: MIB
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047216
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Motion Picture Soundtrack.mp3
+Time: 167.392
+Artist: Vitamin String Quartet
+Title: Motion Picture Soundtrack
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047126
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Nitro Heist.mp3
+Time: 212.183
+Artist: Ramin Djawadi
+Title: Nitro Heist
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047114
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] No Surprises - Stride Piano.mp3
+Time: 157.15200000000002
+Artist: Ramin Djawadi
+Title: No Surprises - Stride Piano
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047392
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] No Surprises.mp3
+Time: 243.298
+Artist: Ramin Djawadi
+Title: No Surprises
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047052
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Online.mp3
+Time: 259.274
+Artist: Ramin Djawadi
+Title: Online
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047032
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Paint It, Black.mp3
+Time: 345.396
+Artist: Ramin Djawadi
+Title: Paint It, Black
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750046980
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Pariah.mp3
+Time: 188.894
+Artist: Ramin Djawadi
+Title: Pariah
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047176
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Reverie.mp3
+Time: 102.098
+Artist: Ramin Djawadi
+Title: Reverie
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047542
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Someday.mp3
+Time: 220.427
+Artist: Ramin Djawadi
+Title: Someday
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047430
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Sweetwater Stride.mp3
+Time: 41.656
+Artist: Ramin Djawadi
+Title: Sweetwater Stride
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047454
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Sweetwater.mp3
+Time: 174.172
+Artist: Ramin Djawadi
+Title: Sweetwater
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750046936
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] The Stray.mp3
+Time: 138.41400000000002
+Artist: Ramin Djawadi
+Title: The Stray
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047490
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] This World.mp3
+Time: 149.42000000000002
+Artist: Ramin Djawadi
+Title: This World
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750046998
+added: 1750038102
+song_end
+song_begin: [SPOTDOWNLOADER.COM] Trompe l'oeil.mp3
+Time: 304.645
+Artist: Ramin Djawadi
+Title: Trompe l'oeil
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047262
+added: 1750038101
+song_end
+song_begin: [SPOTDOWNLOADER.COM] What Does This Mean.mp3
+Time: 184.389
+Artist: Ramin Djawadi
+Title: What Does This Mean
+Album: Westworld: Season 1 (Music from the HBO Series)
+Date: 2016
+Format: 44100:16:2
+mtime: 1750047280
+added: 1750038102
+song_end
+end: [SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)
