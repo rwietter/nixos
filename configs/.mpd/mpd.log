@@ -2412,3 +2412,15 @@ Note: Hit end of (available) data during resync.
 2025-06-16T15:04:44 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] The One.mp3"
 2025-06-16T15:09:11 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Visions of Chani.mp3"
 2025-06-16T15:12:00 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] A Forest.mp3"
+2025-06-16T15:16:25 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Bicameral Mind.mp3"
+2025-06-16T15:21:56 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Dr. Ford.mp3"
+2025-06-16T15:25:02 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] MIB.mp3"
+2025-06-16T19:13:52 alsa_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-16T19:13:52 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Main Title Theme - Westworld.mp3"
+2025-06-16T19:17:37 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Memories.mp3"
+2025-06-16T19:20:46 alsa_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-16T19:20:46 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Pariah.mp3"
+2025-06-16T19:24:26 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Someday.mp3"
+2025-06-16T19:27:20 alsa_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-16T19:27:20 player: played "[SPOTDOWNLOADER.COM] Westworld_ Season 1 (Music from the HBO Series)/[SPOTDOWNLOADER.COM] Sweetwater.mp3"
+2025-06-16T19:32:30 player: played "[SPOTDOWNLOADER.COM] Dune (Original Motion Picture Soundtrack)/[SPOTDOWNLOADER.COM] Armada.mp3"

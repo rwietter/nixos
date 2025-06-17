@@ -2,9 +2,9 @@ sw_volume: 31
 audio_device_state:1:ncmpcpp
 audio_device_state:1:my_fifo
 audio_device_state:1:My HTTP Stream
-state: play
-current: 0
-time: 120.047
+state: pause
+current: 10
+time: 44.349000000000004
 random: 0
 repeat: 1
 single: 0

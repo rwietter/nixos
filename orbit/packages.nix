@@ -86,6 +86,7 @@ in
       chromium # Web Browser
       espanso # text expander
       anki # Spaced repetition flashcard program
+      gnome-pomodoro # Gnome Pomodoro timer
       # libreoffice-qt
 
       # System Monitoring & Information

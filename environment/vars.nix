@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "eink"; # Or "amarena", "eink", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral",  "lovelace", "manta", "skyall", "aphelion", "hypfrost",
-    theme = "light"; # Or "light", "dark", "dim".
+    colorscheme = "hypfrost"; # Or "amarena", "eink", "catppuccin-macchiato", "moonstars", "everforest", "umbrosus", "ephemeral",  "lovelace", "manta", "skyall", "aphelion", "hypfrost",
+    theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {
     username = "rwietter";
