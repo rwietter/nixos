@@ -60,14 +60,14 @@ awful.keyboard.append_global_keybindings({
 	}),
 
 	awful.key({ modkey }, "d", function()
-		awful.spawn(misc.rofiCommand)
+		awful.spawn(user_likes.drun)
 	end, {
 		description = "open rofi",
 		group = "launcher",
 	}),
 
-	awful.key({ modkey, shift }, "d", function()
-		awful.spawn(misc.rofiWindow)
+	awful.key({ alt }, "d", function()
+		awful.spawn(user_likes.window)
 	end, {
 		description = "open rofi window",
 		group = "launcher",
@@ -97,7 +97,7 @@ awful.keyboard.append_global_keybindings({
 	}),
 
 	awful.key({ modkey }, "a", function()
-		awful.spawn(home_var .. "/.config/awesome/scripts/ss area", false)
+		awful.spawn(home_var .. "/.config/awesome/scripts/ss area", true)
 	end, {
 		description = "screenshot",
 		group = "launcher",

@@ -25,19 +25,19 @@ lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
           ## Display
           monitor = 0;
           follow = none;
-          width = 300;
+          width = 250;
           height = 350;
           offset = "10x40";
           origin = "top-right";
-          progress_bar = true;
+          progress_bar = false;
           indicate_hidden = no;
           shrink = 0;
-          transparency = 0;
+          transparency = 5;
           separator_height = 10;
           padding = 8;
           horizontal_padding = 8;
           frame_width = 1;
-          frame_color = "${theme.scheme.variants."${vars.appearance.theme}".fg.root}"; 
+          frame_color = "${theme.scheme.variants."${vars.appearance.theme}".fg.shift}"; 
           separator_color = "#00000000";
           sort = yes;
           idle_threshold = 120;
@@ -54,7 +54,7 @@ lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
           word_wrap = yes;
 
           ## Timeouts
-          show_age_threshold = 60;
+          show_age_threshold = -1;
           ellipsize = start;
 
           ## Notifications

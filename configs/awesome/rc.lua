@@ -11,6 +11,7 @@
 -- Disable notification module instead of dunst
 package.loaded["naughty.dbus"] = {}
 package.loaded["json"] = {}
+local gfs = require "gears".filesystem.get_configuration_dir()
 
 pcall(require, "luarocks.loader")
 
@@ -25,9 +26,11 @@ user_likes = {
 	editor   = "wezterm -e " .. "nvim",
 	code     = "code",
 	web      = "brave",
-	files    = "spacedrive",
+	files    = "nautilus",
 	ss       =
-	"maim -s -m 10 -f png -b 0 -u -o ~/Imagens/Prints/$(date +%d-%m-%y_%H:%M:%S).png | notify-send -i ~/.local/share/icons/customer-service.png -u normal -t 9000 'Screenshot taken and saved to ~/Imagens/Prints'",
+	"maim -s -m 10 -f png -b 0 -u -o ~/Imagens/Prints/$(date +%d-%m-%y_%H:%M:%S).png | notify-send -i ~/.local/share/icons/customer-service.png -u normal -t 1000 'Screenshot taken and saved to ~/Imagens/Prints'",
+	drun = "rofi -show drun -theme " .. gfs .. "/misc/rofi/theme.rasi",
+	window  = "rofi -show window -theme " .. gfs .. "/misc/rofi/window/window.rasi",
 
 	-- your profile
 	username = os.getenv("USER"),
