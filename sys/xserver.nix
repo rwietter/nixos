@@ -5,14 +5,12 @@
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
 
-  # Change DPI 
-  services.xserver.dpi = 70;
+  services.xserver.dpi = 65;
 
-  # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = false;
   services.xserver.desktopManager.xfce.enable = false;
 
-  services.xserver.displayManager.defaultSession = "hyprland";
+  services.xserver.displayManager.defaultSession = "none+awesome";
   services.displayManager.sddm.enable = lib.mkDefault true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -22,6 +20,10 @@
     konsole
     elisa
   ];
+
+  services.xserver.videoDrivers  = [ "ati_unfree" ];
+
+  # services.xserver.displayManager.sessionCommands = ''''
 
   # services.xserver.windowManager.session = [
   #   {
@@ -36,6 +38,7 @@
   # ];
 
   # Configure keymap in X11
+  services.xserver.layout = "br";
   services.xserver.xkb = {
     layout = "br";
     variant = "abnt2";
