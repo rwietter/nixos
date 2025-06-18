@@ -6,10 +6,8 @@
   pkgs,
   ...
 }:
-let
-  colorscheme = if vars.appearance.theme == "dark" then "lovelace" else "yousai";
-in
-{
+
+with lib; {
   options = {
     rofi.enable = lib.mkOption {
       type = lib.types.bool;
@@ -26,28 +24,18 @@ in
     };
 
     xdg.configFile = lib.mkForce {
-      "/awesome/misc/rofi/themes/colors.rasi" = {
-        force = true;
+      "/rofi/window/colors.rasi" = {
         text = ''
-          /**
-          *
-          * Author : Aditya Shakya (adi1090x)
-          * Github : @adi1090x
-          * 
-          * Colors
-          *
-          * Available Colors Schemes
-          *
-          * adapta    catppuccin    everforest    navy       paper
-          * arc       cyberpunk     gruvbox       nord       solarized
-          * black     dracula       lovelace      onedark    yousai
-          *
-          **/
-
-          /* Import color-scheme from `colors` directory */
-
-          @import "../vivid/${colorscheme}.rasi";
+            * {
+              background: "${theme.scheme.variants."${vars.appearance.theme}".bg.root}";
+              background-alt: "${theme.scheme.variants."${vars.appearance.theme}".bg.shift}";
+              foreground: "${theme.scheme.variants."${vars.appearance.theme}".fg.root}";
+              selected: "${theme.scheme.variants."${vars.appearance.theme}".blue.shift}";
+              active: "${theme.scheme.variants."${vars.appearance.theme}".green.shift}";
+              urgent: "${theme.scheme.variants."${vars.appearance.theme}".red.shift}";
+            }
         '';
+        force = true;
       };
     };
   };

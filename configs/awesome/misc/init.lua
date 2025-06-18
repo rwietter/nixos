@@ -51,6 +51,6 @@ require(... .. ".scripts.theme-applier")
 
 return {
 	rofiCommand = "rofi -show drun -theme " .. gfs .. "/misc/rofi/theme.rasi",
-	rofiWindow  = "rofi -show window -theme " .. gfs .. "/misc/rofi/window.rasi",
+	rofiWindow  = "rofi -show window -theme " .. gfs .. "/misc/rofi/window/window.rasi",
 	musicMenu   = function() require("misc.scripts.Rofi.music-pop").execute() end
 }

@@ -25,7 +25,7 @@ lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
           ## Display
           monitor = 0;
           follow = none;
-          width = 350;
+          width = 300;
           height = 350;
           offset = "10x40";
           origin = "top-right";

@@ -66,7 +66,7 @@ awful.keyboard.append_global_keybindings({
 		group = "launcher",
 	}),
 
-	awful.key({ modkey }, "z", function()
+	awful.key({ modkey, shift }, "d", function()
 		awful.spawn(misc.rofiWindow)
 	end, {
 		description = "open rofi window",
