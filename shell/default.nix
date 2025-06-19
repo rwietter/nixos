@@ -9,6 +9,7 @@
     ./starship.nix # Prompt shell
     ./direnv.nix # Load and unload environment variables depending on the current directory.
     ./devenv.nix # Composable Developer Environments using Nix
+    ./rmpc.nix # A terminal client for the MPD music player
     # ./zsh.nix
   ];
 }

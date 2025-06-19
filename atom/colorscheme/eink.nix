@@ -90,17 +90,17 @@
       light = {
         # Light mode - paper with dark text (default e-ink look)
         bg = {
-          root = "#F8F6F1"; # Paper white with slight cream tint
-          shift = "#F0EEE9"; # Slightly darker paper
-          echo = "#E8E6E1"; # More aged paper look
-          fade = "#E0DED9"; # Most aged paper look
+          root = "#FBFBF8"; # Soft paper white with warm tint
+          shift = "#F0EEEB";
+          echo = "#E8E6E1";
+          fade = "#E0DED9";
         };
 
         fg = {
-          root = "#2A2A2A"; # Dark gray text
-          shift = "#333333";
-          echo = "#3D3D3D";
-          fade = "#474747";
+          root = "#474747"; # Dark gray text
+          shift = "#414040";
+          echo = "#3A3938";
+          fade = "#333230";
         };
 
         red = {

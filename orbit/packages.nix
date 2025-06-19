@@ -78,7 +78,6 @@ in
       nitch # A system fetch utility that displays system information in a visually appealing way
       xorg.xdpyinfo # X11 display information utility
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
-      rmpc # Modern and configurable terminal based Music Player Daemon client.
      
       # Productivity & Note-taking
       zotero_7 # reference manager and reader

@@ -42,9 +42,9 @@
     ),
     progress_bar: (
         symbols: ["█", "█", "█"],
-        track_style: (bg: "#1e2030"),
-        elapsed_style: (fg: "#c6a0f6", bg: "#1e2030"),
-        thumb_style: (fg: "#c6a0f6", bg: "#1e2030"),
+        track_style: (bg: None),
+        elapsed_style: (fg: "#c6a0f6", bg: None),
+        thumb_style: (fg: "#c6a0f6", bg: None),
     ),
     scrollbar: (
         symbols: ["│", "█", "▲", "▼"],
@@ -55,7 +55,7 @@
     browser_column_widths: [20, 38, 42],
     text_color: "#cad3f5",
     background_color: None,
-    header_background_color: "#1e2030",
+    header_background_color: None,
     modal_background_color: None,
     modal_backdrop: true,
     borders_style: (fg: "#787DA6"),

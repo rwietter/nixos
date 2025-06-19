@@ -13,10 +13,10 @@ local equal = bling.layout.equalarea
 local deck = bling.layout.deck
 -- layout machi  
 lmachi.editor.nested_layouts = {
-	[""] = awful.layout.suit.tile,
-	[""] = awful.layout.suit.tile,
-	[""] = awful.layout.suit.tile,
-	[""] = awful.layout.suit.tile,
+	[""] = awful.layout.suit.magnifier,
+	[""] = awful.layout.suit.magnifier,
+	[""] = awful.layout.suit.magnifier,
+	[""] = awful.layout.suit.magnifier,
 }
 -- names/numbers of layouts
 local names = { "", "", "", "" }
@@ -29,19 +29,19 @@ tag.connect_signal(
 	function()
 		awful.layout.append_default_layouts({
 			l.tile,
-			l.floating,
-			lmachi.default_layout,
-			equal,
-			mstab,
-			deck,
-			awful.layout.suit.tile.left,
-			awful.layout.suit.tile.top,
-			awful.layout.suit.fair,
-			awful.layout.suit.spiral.dwindle,
-			awful.layout.suit.max,
-			awful.layout.suit.max.fullscreen,
 			awful.layout.suit.magnifier,
-			awful.layout.suit.corner.nw,
+			awful.layout.suit.max.fullscreen,
+			l.floating,
+			-- deck,
+			-- awful.layout.suit.spiral.dwindle,
+			-- lmachi.default_layout,
+			-- equal,
+			-- mstab,
+			-- awful.layout.suit.tile.left,
+			-- awful.layout.suit.tile.top,
+			-- awful.layout.suit.fair,
+			-- awful.layout.suit.max,
+			-- awful.layout.suit.corner.nw,
 		})
 	end
 )
