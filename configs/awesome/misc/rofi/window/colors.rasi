@@ -1,8 +1,1 @@
-* {
-    background:     #1E1D2FFF;
-    background-alt: #282839FF;
-    foreground:     #D9E0EEFF;
-    selected:       #7AA2F7FF;
-    active:         #ABE9B3FF;
-    urgent:         #F28FADFF;
-}
+/nix/store/a3g1vx6q9bf24alglcnaxg5033jnywbc-home-manager-files/.config/awesome/misc/rofi/window/colors.rasi

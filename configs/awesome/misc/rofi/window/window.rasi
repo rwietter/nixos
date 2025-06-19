@@ -19,6 +19,7 @@ configuration {
 @import                          "./colors.rasi"
 @import                          "./fonts.rasi"
 
+
 * {
     border-colour:               var(selected);
     handle-colour:               var(foreground);
@@ -83,7 +84,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
@@ -96,12 +97,12 @@ inputbar {
 }
 
 prompt {
-    enabled:                     true;
+    enabled:                     false;
     background-color:            inherit;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
     str:                         "::";
     background-color:            inherit;
@@ -193,7 +194,7 @@ element normal.urgent {
 }
 element normal.active {
     background-color:            var(active-background);
-    text-color:                  var(active-foreground);
+    text-color:                  var(foreground-colour);
 }
 element selected.normal {
     background-color:            var(normal-foreground);
@@ -255,9 +256,11 @@ button {
     text-color:                  inherit;
     cursor:                      pointer;
 }
+
+/*****----- Button MODE -----*****/
 button selected {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            transparent;
+    text-color:                  transparent;
 }
 
 /*****----- Message -----*****/

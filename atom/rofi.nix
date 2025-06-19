@@ -6,8 +6,9 @@
   pkgs,
   ...
 }:
-
-with lib; {
+let colors = theme.scheme.variants."${vars.appearance.theme}";
+in
+{
   options = {
     rofi.enable = lib.mkOption {
       type = lib.types.bool;
@@ -24,15 +25,15 @@ with lib; {
     };
 
     xdg.configFile = lib.mkForce {
-      "/rofi/window/colors.rasi" = {
+      "awesome/misc/rofi/window/colors.rasi" = {
         text = ''
             * {
-              background: "${theme.scheme.variants."${vars.appearance.theme}".bg.root}";
-              background-alt: "${theme.scheme.variants."${vars.appearance.theme}".bg.shift}";
-              foreground: "${theme.scheme.variants."${vars.appearance.theme}".fg.root}";
-              selected: "${theme.scheme.variants."${vars.appearance.theme}".blue.shift}";
-              active: "${theme.scheme.variants."${vars.appearance.theme}".green.shift}";
-              urgent: "${theme.scheme.variants."${vars.appearance.theme}".red.shift}";
+              background:     ${colors.bg.root};
+              background-alt: ${colors.bg.shift};
+              foreground:     ${colors.fg.root};
+              selected:       ${colors.fg.root};
+              active:         ${colors.bg.echo};
+              urgent:         ${colors.fg.echo};
             }
         '';
         force = true;
