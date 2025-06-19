@@ -5,7 +5,7 @@
     address: "/tmp/mpd_socket",
     password: None,
     theme: Some("default"),
-    // on_song_change: ["~/.config/rmpc/scripts/notify"],
+    on_song_change: ["~/.config/rmpc/scripts/notify"],
     volume_step: 5,
     scrolloff: 2,
     max_fps: 30,

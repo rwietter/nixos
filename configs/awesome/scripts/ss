@@ -1,6 +1,7 @@
 #!/bin/sh
 # -------
 # edited from manilarome
+# MODIFICADO PARA ADICIONAR CÓPIA PARA O CLIPBOARD
 
 # screenshot direcotry
 screenshot_dir=$HOME/Imagens/Prints
@@ -8,55 +9,59 @@ screenshot_dir=$HOME/Imagens/Prints
 # Check save directory
 # Create it if it doesn't exist
 function check_dir() {
-	if [ ! -d "$screenshot_dir" ];
-	then
-		mkdir -p "$screenshot_dir"
-	fi
+  if [ ! -d "$screenshot_dir" ];
+  then
+    mkdir -p "$screenshot_dir"
+  fi
 }
 
 # Main function
 function shot() {
 
-	check_dir
+  check_dir
 
-	file_loc="${screenshot_dir}screensht_$(date +%y-%m-%d_%H:%M:%S).png"
+  file_loc="${screenshot_dir}screensht_$(date +%y-%m-%d_%H:%M:%S).png"
 
-	echo "file_loc: ${file_loc}"
+  # Removido o echo daqui para não poluir a saída
+  # echo "file_loc: ${file_loc}"
 
-	maim_command="$1"
-	notif_message="$2"
+  maim_command="$1"
+  notif_message="$2"
 
-	# Execute maim command
-	${maim_command} ${file_loc}
-	# Exit if the user cancels the screenshot
-	# So it means there's no new screenshot image file
-	if [ ! -f "${file_loc}" ];
-	then
-		exit;
-	fi
+  # Execute maim command
+  ${maim_command} ${file_loc}
+  # Exit if the user cancels the screenshot
+  # So it means there's no new screenshot image file
+  if [ ! -f "${file_loc}" ];
+  then
+    exit;
+  fi
 
-	# Return the screenshot file location
-	echo "${file_loc}"
+  # Return the screenshot file location
+  echo "${file_loc}"
 }
 
 
 # Check the args passed
 if [ -z "$1" ] || ([ "$1" != 'full' ] && [ "$1" != 'area' ]);
 then
-	echo "
-	Requires an argument:
-	area 	- Area screenshot
-	full 	- Fullscreen screenshot
-	Example:
-	./screensht area
-	./screensht full
-	"
+  echo "
+  Requires an argument:
+  area  - Area screenshot
+  full  - Fullscreen screenshot
+  Example:
+  ./screensht area
+  ./screensht full
+  "
 elif [ "$1" = 'full' ];
 then
-	file_loc=$(shot 'maim -m 10 -d 1 -u -o')
-	notify-send -u normal -i print "Screenshot taken and saved as ${screenshot_dir}/$(basename ${file_loc})"
+  file_loc=$(shot 'maim -m 10 -d 1 -u -o')
+  xclip -selection clipboard -t image/png -i "${file_loc}"
+  notify-send -u normal -i "${file_loc}" "Screenshot taken and saved!"
+
 elif [ "$1" = 'area' ];
 then
-	file_loc=$(shot 'maim -s -m 10 -d 1 -u -o')
-	notify-send -u normal -i print "Screenshot taken and saved as ${screenshot_dir}/$(basename ${file_loc})"
+  file_loc=$(shot 'maim -s -m 10 -d 1 -u -o')
+  xclip -selection clipboard -t image/png -i "${file_loc}"
+  notify-send -u normal -i "${file_loc}" "Screenshot taken and saved!"
 fi
