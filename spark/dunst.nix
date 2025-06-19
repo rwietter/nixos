@@ -5,7 +5,8 @@
   theme,
   ...
 }:
-
+let colors = theme.scheme.variants."${vars.appearance.theme}";
+in
 lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
   services.dunst = {
     enable = true;
@@ -33,11 +34,12 @@ lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
           indicate_hidden = no;
           shrink = 0;
           transparency = 5;
-          separator_height = 10;
           padding = 8;
           horizontal_padding = 8;
-          frame_width = 1;
-          frame_color = "${theme.scheme.variants."${vars.appearance.theme}".fg.shift}"; 
+          separator_height = 0; # 0 - no separator
+          frame_width = 1; # border width
+          gap_size = 10; # space between notifications
+          frame_color = "${colors.fg.root}"; 
           separator_color = "#00000000";
           sort = yes;
           idle_threshold = 120;
@@ -91,18 +93,21 @@ lib.mkIf (vars.os.desktop == "awesome" || vars.os.desktop == "i3") {
           mouse_right_click = close_all;
 
         [urgency_low]
-          background = "${theme.scheme.variants."${vars.appearance.theme}".cyan.shift}";
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".black.shift}";
+          background = "${colors.bg.root}";
+          foreground = "${colors.fg.root}";
+          frame_color = "${colors.yellow.root}";
           timeout = 10;
 
         [urgency_normal]
-          background = "${theme.scheme.variants."${vars.appearance.theme}".bg.root}";
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".fg.shift}";
+          background = "${colors.bg.root}";
+          foreground = "${colors.fg.root}";
+          frame_color = "${colors.fg.root}";
           timeout = 15
 
         [urgency_critical]
-          background = "${theme.scheme.variants."${vars.appearance.theme}".red.shift}";
-          foreground = "${theme.scheme.variants."${vars.appearance.theme}".black.root}";
+          background = "${colors.bg.root}";
+          foreground = "${colors.fg.root}";
+          frame_color = "${colors.red.root}";
           timeout = 20;
 
         iconTheme = {
