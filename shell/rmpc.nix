@@ -41,7 +41,7 @@ in
                 panes: [
                     (
                         pane: Pane(Header),
-                        size: "1",
+                        size: "2",
                     ),
                     (
                         pane: Pane(TabContent),
@@ -113,7 +113,39 @@ in
                             (kind: Property(Status(Volume)), style: (fg: "${colors.magenta.root}", modifiers: "Bold")),
                             (kind: Text("% "), style: (fg: "${colors.magenta.root}", modifiers: "Bold"))
                         ]
-                    )
+                    ),
+                    (
+                        left: [
+                            (kind: Text("[ "),style: (fg: "${colors.fg.root}", modifiers: "Bold")),
+                            (kind: Property(Status(Elapsed)),style: (fg: "${colors.fg.echo}")),
+                            (kind: Text(" / "),style: (fg: "${colors.fg.root}", modifiers: "Bold")),
+                            (kind: Property(Status(Duration)),style: (fg: "${colors.fg.echo}")),
+                            (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
+                            (kind: Property(Status(Bitrate)),style: (fg: "${colors.fg.echo}")),
+                            (kind: Text(" kbps"),style: (fg: "${colors.fg.root}")),
+                            (kind: Text("]"),style: (fg: "${colors.fg.root}", modifiers: "Bold"))
+                        ],
+                        center: [],
+                        right: [
+                            (kind: Text("[ "),style: (fg: "${colors.fg.root}")),
+                            (kind: Property(Status(RepeatV2(
+                                            on_label: "", off_label: "",
+                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                            (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
+                            (kind: Property(Status(RandomV2(
+                                            on_label: "", off_label: "",
+                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                            (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
+                            (kind: Property(Status(ConsumeV2(
+                                            on_label: "󰮯", off_label: "󰮯", oneshot_label: "󰮯󰇊",
+                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                            (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
+                            (kind: Property(Status(SingleV2(
+                                            on_label: "󰎤", off_label: "󰎦", oneshot_label: "󰇊", off_oneshot_label: "󱅊",
+                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                            (kind: Text(" ]"),style: (fg: "${colors.fg.root}")),
+                        ]
+                    ),
                 ],
             ),
         )
