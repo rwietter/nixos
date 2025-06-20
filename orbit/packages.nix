@@ -84,6 +84,7 @@ in
       zotero_7 # reference manager and reader
       obsidian # note taking
       chromium # Web Browser
+      librewolf # Firefox fork focused on privacy
       espanso # text expander
       anki # Spaced repetition flashcard program
       gnome-pomodoro # Gnome Pomodoro timer
@@ -132,13 +133,10 @@ in
       # powerline # status line
       gpick # color picker
       nix-output-monitor # enhanced logging for Nix
-      # torrential # torrent client
-      # fuzzel # Wayland-native application launcher, similar to rofi’s drun mode
+      gnumake # A build automation tool (make)
 
       # Scripts
       # (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
-
-      # lazyorg
     ]
     ++ unstablePackages;
 }

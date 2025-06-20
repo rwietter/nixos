@@ -12,6 +12,7 @@
     ./rmpc.nix # A terminal client for the MPD music player
     ./nil.nix # A Nix Language Server
     ./git.nix # Git configuration and tools
+    ./nix-index.nix # Nix index for command-not-found
     # ./zsh.nix
   ];
 }
