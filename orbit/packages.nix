@@ -78,7 +78,7 @@ in
       nitch # A system fetch utility that displays system information in a visually appealing way
       xorg.xdpyinfo # X11 display information utility
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
-     
+
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
       obsidian # note taking
@@ -86,6 +86,7 @@ in
       espanso # text expander
       anki # Spaced repetition flashcard program
       gnome-pomodoro # Gnome Pomodoro timer
+      fabric-ai # AI assistant for terminal
       # libreoffice-qt
 
       # System Monitoring & Information
