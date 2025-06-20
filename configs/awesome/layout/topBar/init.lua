@@ -288,6 +288,29 @@ awful.screen.connect_for_each_screen(
 			end
 		)
 
+    -- | Transparency | Hex  |
+    -- | :----------- | :--: |
+    -- | 100%         | `FF` |
+    -- | 95%          | `F2` |
+    -- | 90%          | `E6` |
+    -- | 85%          | `D9` |
+    -- | 80%          | `CC` |
+    -- | 75%          | `BF` |
+    -- | 70%          | `B3` |
+    -- | 65%          | `A6` |
+    -- | 60%          | `99` |
+    -- | 55%          | `8C` |
+    -- | 50%          | `80` |
+    -- | 45%          | `73` |
+    -- | 40%          | `66` |
+    -- | 35%          | `59` |
+    -- | 30%          | `4D` |
+    -- | 25%          | `40` |
+    -- | 20%          | `33` |
+    -- | 15%          | `26` |
+    -- | 10%          | `1A` |
+    -- | 5%           | `0D` |
+    -- | 0%           | `00` |
 		-- wibar
 		s.wibar_wid =
 			awful.wibar(
@@ -298,7 +321,7 @@ awful.screen.connect_for_each_screen(
 				type = "dock",
 				width = s.geometry.width, -- - beautiful.useless_gap * 4,
 				shape = gears.shape.rectangle, -- helpers.rrect(beautiful.rounded - 4),
-				bg = beautiful.bg_color,
+				bg = beautiful.bg_color .. "00",
 				height = dpi(40)
 			}
 		)
@@ -354,7 +377,7 @@ awful.screen.connect_for_each_screen(
 						margins = { top = dpi(0)}
 					},
 					{
-						launcher,
+						nil,
 						margins = dpi(0),
 						widget = wibox.container.margin,
 						layout = wibox.layout.fixed.horizontal

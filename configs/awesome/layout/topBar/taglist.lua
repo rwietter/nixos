@@ -36,7 +36,7 @@ local get_taglist = function(s)
 			awful.tag.viewprev(t.screen)
 		end)
 	)
-	
+
 	small_rounded_border_shape = function(cr, width, height)
 		gears.shape.rounded_rect(cr, width, height, dpi(8))
 	end
@@ -50,10 +50,10 @@ local get_taglist = function(s)
 			border_width = dpi(0),
 			layout = wibox.layout.fixed.horizontal,
 			widget = wibox.container.background,
-			bg_occupied = beautiful.bg_3,
-			bg_empty = beautiful.bg_2,
-			bg_urgent = beautiful.bg_4,
-			bg_focus = beautiful.bg_4,
+			bg_occupied = beautiful.bg_3 .. '00',
+			bg_empty = beautiful.bg_2 .. '00',
+			bg_urgent = beautiful.bg_4 .. '00',
+			bg_focus = beautiful.fg_color,
 
 			fg_occupied = beautiful.fg_color,
 			fg_urgent = beautiful.red,
@@ -65,8 +65,8 @@ local get_taglist = function(s)
 			spacing = dpi(0),
 			layout = wibox.layout.fixed.horizontal,
 			spacing_widget = {
-				color = beautiful.bg_color,
-				shape = gears.shape.circle,
+				color = beautiful.bg_color .. "00",
+				shape = gears.shape.rectangle,
 				widget = wibox.widget.separator,
 				thickness = dpi(0),
 				border_width = dpi(0),
