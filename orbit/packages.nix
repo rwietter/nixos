@@ -4,7 +4,8 @@ let
   # lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
   unstablePackages = [
     unstable.yt-dlp # YouTube downloader
-    unstable.zellij # Terminal multiplexer
+    unstable.zellij
+    # Terminal multiplexer
   ];
 in
 {

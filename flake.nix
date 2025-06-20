@@ -80,7 +80,6 @@
                       ./spark
                       ./scroll
                       ./shell
-                      ./forge
                       ./atom
                     ];
                   };
@@ -109,7 +108,6 @@
             ./atom
             ./scroll
             ./shell
-            ./forge
           ];
         };
       };
