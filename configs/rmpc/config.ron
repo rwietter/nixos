@@ -2,7 +2,7 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "/tmp/mpd_socket",
+    address: "/tmp/mpd.socket",
     password: None,
     theme: Some("default"),
     on_song_change: ["~/.config/rmpc/scripts/notify"],
