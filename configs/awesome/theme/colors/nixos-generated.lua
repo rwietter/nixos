@@ -1,1 +1,1 @@
-/nix/store/c1afhci0yk9aijhisd148ki8izlqi8fj-home-manager-files/.config/awesome/theme/colors/nixos-generated.lua
+/nix/store/y86w47dfliil0in1x7d8m7l5z1537jgj-home-manager-files/.config/awesome/theme/colors/nixos-generated.lua

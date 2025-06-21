@@ -107,6 +107,8 @@ bind -M insert \ea zellij toggle                 # Toggle zellij
 # \c -> ctrl (case sensitive)
 # \e -> esc | alt (case insensitive)
 
+# export LS_COLORS="$(vivid generate ~/nixos/ui/ls_colors/amarena.yml)"
+
 # ---------------- References ------------------
 # ----------------------------------------------
 # - [Fish for bash users](https://fishshell.com/docs/3.2/fish_for_bash_users.html)

@@ -23,7 +23,7 @@
       system = "x86_64-linux";
       mylib = import ./lib { inherit lib builtins; };
       vars = import ./environment/vars.nix;
-      theme = (import ./atom/colorscheme { inherit mylib vars; }).theme;
+      theme = (import ./ui/colorscheme { inherit mylib vars; }).theme;
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -80,7 +80,7 @@
                       ./spark
                       ./scroll
                       ./shell
-                      ./atom
+                      ./ui
                     ];
                   };
               };
@@ -105,7 +105,7 @@
           modules = [
             ./orbit/home.nix
             ./spark
-            ./atom
+            ./ui
             ./scroll
             ./shell
           ];
