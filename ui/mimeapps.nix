@@ -1,6 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
-with lib; {
+with lib;
+{
   xdg.configFile = mkForce {
     "mimeapps.list" = {
       force = true;

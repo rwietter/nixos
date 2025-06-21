@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   theme,
   lib,
@@ -7,7 +6,6 @@
   ...
 }:
 
-with lib;
 {
   gtk = {
     enable = true;
