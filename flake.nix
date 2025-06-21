@@ -76,7 +76,7 @@
                       stateVersion = "25.05";
                     };
                     imports = [
-                      ./orbit/home.nix
+                      ./homemanager/home.nix
                       ./spark
                       ./scroll
                       ./shell
@@ -103,7 +103,7 @@
               ;
           };
           modules = [
-            ./orbit/home.nix
+            ./homemanager/home.nix
             ./spark
             ./ui
             ./scroll
