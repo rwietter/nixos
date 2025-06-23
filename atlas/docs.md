@@ -14,11 +14,11 @@ voltage/
     │
     ├── atom           # Interface gráfica e ambiente visual
     │   ├── default.nix
-    │   ├── ssh         
-    |   ├── dns         
-    │   ├── mimetypes   
-    │   └── gtk         
-    |   └── colorscheme 
+    │   ├── ssh
+    |   ├── dns
+    │   ├── mimetypes
+    │   └── gtk
+    |   └── colorscheme
     │
     ├── shell          # Terminal e shell utilities
     │   ├── default.nix
@@ -68,7 +68,7 @@ voltage/
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = import inputs.nixpkgs { inherit system; };
@@ -95,7 +95,7 @@ voltage/
                 home = {
                   username = vars.os.hostname;
                   homeDirectory = vars.os.homeDirectory;
-                  stateVersion = "24.05";
+                  stateVersion = "25.05";
                 };
                 imports = [
                   ./orbit/home.nix

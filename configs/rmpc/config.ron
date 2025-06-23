@@ -4,7 +4,7 @@
 (
     address: "/tmp/mpd.socket",
     password: None,
-    theme: Some("default"),
+    theme: Some("default"), // catppuccin
     on_song_change: ["~/.config/rmpc/scripts/notify"],
     volume_step: 5,
     scrolloff: 2,
@@ -36,20 +36,20 @@
             "5":       SwitchToTab("Albums"),
             "6":       SwitchToTab("Playlists"),
             "7":       SwitchToTab("Search"),
-            "q":       Quit,
-            ">":       NextTrack,
-            "p":       TogglePause,
-            "<":       PreviousTrack,
-            "f":       SeekForward,
-            "z":       ToggleRepeat,
-            "x":       ToggleRandom,
-            "c":       ToggleConsume,
-            "v":       ToggleSingle,
-            "b":       SeekBack,
-            "~":       ShowHelp,
-            "I":       ShowCurrentSongInfo,
-            "O":       ShowOutputs,
-            "P":       ShowDecoders,
+            "q":       Quit, // Quits the application.
+            ">":       NextTrack, // Plays the next track in the queue.
+            "p":       TogglePause, // Toggles the pause state of the currently playing track.
+            "<":       PreviousTrack, // Plays the previous track in the queue.
+            "f":       SeekForward, // Seeks (moves) the currently playing track forward.
+            "z":       ToggleRepeat, // When repeat mode is enabled, the player will repeat the current track or playlist.
+            "x":       ToggleRandom, // When random mode is enabled, the player will play tracks in a random order.
+            "c":       ToggleConsume, // When consume mode is enabled, the song is removed from the queue after playing.
+            "v":       ToggleSingle, // When single mode is enabled, the player will either stop after playing a single track or repeat the track/playlist when repeat is on.
+            "b":       SeekBack, // Seeks (moves) the currently playing track backward.
+            "~":       ShowHelp, // Shows the help menu.
+            "I":       ShowCurrentSongInfo, // Shows information about the currently playing song.
+            "O":       ShowOutputs, // Shows the outputs menu.
+            "P":       ShowDecoders, // Shows the decoders menu.
         },
         navigation: {
             "k":         Up,

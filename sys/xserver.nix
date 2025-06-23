@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Enable the X11 windowing system.
@@ -10,7 +14,7 @@
   services.xserver.displayManager.lightdm.enable = false;
   services.xserver.desktopManager.xfce.enable = false;
 
-  services.xserver.displayManager.defaultSession = "none+awesome";
+  services.displayManager.defaultSession = "none+awesome";
   services.displayManager.sddm.enable = lib.mkDefault true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -21,7 +25,7 @@
     elisa
   ];
 
-  services.xserver.videoDrivers  = [ "ati_unfree" ];
+  services.xserver.videoDrivers = [ "ati_unfree" ];
 
   # services.xserver.displayManager.sessionCommands = ''''
 
@@ -38,7 +42,6 @@
   # ];
 
   # Configure keymap in X11
-  services.xserver.layout = "br";
   services.xserver.xkb = {
     layout = "br";
     variant = "abnt2";

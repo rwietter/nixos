@@ -1,4 +1,10 @@
-{ lib, vars, pkgs, theme, ... }:
+{
+  lib,
+  vars,
+  pkgs,
+  theme,
+  ...
+}:
 let
   colors = theme.scheme.variants."${vars.appearance.theme}";
 in
@@ -130,19 +136,19 @@ in
                             (kind: Text("[ "),style: (fg: "${colors.fg.root}")),
                             (kind: Property(Status(RepeatV2(
                                             on_label: "", off_label: "",
-                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                                            on_style: (fg: "${colors.fg.root}", modifiers: "Underlined"), off_style: (fg: "${colors.bg.fade}", modifiers: ""))))),
                             (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
                             (kind: Property(Status(RandomV2(
                                             on_label: "", off_label: "",
-                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                                            on_style: (fg: "${colors.fg.root}", modifiers: "Underlined"), off_style: (fg: "${colors.bg.fade}", modifiers: ""))))),
                             (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
                             (kind: Property(Status(ConsumeV2(
                                             on_label: "󰮯", off_label: "󰮯", oneshot_label: "󰮯󰇊",
-                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                                            on_style: (fg: "${colors.fg.root}", modifiers: "Underlined"), off_style: (fg: "${colors.bg.fade}", modifiers: ""))))),
                             (kind: Text(" | "),style: (fg: "${colors.fg.root}")),
                             (kind: Property(Status(SingleV2(
                                             on_label: "󰎤", off_label: "󰎦", oneshot_label: "󰇊", off_oneshot_label: "󱅊",
-                                            on_style: (fg: "${colors.fg.echo}", modifiers: "Bold"), off_style: (fg: "#4c566a", modifiers: "Bold"))))),
+                                            on_style: (fg: "${colors.fg.root}", modifiers: "Underlined"), off_style: (fg: "${colors.bg.fade}", modifiers: ""))))),
                             (kind: Text(" ]"),style: (fg: "${colors.fg.root}")),
                         ]
                     ),

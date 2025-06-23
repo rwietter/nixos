@@ -8,7 +8,6 @@
     ./packages.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
   home.username = vars.os.hostname;
   home.homeDirectory = vars.os.homeDirectory;
 

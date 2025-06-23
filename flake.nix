@@ -8,7 +8,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs"; # use the same nixpkgs as the system
     };
   };
 
@@ -45,7 +45,6 @@
               vars
               mylib
               theme
-              pkgs
               unstable
               ;
           };

@@ -54,7 +54,7 @@ rebuild: ## (rebuild) Reconstrói e ativa a configuração do NixOS a partir do 
 
 home-switch: ## (home) Atualiza e ativa a configuração do Home Manager.
 	@echo "$(YELLOW)🏠 Atualizando a configuração do Home Manager...$(RESET)"
-	@home-manager -b backup switch --flake .#$(NIX_USER) &| nom && awesome-client "awesome.restart()"
+	@home-manager -b backup switch --flake .#$(NIX_USER) && awesome-client "awesome.restart()"
 
 update: ## (update) Atualiza os canais, o flake e o Home Manager.
 	@echo "$(YELLOW)🔄 Atualizando canais e flake...$(RESET)"
