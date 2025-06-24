@@ -14,6 +14,7 @@
     ./nh.nix
     ./yarr.nix
     ./niri.nix
+    ./homelab.nix
     ./blueman.nix
     # ./dns.nix
   ];

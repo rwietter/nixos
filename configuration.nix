@@ -119,6 +119,7 @@
   zram.enable = true; # Zram for swap space
   hyprland.enable = false; # Hyprland window manager
   awesome.enable = true; # Awesome window manager
+  homelab.enable = true; # Homelab services
 
   # List services that you want to enable:
 
