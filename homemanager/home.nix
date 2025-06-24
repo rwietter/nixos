@@ -30,7 +30,7 @@
   brave.enable = true; # A privacy-focused web browser
   nil.enable = true; # A Nix Language Server
   playerctl.enable = true; # media player control
-  vscode.enable = true; # Visual Studio Code
+  code.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
   rmpc.enable = true; # Remote Music Player Client
 

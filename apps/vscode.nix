@@ -1,21 +1,20 @@
 {
   lib,
-  pkgs,
   unstable,
   config,
   ...
 }:
 {
   options = {
-    vscode.enable = lib.mkOption {
+    code.enable = lib.mkOption {
       type = lib.types.bool;
-      default = false;
+      default = true;
       description = "Enable Visual Studio Code";
     };
   };
 
   config = {
-    vscode.enable = lib.mkIf config.vscode.enable {
+    code.enable = lib.mkIf config.code.enable {
       programs.vscode = {
         enable = true;
         package = unstable.vscode;

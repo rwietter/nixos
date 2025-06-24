@@ -121,14 +121,11 @@
   awesome.enable = true; # Awesome window manager
   homelab.enable = true; # Homelab services
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Firewall configuration.
   networking.firewall.enable = true;
-  # Open ports in the firewall.
   networking.firewall = {
     allowedTCPPorts = [
       53
@@ -174,30 +171,16 @@
     "1.1.1.1"
   ];
   networking.search = [ "tailaf1430.ts.net" ];
-  /**
-    * Resolved and Adguard Home listen on the same port (53).
-      services.resolved = {
-        enable = true;
-        dnssec = "true";
-        domains = [ "~." ];
-        fallbackDns = [
-          "1.1.1.1"
-          "1.0.0.1"
-        ];
-        dnsovertls = "true";
-      };
-  */
 
   networking.extraHosts = ''
     # For Glances and Homepage
     127.0.0.1 host.docker.internal
-    # 127.0.0.1 glaces
   '';
 
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "0 */5 * * *  rwietter cd $HOME/.local/share/nap && git add . && git commit -m 'cron' && git push"
+      ""
     ];
   };
 
