@@ -40,7 +40,7 @@ help:
 # Declara todos os nossos alvos como "phony" (falsos).
 # Isso diz ao 'make' que esses alvos não criam arquivos com seus nomes,
 # garantindo que os comandos sempre sejam executados.
-.PHONY: help rebuild home-switch update upgrade gc-store gc-system \
+.PHONY: help rebuild home-switch update gc-store gc-system \
 	optimize cleanup build gen-rm-old gen-rm-days flake-templates \
 	flake-template-init nh-update
 
@@ -54,16 +54,11 @@ rebuild: ## (rebuild) Reconstrói e ativa a configuração do NixOS a partir do 
 
 home-switch: ## (home) Atualiza e ativa a configuração do Home Manager.
 	@echo "$(YELLOW)🏠 Atualizando a configuração do Home Manager...$(RESET)"
-	@home-manager -b backup switch --flake .#$(NIX_USER) && awesome-client "awesome.restart()"
+	@home-manager -b backup switch --flake .#$(NIX_USER)
 
-update: ## (update) Atualiza os canais, o flake e o Home Manager.
-	@echo "$(YELLOW)🔄 Atualizando canais e flake...$(RESET)"
-	@sudo nix-channel --update && nix flake update nixpkgs
-	@$(MAKE) home-switch
-
-upgrade: ## (upgrade) Atualiza os canais e faz o upgrade completo do sistema.
-	@echo "$(YELLOW)⬆️  Fazendo o upgrade completo do sistema NixOS...$(RESET)"
-	@sudo nix-channel --update && nix flake update nixpkgs
+update: ## (update) Update and upgrade the NixOS system and Home Manager.
+	@echo "$(YELLOW)🔄 Updating NixOS system and Home Manager...$(RESET)"
+	@sudo nix flake update
 	@sudo nixos-rebuild switch --flake .#$(NIX_USER) --upgrade
 
 nh-update: ## (nh-update) Alterna o sistema operacional usando 'nh'.
