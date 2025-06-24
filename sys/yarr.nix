@@ -22,14 +22,14 @@ let
 in
 {
   options = {
-    services.rss.enable = lib.mkOption {
+    rss.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable Yarr";
     };
   };
 
-  config = lib.mkIf config.services.rss.enable {
+  config = lib.mkIf config.rss.enable {
     systemd.services.yarr = {
       description = "Yarr";
       wantedBy = [ "multi-user.target" ];

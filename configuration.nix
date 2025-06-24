@@ -110,12 +110,15 @@
   #   enableSSHSupport = true;
   # };
 
-  # Enable/Disable Options
-  programs.firefox.enable = false; # Firefox
-  programs.fish.enable = true; # Fish shell
-  services.blueman.enable = true; # Bluetooth manager
-  services.rss.enable = true; # Yet Another RSS Reader (YARR)
-  programs.niri.enable = true; # Niri
+  # Optionally enable the NixOS apps and services.
+  niri.enable = false; # Niri window manager
+  nh.enable = true; # Nix Home
+  rss.enable = true; # Yet Another RSS Reader (YARR)
+  blueman.enable = true; # Bluetooth manager
+  zram.enable = true; # Zram for swap space
+  earlyoom.enable = true; # Early OOM Daemon
+  hyprland.enable = false; # Hyprland window manager
+  awesome.enable = true; # Awesome window manager
 
   # List services that you want to enable:
 

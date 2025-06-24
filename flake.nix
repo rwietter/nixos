@@ -76,8 +76,8 @@
                     };
                     imports = [
                       ./homemanager/home.nix
-                      ./spark
-                      ./scroll
+                      ./services
+                      ./apps
                       ./shell
                       ./ui
                     ];
@@ -103,9 +103,9 @@
           };
           modules = [
             ./homemanager/home.nix
-            ./spark
+            ./services
             ./ui
-            ./scroll
+            ./apps
             ./shell
           ];
         };

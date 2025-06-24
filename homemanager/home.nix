@@ -31,6 +31,7 @@
   playerctl.enable = true; # media player control
   vscode.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
+  fish.enable = true; # Fish shell
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

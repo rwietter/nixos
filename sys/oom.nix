@@ -1,18 +1,33 @@
-{ pkgs, lib, vars, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
-with lib; mkIf(vars.os.oom == true) {
-  users.users.rwietter = {
-    packages = with pkgs; [
-      earlyoom
-    ];
+{
+  options = {
+    earlyoom.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable Early OOM Daemon";
+    };
   };
-  systemd = {
+
+  config = lib.mkIf config.earlyoom.enable {
     services.earlyoom = {
-      description = "Early OOM Daemon";
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.earlyoom}/bin/earlyoom";
+      enable = true;
+      package = pkgs.earlyoom;
+      enableNotifications = true;
+    };
+    systemd = {
+      services.earlyoom = {
+        description = "Early OOM Daemon";
+        wantedBy = [ "multi-user.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.earlyoom}/bin/earlyoom";
+        };
       };
     };
   };

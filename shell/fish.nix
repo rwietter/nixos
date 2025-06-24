@@ -2,6 +2,7 @@
   lib,
   pkgs,
   vars,
+  config,
   ...
 }:
 
@@ -45,19 +46,29 @@ let
 
 in
 
-lib.mkIf (vars.os.shell == "fish") {
-  programs.fish = {
-    enable = true;
-    package = pkgs.fish;
+{
+  options = {
+    fish.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable Fish shell";
+    };
   };
 
-  home.packages = basePackages ++ promptConfig.packages;
+  config = lib.mkIf config.fish.enable {
+    programs.fish = {
+      enable = true;
+      package = pkgs.fish;
+    };
 
-  xdg.configFile = lib.mkForce {
-    "fish" = {
-      source = ../repo/config/fish;
-      recursive = true;
-      force = true;
+    home.packages = basePackages ++ promptConfig.packages;
+
+    xdg.configFile = lib.mkForce {
+      "fish" = {
+        source = ../repo/config/fish;
+        recursive = true;
+        force = true;
+      };
     };
   };
 }
