@@ -172,6 +172,12 @@ nix-shell -p nix-prefetch-git --extra-experimental-features 'nix-command flakes'
 nix-prefetch-git https://github.com/awesomeWM/awesome --rev fcd23a7478b38788e13849f76190e60338ba9fdc
 ```
 
+or use `nurl`:
+
+```bash
+nurl https://github.com/awesomeWM/awesome
+```
+
 ## Garbage collection
 
 ```bash

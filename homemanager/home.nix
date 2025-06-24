@@ -24,6 +24,7 @@
   };
 
   # Enable/Disable Options
+  fish.enable = true; # Fish shell
   direnv.enable = true; # A shell extension that loads/unloads environment variables depending on the current directory
   devenv.enable = true; # Composable Developer Environments using Nix
   brave.enable = true; # A privacy-focused web browser
@@ -31,7 +32,7 @@
   playerctl.enable = true; # media player control
   vscode.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
-  fish.enable = true; # Fish shell
+  rmpc.enable = true; # Remote Music Player Client
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

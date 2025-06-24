@@ -16,12 +16,12 @@
 
   config = {
     vscode.enable = lib.mkIf config.vscode.enable {
-      programas.vscode = {
+      programs.vscode = {
         enable = true;
-        package = pkgs.vscode;
+        package = unstable.vscode;
         extensions = [
-          pkgs.vscode-extension-yoavbls-pretty-ts-errors
-          pkgs.vscode-extension-biomejs-biome
+          unstable.vscode-extension-yoavbls-pretty-ts-errors
+          unstable.vscode-extension-biomejs-biome
         ];
       };
     };

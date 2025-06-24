@@ -60,6 +60,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rwietter = {
     isNormalUser = true;
+    ignoreShellProgramCheck = true;
     shell = pkgs.fish;
     description = "rwietter";
     extraGroups = [
@@ -116,7 +117,6 @@
   rss.enable = true; # Yet Another RSS Reader (YARR)
   blueman.enable = true; # Bluetooth manager
   zram.enable = true; # Zram for swap space
-  earlyoom.enable = true; # Early OOM Daemon
   hyprland.enable = false; # Hyprland window manager
   awesome.enable = true; # Awesome window manager
 
@@ -203,6 +203,5 @@
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-
   services.atd.enable = true;
 }

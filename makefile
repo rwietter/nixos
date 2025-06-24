@@ -113,7 +113,7 @@ gen-rm-days: ## (gen-rm-days) Remove gerações com mais de X dias (ex: make gen
 
 build: ## (build) Executa um 'nix-build' sem criar o link de saída.
 	@echo "$(BLUE)🛠️  Executando nix-build...$(RESET)"
-	@nix-build --no-out-link &| nom
+	@nix-build --no-out-link
 
 flake-templates: ## (flake-templates) Lista os templates de flake disponíveis.
 	@echo "$(BLUE)📜 Listando templates de flake...$(RESET)"
