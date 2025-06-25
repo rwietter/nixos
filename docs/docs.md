@@ -1,56 +1,6 @@
-# Estrutura Modular NixOS - ⚡ Voltage
+# NixOS ⚡
 
-```
-voltage/
-├── flake.nix
-├── flake.lock
-├── README.md
-└── src
-    ├── sys            # Configurações essenciais do sistema
-    │   ├── default.nix
-    │   ├── boot.nix
-    │   ├── network.nix
-    │   └── users.nix
-    │
-    ├── atom           # Interface gráfica e ambiente visual
-    │   ├── default.nix
-    │   ├── ssh
-    |   ├── dns
-    │   ├── mimetypes
-    │   └── gtk
-    |   └── colorscheme
-    │
-    ├── shell          # Terminal e shell utilities
-    │   ├── default.nix
-    │   ├── fish.nix
-    │   ├── wezterm.nix
-    │   └── git.nix
-    │
-    ├── forge         # Ambiente de desenvolvimento
-    │   ├── default.nix
-    │   ├── node.nix
-    │   ├── go.nix
-    │   ├── rust.nix
-    │   └── lua.nix
-    │
-    ├── scroll        # Aplicativos de conhecimento/documentação/leitura/research
-    │   ├── default.nix
-    │   ├── obsidian.nix
-    │   └── zotero.nix
-    │
-    ├── spark         # Utilitários e ferramentas (serviços, scripts, etc)
-    │   ├── default.nix
-    │   ├── espanso.nix
-    │   └── neofetch.nix
-    │
-    └── orbit         # Home-manager config
-        ├── default.nix
-        └── home.nix
-```
-
-## Exemplo de configuração
-
-### flake.nix
+## flake.nix
 
 ```nix
 {
@@ -130,16 +80,6 @@ voltage/
 }
 ```
 
-## Significado dos Diretórios
-
-- **core**: Configurações fundamentais do sistema (como o núcleo de um átomo)
-- **atom**: Interface gráfica (representa a camada visual, como a estrutura de um átomo)
-- **shell**: Terminal e utilitários relacionados (como uma concha que protege)
-- **forge**: Ambiente de desenvolvimento (onde as ferramentas são forjadas)
-- **scroll**: Aplicativos relacionados a conhecimento (como pergaminhos antigos)
-- **spark**: Utilitários pequenos mas essenciais (como faíscas que facilitam a vida)
-- **orbit**: Configurações do home-manager (orbita em torno do sistema)
-
 ---
 
 # Command Line Interface
@@ -158,7 +98,7 @@ sudo nixos-rebuild switch --flake .#rwietter
 home-manager switch --flake .#rwietter
 ```
 
-## Install unstable packages
+## Install unstable packages (no-flakes version)
 
 ```bash
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
@@ -194,26 +134,17 @@ nix-store --gc
 ## Home Manager switch
 
 ```bash
-home-manager switch # this will switch to the current configuration
+home-manager switch
 ```
 
-## Comandos Úteis
+## Upgrade NixOS
 
 ```bash
-# Reconstruir o sistema
-sudo nixos-rebuild switch --flake .#voltage
-
-# Atualizar flake.lock
+# Update the flake.lock pointing to the latest nixpkgs
 nix flake update
 
-# Limpar gerações antigas
-sudo nix-collect-garbage -d
-```
-
-## Upgrade
-
-```bash
-sudo nix-channel --update && nix flake update nixpkgs && sudo nixos-rebuild switch --flake .#rwietter --upgrade
+# Rebuild the system with the updated flake
+sudo nixos-rebuild switch --flake .#rwietter
 ```
 
 ---
@@ -221,3 +152,4 @@ sudo nix-channel --update && nix flake update nixpkgs && sudo nixos-rebuild swit
 # Otimizações
 
 - [Storage_optimization](https://nixos.wiki/wiki/Storage_optimization)
+- [NixOS Book](https://nixos-and-flakes.thiscute.world/nixos-with-flakes/update-the-system)

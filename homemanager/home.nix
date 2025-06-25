@@ -6,6 +6,10 @@
 {
   imports = [
     ./packages.nix
+    ../apps
+    ../shell
+    ../services
+    ../ui
   ];
 
   home.username = vars.os.hostname;
@@ -32,7 +36,7 @@
   playerctl.enable = true; # media player control
   code.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
-  rmpc.enable = true; # Remote Music Player Client
+  rmpc.enable = true; # Remote Music Player Client\
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -5,8 +5,6 @@ let
   unstablePackages = [
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
-    unstable.vscode
-    # Terminal multiplexer
   ];
 in
 {
