@@ -3,29 +3,30 @@ name: "Build and cache Nix Flake"
 on:
   push:
     branches:
-      - main
+    - main
   pull_request:
     branches:
-      - main
+    - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Install Nix with Flakes support
-        uses: cachix/install-nix-action@v26
-        with:
-          extra_nix_config: |
-            experimental-features = nix-command flakes
+    - name: Install Nix with Flakes support
+      uses: cachix/install-nix-action@v26
+      with:
+        extra_nix_config: |
+          experimental-features = nix-command flakes
 
-      - name: Setup Cachix
-        uses: cachix/cachix-action@v14
-        with:
-          name: rwietter
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - name: Setup Cachix
+      uses: cachix/cachix-action@v14
+      with:
+        name: rwietter
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        extraPushArgs: "--jobs 8"
 
-      - name: Build Flake outputs
-        run: nix build .#nixosConfigurations.rwietter.config.system.build.toplevel .#homeConfigurations.rwietter.activationPackage
+    - name: Build Flake outputs
+      run: nix build .#nixosConfigurations.rwietter.config.system.build.toplevel .#homeConfigurations.rwietter.activationPackage
