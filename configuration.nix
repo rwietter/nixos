@@ -188,4 +188,7 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.atd.enable = true;
+
+	# Cachix
+	nix.settings.trusted-users = [ "root" "rwietter" ];
 }
