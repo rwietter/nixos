@@ -23,7 +23,9 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # Use the latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
+	# zen : linuxPackages_zen
+	# latest : linuxPackages_latest
+  boot.kernelPackages = pkgs.linuxPackages_latest; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
 
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
