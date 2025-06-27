@@ -79,6 +79,8 @@ in
       nitch # A system fetch utility that displays system information in a visually appealing way
       xorg.xdpyinfo # X11 display information utility
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
+			udict # Urban Dictionary CLI client
+			quick-lookup # Wikimedia dictionary client
 
       # Productivity & Note-taking
       zotero_7 # reference manager and reader

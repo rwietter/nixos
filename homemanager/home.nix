@@ -30,7 +30,7 @@
   # Enable/Disable Options
   fish.enable = true; # Fish shell
   direnv.enable = true; # A shell extension that loads/unloads environment variables depending on the current directory
-  devenv.enable = true; # Composable Developer Environments using Nix
+  devenv.enable = false; # Composable Developer Environments using Nix
   brave.enable = true; # A privacy-focused web browser
   nil.enable = true; # A Nix Language Server
   playerctl.enable = true; # media player control
