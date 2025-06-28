@@ -23,11 +23,60 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   # Use the latest kernel.
-	# zen : linuxPackages_zen
-	# latest : linuxPackages_latest
-  boot.kernelPackages = pkgs.linuxPackages_latest; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
+  boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
+	boot.kernelParams = [
+		# Clean boot
+		"quiet"
+		"splash"
+		# "loglevel=0"
+		# "udev.log_level=0"
+		# "rd.udev.log_level=0"
+		# "rd.systemd.show_status=false"
+		# "nowatchdog"
+		# "nomce"
 
-  networking.hostName = "nixos";
+		# Performance
+		"cpufreq.default_governor=schedutil"
+		# "psi=1"
+		"mitigations=off"
+		# "rootflags=noatime"
+
+		# Utilities
+		# "fs.inotify.max_user_watches=524288"
+		# "usbcore.blinkenlights=1"
+		# "sysrq_always_enabled=1"
+		# "consoleblank=0"
+
+		# Gerenciamento de Energia e CPU
+		# "intel_pstate=passive"
+		# "i915.enable_psr=1"
+		# "i915.fastboot=1"
+
+		# Gerenciamento de Memória e Agendador (Scheduler)
+		# "vm.dirty_ratio=10"
+		# "vm.dirty_background_ratio=5"
+		# "preempt=full"
+		# "threadirqs"
+
+		# Debugging
+		# "panic=10"
+		# "oops=panic"
+		# "debug"
+		# "drm.debug=0x1e"
+	];
+
+	# services.thermald.enable = false;
+	# services.auto-cpufreq.enable = true;
+	powerManagement = {
+		enable = true;
+		cpuFreqGovernor = "schedutil";
+	};
+	security.allowSimultaneousMultithreading = true; # Enable SMT (Hyper-Threading) for performance (unsafe).
+	nix.settings.max-jobs = 4;
+	nix.settings.cores = 4;
+	services.system76-scheduler.enable = true; # System76 scheduler for better performance.
+
+  # networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

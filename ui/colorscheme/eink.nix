@@ -15,76 +15,76 @@
     };
     variants = {
       dark = {
-        # Paleta de cores aprimorada para melhor contraste e legibilidade.
+        # Dark mode with #131419 base
         bg = {
-          root = "#242424"; # Fundo de "papel escuro" mais profundo e neutro
-          shift = "#2C2C2C";
-          echo = "#353535";
-          fade = "#3F3F3F";
+          root = "#131419"; # Base dark background
+          shift = "#1A1B20"; # Slightly lighter
+          echo = "#21222A";  # Even lighter
+          fade = "#282A33";  # Lightest variant
         };
 
         fg = {
-          root = "#EAE8E1"; # Texto claro e legível com um toque quente
-          shift = "#DCDAD4";
-          echo = "#CEC9C2";
-          fade = "#C0BBB4";
+          root = "#E2E3E7"; # Clear, readable text with slight coolness
+          shift = "#D4D5DC";
+          echo = "#C6C8D1";
+          fade = "#B8BAC5";
         };
 
-        # Cores de destaque mais claras para se destacarem no fundo escuro.
+        # Subtle, desaturated accent colors that complement the dark background
         red = {
-          root = "#C5AFAF"; # Vermelho pálido
-          shift = "#B9A3A3";
-          echo = "#AD9797";
-          fade = "#A18B8B";
+          root = "#908487"; # Muted red with grayish tone
+          shift = "#847A7D";
+          echo = "#787073";
+          fade = "#6C6568";
         };
 
         black = {
-          root = "#2D2C2A";
-          shift = "#333231";
-          echo = "#3A3938";
-          fade = "#41403F";
+          root = "#131419"; # Match background
+          shift = "#1A1B20";
+          echo = "#21222A";
+          fade = "#282A33";
         };
 
         green = {
-          root = "#AFC5AF"; # Verde pálido
-          shift = "#A3B9A3";
-          echo = "#97AD97";
-          fade = "#8BA18B";
+          root = "#818984"; # Subtle sage green
+          shift = "#777F7A";
+          echo = "#6D7570";
+          fade = "#636B66";
         };
 
         yellow = {
-          root = "#C5C0AF"; # Amarelo/sépia pálido
-          shift = "#B9B4A3";
-          echo = "#ADAA97";
-          fade = "#A19E8B";
+          root = "#8A8678"; # Warm gray
+          shift = "#807C6E";
+          echo = "#767264";
+          fade = "#6C685A";
         };
 
         blue = {
-          root = "#AFB9C5"; # Azul pálido
-          shift = "#A3AAB9";
-          echo = "#979DAE";
-          fade = "#8B91A2";
+          root = "#7E8490"; # Steel blue gray
+          shift = "#747A86";
+          echo = "#6A707C";
+          fade = "#606672";
         };
 
         magenta = {
-          root = "#C5AFC5"; # Magenta pálido
-          shift = "#B9A3B9";
-          echo = "#AD97AD";
-          fade = "#A18BA1";
+          root = "#887E89"; # Subtle purple gray
+          shift = "#7E747F";
+          echo = "#746A75";
+          fade = "#6A606B";
         };
 
         cyan = {
-          root = "#AFC5C5"; # Ciano pálido
-          shift = "#A3B9B9";
-          echo = "#97ADAD";
-          fade = "#8BA1A1";
+          root = "#7C858A"; # Cool gray with cyan tint
+          shift = "#727B80";
+          echo = "#687176";
+          fade = "#5E676C";
         };
 
         white = {
-          root = "#F5F2E9"; # Branco papel original
-          shift = "#E8E5DC";
-          echo = "#DBD8CF";
-          fade = "#CEC9C2";
+          root = "#E2E3E7"; # Match foreground
+          shift = "#D4D5DC";
+          echo = "#C6C8D1";
+          fade = "#B8BAC5";
         };
       };
 

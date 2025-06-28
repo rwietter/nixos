@@ -24,7 +24,7 @@
     };
   };
 
-  nix.optimise.automatic = true;
+  nix.optimise.automatic = false;
   nix.settings.auto-optimise-store = false; # True will run at each compilation and can be slow
   nix.gc = {
     automatic = false;

@@ -2,8 +2,9 @@
   description = "rwietter's NixOS settings";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # delivering the latest tested updates on a rolling basis
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # latest unstable NixOS release
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # stable release of NixOS 25.05
     master.url = "github:nixos/nixpkgs";
 
     home-manager = {
@@ -16,6 +17,7 @@
     {
       nixpkgs,
       unstable,
+			nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
@@ -32,6 +34,10 @@
         inherit system;
         config.allowUnfree = true;
       };
+			nixpkgs-unstable = import inputs.nixpkgs-unstable {
+				inherit system;
+				config.allowUnfree = true;
+			};
       lib = pkgs.lib;
     in
     {
@@ -46,6 +52,7 @@
               mylib
               theme
               unstable
+							nixpkgs-unstable
               ;
           };
           modules = [
@@ -64,6 +71,7 @@
                     theme
                     pkgs
                     unstable
+										nixpkgs-unstable
                     ;
                 };
                 users.rwietter =
@@ -99,6 +107,7 @@
               theme
               pkgs
               unstable
+							nixpkgs-unstable
               ;
           };
           modules = [

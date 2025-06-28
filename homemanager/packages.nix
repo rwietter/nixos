@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }:
+{ pkgs, unstable, nixpkgs-unstable, ... }:
 
 let
   # lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
@@ -6,6 +6,7 @@ let
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
     unstable.vscode
+		nixpkgs-unstable.gemini-cli # AI agent for the terminal
   ];
 in
 {
@@ -81,6 +82,10 @@ in
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
 			udict # Urban Dictionary CLI client
 			quick-lookup # Wikimedia dictionary client
+			smartmontools # tools for monitoring storage devices
+			file # file type identification utility
+			crow-translate # Translation tool
+			cachix # Nix cache client
 
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
