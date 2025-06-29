@@ -15,76 +15,76 @@
     };
     variants = {
       dark = {
-        # Dark mode with #131419 base
+        # Pure monochromatic dark theme
         bg = {
           root = "#131419"; # Base dark background
-          shift = "#1A1B20"; # Slightly lighter
-          echo = "#21222A";  # Even lighter
-          fade = "#282A33";  # Lightest variant
+          shift = "#1E1F24"; # More visible depth
+          echo = "#292A30";  # Clear elevation
+          fade = "#34353B";  # Distinct highlight
         };
 
         fg = {
-          root = "#E2E3E7"; # Clear, readable text with slight coolness
-          shift = "#D4D5DC";
-          echo = "#C6C8D1";
-          fade = "#B8BAC5";
+          root = "#BABBBD"; # Reduced contrast text
+          shift = "#A7A8AA"; # Gentle fade
+          echo = "#939497"; # Muted text
+          fade = "#7F8084"; # Soft detail
         };
 
-        # Subtle, desaturated accent colors that complement the dark background
+        # Pure grayscale accents
         red = {
-          root = "#908487"; # Muted red with grayish tone
-          shift = "#847A7D";
-          echo = "#787073";
-          fade = "#6C6568";
+          root = "#8C8C8C"; # Light gray
+          shift = "#7A7A7A"; # Medium gray
+          echo = "#686868"; # Dark gray
+          fade = "#565656"; # Deeper gray
         };
 
         black = {
-          root = "#131419"; # Match background
-          shift = "#1A1B20";
-          echo = "#21222A";
-          fade = "#282A33";
+          root = "#232325"; # Daker neutral
+					shift = "#2A2B2F"; # Slightly lighter neutral
+					echo = "#313233"; # Medium dark neutral
+					fade = "#38393D"; # Deep dark neutral
         };
 
         green = {
-          root = "#818984"; # Subtle sage green
-          shift = "#777F7A";
-          echo = "#6D7570";
-          fade = "#636B66";
+          root = "#959595"; # Light neutral
+          shift = "#838383"; # Medium neutral
+          echo = "#717171"; # Dark neutral
+          fade = "#5F5F5F"; # Deep neutral
         };
 
         yellow = {
-          root = "#8A8678"; # Warm gray
-          shift = "#807C6E";
-          echo = "#767264";
-          fade = "#6C685A";
+          root = "#9E9E9E"; # Light accent
+          shift = "#8C8C8C"; # Medium accent
+          echo = "#7A7A7A"; # Dark accent
+          fade = "#686868"; # Deep accent
         };
 
         blue = {
-          root = "#7E8490"; # Steel blue gray
-          shift = "#747A86";
-          echo = "#6A707C";
-          fade = "#606672";
+          root = "#878787"; # Light shade
+          shift = "#757575"; # Medium shade
+          echo = "#636363"; # Dark shade
+          fade = "#515151"; # Deep shade
         };
 
         magenta = {
-          root = "#887E89"; # Subtle purple gray
-          shift = "#7E747F";
-          echo = "#746A75";
-          fade = "#6A606B";
+          root = "#909090"; # Light tone
+          shift = "#7E7E7E"; # Medium tone
+          echo = "#6C6C6C"; # Dark tone
+          fade = "#5A5A5A"; # Deep tone
         };
 
         cyan = {
-          root = "#7C858A"; # Cool gray with cyan tint
-          shift = "#727B80";
-          echo = "#687176";
-          fade = "#5E676C";
+          root = "#828282"; # Light cool
+          shift = "#707070"; # Medium cool
+          echo = "#5E5E5E"; # Dark cool
+          fade = "#4C4C4C"; # Deep cool
         };
 
         white = {
-          root = "#E2E3E7"; # Match foreground
-          shift = "#D4D5DC";
-          echo = "#C6C8D1";
-          fade = "#B8BAC5";
+          root = "#BABBBD"; # Match foreground
+          shift = "#A7A8AA"; # Soft white
+          echo = "#939497"; # Muted white
+          fade = "#7F8084"; # Dim white
         };
       };
 

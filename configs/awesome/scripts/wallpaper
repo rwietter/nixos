@@ -4,7 +4,7 @@
 dir="${HOME}/Imagens/Wallpapers/"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/Know yourself 4k.png"
-ultima="/home/rwietter/Imagens/Wallpapers/Know yourself 4k.png"
+ultima="/home/rwietter/Imagens/Wallpapers/2560x1440-1_tokyo-night-dark.jpg"
 modo="--bg-fill"
 indice=0
 i=0

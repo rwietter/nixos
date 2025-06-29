@@ -28,7 +28,7 @@ local fonts = {
 	jet = "JetBrainsMono Nerd Font Mono"
 }
 
-local font_name = fonts.jet
+local font_name = fonts.fantasque
 
 local themes = {
 	rose_pine_dark = "rose-pine",

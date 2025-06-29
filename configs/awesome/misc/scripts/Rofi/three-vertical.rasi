@@ -16,8 +16,8 @@ configuration {
 * {
 	accent: #1e88e5;
 	background: #101012;
-	background-light: #19191B;
-	foreground: #bdbdbd;
+	foreground-neutral:#6b6b6b;
+	foreground: #eceff1;
 	on: #66bb6a;
 	off: #ef5350;
 }
@@ -39,7 +39,7 @@ window {
 
 listview {
 	lines: 3;
-	margin: 5px;
+	margin: 0px;
 	spacing: 5px;
 	cycle: true;
 	dynamic: true;
@@ -52,19 +52,19 @@ mainbox {
 }
 
 element {
-	background-color: @background;
-	text-color: @foreground;
+	background-color: transparent;
 	orientation: vertical;
 	spacing: 5px;
 	border-radius: 4px;
 }
 
 element-text {
-	font: "Material Icons Round 17";
+	font: "FontAwesome 17";
 	expand: true;
-	horizontal-align: 0.5;
+	text-color: @foreground-neutral;
+	horizontal-align: 0.4;
 	vertical-align: 0;
-	margin: 3px 3px 22px 3px;
+	margin: 20px 10px;
 }
 
 element normal.urgent,
@@ -81,10 +81,18 @@ element alternate.active {
 }
 
 element selected {
-	background-color: @background-light;
+	background-color: transparent;
 	text-color: @foreground;
 	border: 0px;
-	border-color: @border;
+	border-color: transparent;
+}
+
+element-text selected {
+	font: "FontAwesome 17";
+	text-color: @foreground;
+	horizontal-align: 0.4;
+	vertical-align: 0;
+	margin: 20px 10px;
 }
 
 element selected.urgent {

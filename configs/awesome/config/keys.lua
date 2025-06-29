@@ -109,7 +109,7 @@ awful.keyboard.append_global_keybindings({
 		description = "screenshot",
 		group = "launcher",
 	}),
-	
+
 })
 
 -- control/media
@@ -120,7 +120,7 @@ awful.keyboard.append_global_keybindings({
 		description = "increase brightness",
 		group = "control",
 	}),
-	
+
 	awful.key({ alt }, "d", function()
 		awful.spawn("brightnessctl set 5%- -q", false)
 	end, {
@@ -156,7 +156,7 @@ awful.keyboard.append_global_keybindings({
 		group = "control",
 	}),
 
-	awful.key({ modkey }, "F2", function()
+	awful.key({ modkey }, "]", function()
 		misc.musicMenu()
 	end, {
 		description = "screenshot",
@@ -234,7 +234,7 @@ awful.keyboard.append_global_keybindings({
 		description = "focus the next screen",
 		group = "screen",
 	}),
-	
+
 	awful.key({ modkey, ctrl }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, {
@@ -271,7 +271,7 @@ awful.keyboard.append_global_keybindings({
 		description = "swap with previous client by index",
 		group = "client",
 	}),
-	
+
 	awful.key({ modkey }, "u", awful.client.urgent.jumpto, {
 		description = "jump to urgent client",
 		group = "client",
@@ -325,7 +325,7 @@ awful.keyboard.append_global_keybindings({
 		description = "select next",
 		group = "layout",
 	}),
-	
+
 	awful.key({ modkey, shift }, "space", function()
 		awful.layout.inc(-1)
 	end, {
@@ -495,7 +495,7 @@ client.connect_signal("request::default_keybindings", function()
 			description = "minimize",
 			group = "client",
 		}),
-		
+
 		awful.key({ alt }, "z", function(c)
 			c.maximized = not c.maximized
 			c:raise()
