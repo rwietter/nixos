@@ -88,7 +88,6 @@ abbr fcc 'fc-cache -fv'
 abbr makelog '2>&1 | tee build.log' # Run some command and save output to build.log e.g make 2>&1 | tee build.log
 abbr copy 'xclip -sel clip' # Copy output to clipboard
 abbr paste 'xclip -sel clip -o' # Paste clipboard content
-abbr cat 'bat --color=always --style=plain' # Use bat to display file content with syntax highlighting
 
 : '------------- FZF ----------------- '
 abbr fdz 'fd . | fzf --multi --preview "bat --color=always --style=numbers --line-range=:1000 {}" -- --preview-window=right:70%:wrap' # Find files with fd and preview with bat

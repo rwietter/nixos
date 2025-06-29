@@ -109,6 +109,34 @@ bind -M insert \ea zellij toggle                 # Toggle zellij
 
 # export LS_COLORS="$(vivid generate ~/nixos/ui/ls_colors/amarena.yml)"
 
+# -- Alias
+alias ymp3="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0"
+alias x="xsel -i -b"
+alias wifi="nmtui-connect"
+alias whp="sudo netstat -tulpn | grep :7070"
+alias lstrim="lsblk --discard"
+alias c="clear"
+alias cat="bat --color always --plain"
+alias cpuperf="sudo cpupower frequency-set -g performance"
+alias cpupowfreqinf="sudo cpupower frequency-info"
+alias cpusave="sudo cpupower frequency-set -g powersave"
+alias cpustats="sudo i7z"
+alias cv="xclip -sel clip"
+alias driver="sudo lspci -vnn"
+alias flac="yt-dlp -x --audio-format flac"
+alias gpl="gpg --list-secret-keys --keyid-format LONG"
+alias hardqualitydown="yt-dlp -f"
+alias irmblocks="ipfs repo gc"
+alias k9="pkill -9"
+alias lt="ls --tree"
+alias tebi="dmesg | nc termbin.com 9999"
+alias rss="nohup xdg-open http://localhost:7070/ &>/dev/null & disown"
+alias q="exit"
+alias pweb="lsof -i -n -P"
+alias power="systemctl power"
+alias mergevid='ffmpeg -loglevel error -i "$invideo" -i "$inaudio" -strict -2 -codec copy "$outputfile"'
+alias memd='ps -A --sort -rsz -o comm,pmem,pcpu | awk "NR<=20" | spin'
+
 # ---------------- References ------------------
 # ----------------------------------------------
 # - [Fish for bash users](https://fishshell.com/docs/3.2/fish_for_bash_users.html)
