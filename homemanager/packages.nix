@@ -2,7 +2,6 @@
 
 let
   # lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
-	genymotion = import ../overlays/geny.nix { inherit pkgs; };
   unstablePackages = [
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
@@ -145,9 +144,6 @@ in
 
       # Scripts
       # (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
-
-			# Overlays
-			genymotion # Android emulator
     ]
     ++ unstablePackages;
 }
