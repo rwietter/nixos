@@ -101,11 +101,21 @@ bind -M insert \cz undo                          # Undo any typed command
 # bind -M insert \cd fdf    # Ctrl + D -> git diff
 # bind -M insert \el flo    # Alt + L -> git log
 
-# -- zellij
-bind -M insert \ea zellij toggle                 # Toggle zellij
+# -- tmux
+function start_tmux
+	if not set -q TMUX
+		tmux new-session -A -s main
+	else
+		echo "Already in a tmux session."
+	end
+end
+if status is-interactive
+    bind -M insert \ea start_tmux  # Ctrl + A -> start tmux session
+end
 
 # \c -> ctrl (case sensitive)
 # \e -> esc | alt (case insensitive)
+# [-M] -> state of vi mode (insert, normal, visual, etc.)
 
 # export LS_COLORS="$(vivid generate ~/nixos/ui/ls_colors/amarena.yml)"
 

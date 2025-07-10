@@ -13,6 +13,7 @@
     ./nil.nix # A Nix Language Server
     ./git.nix # Git configuration and tools
     ./nix-index.nix # Nix index for command-not-found
+		./tmux.nix # Terminal multiplexer
     # ./zsh.nix
   ];
 }

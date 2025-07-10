@@ -171,6 +171,13 @@
   hyprland.enable = false; # Hyprland window manager
   awesome.enable = true; # Awesome window manager
   homelab.enable = true; # Homelab services
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+	};
+
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -211,6 +218,7 @@
     enable = false;
     setSocketVariable = false;
   };
+	virtualisation.waydroid.enable = true;
 
   # Tailscale
   services.tailscale.enable = true;
@@ -239,6 +247,9 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.atd.enable = true;
+	services.udev.extraRules = ''
+		SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+	'';
 
 	# Cachix
 	nix.settings.trusted-users = [ "root" "rwietter" ];

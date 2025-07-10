@@ -19,9 +19,9 @@ local pause_buttons_box = pause_buttons[1] .. '\n' .. pause_buttons[2] .. '\n' .
 
 -- playerctl commands
 local commands = {
-    "rmpc prev",
-    "rmpc togglepause",
     "rmpc next",
+    "rmpc togglepause",
+    "rmpc prev",
 }
 
 -- execute

@@ -37,6 +37,7 @@
   code.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
   rmpc.enable = true; # Remote Music Player Client\
+	tmux.enable = true; # Terminal multiplexer
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -18,6 +18,7 @@
       nerd-fonts.monaspace
       nerd-fonts.zed-mono
       nerd-fonts.symbols-only
+			maple-mono.NF-unhinted
     ];
     fontconfig = {
       defaultFonts = {
