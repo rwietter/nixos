@@ -1,6 +1,6 @@
 {
   appearance = {
-    colorscheme = "hypfrost"; # "eink", "everforest", "hypfrost",
+    colorscheme = "eink"; # "eink", "everforest", "hypfrost",
     theme = "dark"; # Or "light", "dark", "dim".
   };
   git = {

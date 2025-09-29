@@ -170,30 +170,30 @@
   gtk = {
     dark = {
       theme = {
-        name = "Graphite";
-        package = "graphite-gtk-theme";
+        name = "Omni";
+        package = "omni-gtk-theme"; # colloid-gtk-theme
       };
       iconTheme = {
-        name = "Paper";
-        package = "paper-icon-theme";
+        name = "Reversal";
+        package = "reversal-icon-theme";
       };
       cursor = {
-        name = "Vanilla-DMZ";
-        package = "vanilla-dmz";
+        name = "Nordzy";
+        package = "nordzy-cursor-theme";
       };
     };
     light = {
       theme = {
-        name = "Graphite";
-        package = "graphite-gtk-theme";
+        name = "Rose Pine";
+        package = "rose-pine-gtk-theme";
       };
       iconTheme = {
-        name = "Paper";
-        package = "paper-icon-theme";
+        name = "Rose Pine";
+        package = "rose-pine-icon-theme";
       };
       cursor = {
-        name = "Vanilla-DMZ";
-        package = "vanilla-dmz";
+        name = "Nordzy";
+        package = "nordzy-cursor-theme";
       };
     };
   };

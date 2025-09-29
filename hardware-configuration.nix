@@ -60,7 +60,7 @@
   # 1. Enable the hardware graphics acceleration and VA-API support
   hardware.graphics = {
     enable = true;
-    enable32Bit = true; # Opcional, mas bom para compatibilidade (Steam, Wine)
+    enable32Bit = false; # Opcional, mas bom para compatibilidade (Steam, Wine)
 
     # VA-API Intel
     extraPackages = with pkgs; [
