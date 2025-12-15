@@ -38,6 +38,8 @@
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
   rmpc.enable = true; # Remote Music Player Client\
 	tmux.enable = true; # Terminal multiplexer
+	up.enable = true; # Ultimate Plumber
+	discord.enable = true; # Discord
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

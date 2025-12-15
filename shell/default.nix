@@ -14,6 +14,7 @@
     ./git.nix # Git configuration and tools
     ./nix-index.nix # Nix index for command-not-found
 		./tmux.nix # Terminal multiplexer
+		./up.nix # A tool for writing Linux pipes with instant live preview
     # ./zsh.nix
   ];
 }

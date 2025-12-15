@@ -60,14 +60,14 @@
   # 1. Enable the hardware graphics acceleration and VA-API support
   hardware.graphics = {
     enable = true;
-    enable32Bit = false; # Opcional, mas bom para compatibilidade (Steam, Wine)
+    enable32Bit = true; # Compatibility with 32-bit applications
 
     # VA-API Intel
     extraPackages = with pkgs; [
-      libva # Biblioteca VA-API principal
-      intel-media-driver # Driver VA-API para Intel Gen8+ (inclui HD 630)
-      libva-utils # Contém a ferramenta 'vainfo' para teste
-      # mesa.drivers     # Necessário para AMD
+      libva # VA-API runtime
+      intel-media-driver # Driver VA-API for Intel Gen9+
+      libva-utils # Contains the 'vainfo' tool for testing
+      # mesa.drivers # Necessary for AMD
     ];
   };
 }
