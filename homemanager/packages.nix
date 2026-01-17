@@ -96,7 +96,10 @@ in
       anki # Spaced repetition flashcard program
       gnome-pomodoro # Gnome Pomodoro timer
       fabric-ai # AI assistant for terminal
+			kdePackages.kdenlive # video editor
       # libreoffice-qt
+      obs-studio # Free and open source software for video recording and live streaming
+			ffmpeg-full
 
       # System Monitoring & Information
       inxi # system info tool

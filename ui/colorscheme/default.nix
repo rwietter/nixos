@@ -15,5 +15,13 @@ with mylib;
       { colorscheme = "eink"; }
       (import ./eink.nix)
     ]
+		[
+			{ colorscheme = "zen"; }
+			(import ./zen.nix)
+		]
+		[
+			{ colorscheme = "monochrome"; }
+			(import ./monochrome.nix)
+		]
   ];
 }

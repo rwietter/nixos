@@ -65,9 +65,11 @@
     # VA-API Intel
     extraPackages = with pkgs; [
       libva # VA-API runtime
-      intel-media-driver # Driver VA-API for Intel Gen9+
+      intel-media-driver # # Aceleração de vídeo (VAAPI)
       libva-utils # Contains the 'vainfo' tool for testing
       # mesa.drivers # Necessary for AMD
+			intel-compute-runtime  # O driver OpenCL "Neo" (para DaVinci)
+			libvdpau-va-gl
     ];
   };
 }
