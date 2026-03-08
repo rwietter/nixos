@@ -7,6 +7,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # stable release of NixOS 25.05
     master.url = "github:nixos/nixpkgs";
 
+		browser-previews = { url = "github:nix-community/browser-previews"; inputs.nixpkgs.follows = "nixpkgs"; };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs"; # use the same nixpkgs as the system

@@ -98,10 +98,10 @@
         };
 
         fg = {
-          root = "#474747"; # Dark gray text
-          shift = "#414040";
-          echo = "#3A3938";
-          fade = "#333230";
+					root = "#131419"; # Base dark background
+					shift = "#1E1F24"; # More visible depth
+					echo = "#292A30";  # Clear elevation
+					fade = "#34353B";  # Distinct highlight
         };
 
         red = {

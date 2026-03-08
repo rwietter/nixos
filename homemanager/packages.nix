@@ -6,7 +6,8 @@ let
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
     unstable.vscode
-		nixpkgs-unstable.gemini-cli # AI agent for the terminal
+		nixpkgs-unstable.chromium
+		# nixpkgs-unstable.gemini-cli # AI agent for the terminal
   ];
 in
 {
@@ -14,7 +15,7 @@ in
     with pkgs;
     [
       # Development Tools
-      nap # code snippets in the terminal
+      # nap # code snippets in the terminal
       tokei # code statistics
       strace # system call monitoring
       clipse # clipboard manager TUI for Unix
@@ -30,7 +31,7 @@ in
       air # golang live reload
       rclone # Command line program to sync files and directories to and from major cloud storage
       tig # git log viewer
-      fossil # distributed version control system
+      # fossil # distributed version control system
       hyperfine # benchmarking tool
       duf # Disk Usage/Free Utility
       fd # find on steroids
@@ -90,12 +91,12 @@ in
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
       obsidian # note taking
-      chromium # Web Browser
-      librewolf # Firefox fork focused on privacy
+      # chromium # Web Browser
+      # librewolf # Firefox fork focused on privacy
       espanso # text expander
       anki # Spaced repetition flashcard program
       gnome-pomodoro # Gnome Pomodoro timer
-      fabric-ai # AI assistant for terminal
+      # fabric-ai # AI assistant for terminal
 			kdePackages.kdenlive # video editor
       # libreoffice-qt
       obs-studio # Free and open source software for video recording and live streaming
@@ -123,7 +124,7 @@ in
       cameractrls-gtk4 # Camera controls for Linux
       redshift # color temperature adjustment
       reaper # audio editing
-      ardour # digital audio workstation
+      # ardour # digital audio workstation
       clapper # GNOME media player built using GTK4 toolkit and powered by GStreamer with OpenGL rendering
       mpv # General-purpose media player, fork of MPlayer and mplayer2
       stremio # p2p video streaming

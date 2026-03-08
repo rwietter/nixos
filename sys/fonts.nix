@@ -19,7 +19,8 @@
       nerd-fonts.zed-mono
       nerd-fonts.symbols-only
 			maple-mono.NF-unhinted
-
+			ipafont
+			kochi-substitute
     ];
     fontconfig = {
       defaultFonts = {

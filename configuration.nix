@@ -4,6 +4,7 @@
 
 {
   pkgs,
+	inputs,
   ...
 }:
 
@@ -132,9 +133,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
+	# List packages installed in system profile.
+	# https://github.com/nix-community/browser-previews
+  environment.systemPackages = (with inputs.browser-previews.packages.${pkgs.system}; [
+    google-chrome-beta # Beta Release
+    google-chrome-dev # Dev Release
+  ]) ++ (with pkgs; [
     wget
     home-manager
     wezterm
@@ -146,12 +150,11 @@
     imlib2 # image loading and rendering library
     lua54Packages.luarocks
 
-
-		# WINE
+    # WINE
     wine64
     wineWowPackages.staging
     winetricks
-  ];
+  ]);
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";

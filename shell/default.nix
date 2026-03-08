@@ -15,6 +15,7 @@
     ./nix-index.nix # Nix index for command-not-found
 		./tmux.nix # Terminal multiplexer
 		./up.nix # A tool for writing Linux pipes with instant live preview
+		# ./spicetify.nix # Spotify customizer
     # ./zsh.nix
   ];
 }

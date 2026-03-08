@@ -1,7 +1,7 @@
 {
   appearance = {
-    colorscheme = "monochrome"; # "eink", "everforest", "hypfrost", "zen"
-    theme = "dark"; # Or "light", "dark", "dim".
+    colorscheme = "hypfrost"; # "eink", "everforest", "hypfrost", "zen"
+    theme = "dark"; # Or "light", "dark".
   };
   git = {
     username = "rwietter";

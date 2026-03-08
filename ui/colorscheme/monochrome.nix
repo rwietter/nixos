@@ -167,29 +167,29 @@
   gtk = {
     dark = {
       theme = {
-        name = "Juno";
-        package = "juno-gtk-theme";
+        name = "Juno-ocean";
+        package = "juno-theme";
       };
       iconTheme = {
-        name = "Juno";
-        package = "juno-icon-theme";
+        name = "Reversal-dark";
+        package = "reversal-icon-theme";
       };
       cursor = {
-        name = "Nordzy";
+        name = "Nordzy-catppucin-frappe-dark";
         package = "nordzy-cursor-theme";
       };
     };
     light = {
       theme = {
         name = "Juno";
-        package = "juno-gtk-theme";
+        package = "juno-theme";
       };
       iconTheme = {
-        name = "Juno";
-        package = "juno-icon-theme";
+        name = "Reversal-dark";
+        package = "reversal-icon-theme";
       };
       cursor = {
-        name = "Nordzy";
+        name = "Nordzy-catppucin-frappe-dark";
         package = "nordzy-cursor-theme";
       };
     };
