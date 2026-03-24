@@ -4,7 +4,7 @@
 
 {
   pkgs,
-	inputs,
+  inputs,
   ...
 }:
 
@@ -25,57 +25,57 @@
 
   # Use the latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest; <https://nixos.wiki/wiki/Linux_kernel>
-	boot.kernelParams = [
-		# Clean boot
-		"quiet"
-		"splash"
-		# "loglevel=0"
-		# "udev.log_level=0"
-		# "rd.udev.log_level=0"
-		# "rd.systemd.show_status=false"
-		# "nowatchdog"
-		# "nomce"
+  boot.kernelParams = [
+    # Clean boot
+    "quiet"
+    "splash"
+    # "loglevel=0"
+    # "udev.log_level=0"
+    # "rd.udev.log_level=0"
+    # "rd.systemd.show_status=false"
+    # "nowatchdog"
+    # "nomce"
 
-		# Performance
-		"cpufreq.default_governor=schedutil"
-		# "psi=1"
-		"mitigations=off"
-		# "rootflags=noatime"
+    # Performance
+    "cpufreq.default_governor=schedutil"
+    # "psi=1"
+    "mitigations=off"
+    # "rootflags=noatime"
 
-		# Utilities
-		# "fs.inotify.max_user_watches=524288"
-		# "usbcore.blinkenlights=1"
-		# "sysrq_always_enabled=1"
-		# "consoleblank=0"
+    # Utilities
+    # "fs.inotify.max_user_watches=524288"
+    # "usbcore.blinkenlights=1"
+    # "sysrq_always_enabled=1"
+    # "consoleblank=0"
 
-		# Gerenciamento de Energia e CPU
-		# "intel_pstate=passive"
-		# "i915.enable_psr=1"
-		# "i915.fastboot=1"
+    # Gerenciamento de Energia e CPU
+    # "intel_pstate=passive"
+    # "i915.enable_psr=1"
+    # "i915.fastboot=1"
 
-		# Gerenciamento de Memória e Agendador (Scheduler)
-		# "vm.dirty_ratio=10"
-		# "vm.dirty_background_ratio=5"
-		# "preempt=full"
-		# "threadirqs"
+    # Gerenciamento de Memória e Agendador (Scheduler)
+    # "vm.dirty_ratio=10"
+    # "vm.dirty_background_ratio=5"
+    # "preempt=full"
+    # "threadirqs"
 
-		# Debugging
-		# "panic=10"
-		# "oops=panic"
-		# "debug"
-		# "drm.debug=0x1e"
-	];
+    # Debugging
+    # "panic=10"
+    # "oops=panic"
+    # "debug"
+    # "drm.debug=0x1e"
+  ];
 
-	# services.thermald.enable = false;
-	# services.auto-cpufreq.enable = true;
-	powerManagement = {
-		enable = true;
-		cpuFreqGovernor = "schedutil";
-	};
-	security.allowSimultaneousMultithreading = true; # Enable SMT (Hyper-Threading) for performance (unsafe).
-	nix.settings.max-jobs = 4;
-	nix.settings.cores = 4;
-	services.system76-scheduler.enable = true; # System76 scheduler for better performance.
+  # services.thermald.enable = false;
+  # services.auto-cpufreq.enable = true;
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "schedutil";
+  };
+  security.allowSimultaneousMultithreading = true; # Enable SMT (Hyper-Threading) for performance (unsafe).
+  nix.settings.max-jobs = 4;
+  nix.settings.cores = 4;
+  services.system76-scheduler.enable = true; # System76 scheduler for better performance.
 
   # networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -131,30 +131,32 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "beekeeper-studio-5.1.5"
+    ];
+  };
 
-	# List packages installed in system profile.
-	# https://github.com/nix-community/browser-previews
-  environment.systemPackages = (with inputs.browser-previews.packages.${pkgs.system}; [
-    google-chrome-beta # Beta Release
-    google-chrome-dev # Dev Release
-  ]) ++ (with pkgs; [
-    wget
-    home-manager
-    wezterm
+  # List packages installed in system profile.
+  # https://github.com/nix-community/browser-previews
+  environment.systemPackages =
+    (with inputs.browser-previews.packages.${pkgs.system}; [
+      google-chrome-beta # Beta Release
+      google-chrome-dev # Dev Release
+    ])
+    ++ (with pkgs; [
+      wget
+      home-manager
+      wezterm
 
-    # Xorg
-    # xorg.xdpyinfo
+      # Xorg
+      # xorg.xdpyinfo
 
-    # Libs
-    imlib2 # image loading and rendering library
-    lua54Packages.luarocks
-
-    # WINE
-    wine64
-    wineWowPackages.staging
-    winetricks
-  ]);
+      # Libs
+      imlib2 # image loading and rendering library
+      lua54Packages.luarocks
+    ]);
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
@@ -180,13 +182,12 @@
   hyprland.enable = false; # Hyprland window manager
   awesome.enable = true; # Awesome window manager
   homelab.enable = true; # Homelab services
-	programs.steam = {
-		enable = true;
-		remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-		dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-		localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-	};
-
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -227,7 +228,7 @@
     enable = false;
     setSocketVariable = false;
   };
-	virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.enable = true;
 
   # Tailscale
   services.tailscale.enable = true;
@@ -256,10 +257,13 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.atd.enable = true;
-	services.udev.extraRules = ''
-		SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
-	'';
+  services.udev.extraRules = ''
+    		SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
+    	'';
 
-	# Cachix
-	nix.settings.trusted-users = [ "root" "rwietter" ];
+  # Cachix
+  nix.settings.trusted-users = [
+    "root"
+    "rwietter"
+  ];
 }

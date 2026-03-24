@@ -15,13 +15,25 @@ with mylib;
       { colorscheme = "eink"; }
       (import ./eink.nix)
     ]
-		[
-			{ colorscheme = "zen"; }
-			(import ./zen.nix)
-		]
-		[
-			{ colorscheme = "monochrome"; }
-			(import ./monochrome.nix)
-		]
+    [
+      { colorscheme = "zen"; }
+      (import ./zen.nix)
+    ]
+    [
+      { colorscheme = "monochrome"; }
+      (import ./monochrome.nix)
+    ]
+    [
+      { colorscheme = "serendipity-midnight"; }
+      (import ./serendipity-midnight.nix)
+    ]
+    [
+      { colorscheme = "amarena-pastel"; }
+      (import ./amarena-pastel.nix)
+    ]
+    [
+      { colorscheme = "synthwave-dream"; }
+      (import ./synthwave-dream.nix)
+    ]
   ];
 }

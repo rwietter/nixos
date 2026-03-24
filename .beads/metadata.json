@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "nixos",
+  "project_id": "883f7202-80ee-4d95-848f-73fb1b67ab80"
+}

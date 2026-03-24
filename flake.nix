@@ -2,12 +2,15 @@
   description = "rwietter's NixOS settings";
 
   inputs = {
-		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # delivering the latest tested updates on a rolling basis
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # delivering the latest tested updates on a rolling basis
     unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # latest unstable NixOS release
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # stable release of NixOS 25.05
     master.url = "github:nixos/nixpkgs";
 
-		browser-previews = { url = "github:nix-community/browser-previews"; inputs.nixpkgs.follows = "nixpkgs"; };
+    browser-previews = {
+      url = "github:nix-community/browser-previews";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -19,7 +22,7 @@
     {
       nixpkgs,
       unstable,
-			nixpkgs-unstable,
+      nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
@@ -31,15 +34,18 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "beekeeper-studio-5.1.5"
+        ];
       };
       unstable = import inputs.unstable {
         inherit system;
         config.allowUnfree = true;
       };
-			nixpkgs-unstable = import inputs.nixpkgs-unstable {
-				inherit system;
-				config.allowUnfree = true;
-			};
+      nixpkgs-unstable = import inputs.nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       lib = pkgs.lib;
     in
     {
@@ -54,7 +60,7 @@
               mylib
               theme
               unstable
-							nixpkgs-unstable
+              nixpkgs-unstable
               ;
           };
           modules = [
@@ -73,7 +79,7 @@
                     theme
                     pkgs
                     unstable
-										nixpkgs-unstable
+                    nixpkgs-unstable
                     ;
                 };
                 users.rwietter =
@@ -109,7 +115,7 @@
               theme
               pkgs
               unstable
-							nixpkgs-unstable
+              nixpkgs-unstable
               ;
           };
           modules = [

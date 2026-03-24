@@ -1,6 +1,6 @@
 {
   appearance = {
-    colorscheme = "hypfrost"; # "eink", "everforest", "hypfrost", "zen"
+    colorscheme = "synthwave-dream"; # "eink", "everforest", "hypfrost", "zen", "monochrome", "serendipity-midnight", "amarena-pastel", "synthwave-dream"
     theme = "dark"; # Or "light", "dark".
   };
   git = {

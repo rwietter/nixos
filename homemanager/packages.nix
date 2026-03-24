@@ -47,7 +47,7 @@ in
       dconf # Needed when gtk is enabled
       nurl # Generate Nix fetcher calls from repository URLs to get shasum like sha256 for fetchFromGitHub and others.
       insomnia # The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.
-      # beekeeper-studio # Cross-platform SQL editor and database manager
+      beekeeper-studio # Cross-platform SQL editor and database manager
 
       # Command Line Utilities
       rsync # file synchronization
