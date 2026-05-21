@@ -23,9 +23,5 @@ with mylib;
       { colorscheme = "amarena-pastel"; }
       (import ./amarena-pastel.nix)
     ]
-    [
-      { colorscheme = "synthwave-dream"; }
-      (import ./synthwave-dream.nix)
-    ]
   ];
 }

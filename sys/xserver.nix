@@ -9,7 +9,8 @@
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
 
-  services.xserver.dpi = 65;
+	# Set the DPI for X11 sessions (uncomment if needed)
+  # services.xserver.dpi = 65;
 
   services.xserver.displayManager.lightdm.enable = false;
   services.xserver.desktopManager.xfce.enable = false;

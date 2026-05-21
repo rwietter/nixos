@@ -1,13 +1,19 @@
-{ pkgs, unstable, nixpkgs-unstable, ... }:
-
+{
+  pkgs,
+  unstable,
+  nixpkgs-unstable,
+  ...
+}:
 let
   # lazyorg = import ../overlays/lazyorg.nix { inherit pkgs; };
   unstablePackages = [
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
     unstable.vscode
-		nixpkgs-unstable.chromium
-		# nixpkgs-unstable.gemini-cli # AI agent for the terminal
+    nixpkgs-unstable.chromium
+		unstable.obs-studio # Free and open source software for video recording and live streaming
+		unstable.opencode # Agentic development platform, evolving the IDE into the agent-first era
+    # nixpkgs-unstable.gemini-cli # AI agent for the terminal
   ];
 in
 {
@@ -27,6 +33,7 @@ in
       minikube # Tool that makes it easy to run Kubernetes locally
       lsof # list open files
       gitui # Blazing fast terminal-ui for Git written in Rust
+      dolt # Git-compatible SQL database engine
       tailspin # Log file highlighter
       air # golang live reload
       rclone # Command line program to sync files and directories to and from major cloud storage
@@ -61,6 +68,8 @@ in
       vivid # A modern LS command
       tealdeer # tldr client
       onefetch # Git repository summary
+      gdal # Geospatial data processing toolkit
+      osmium-tool # OSM data processing tool
       age # simple, modern and secure file encryption tool
       mpd # server music client
       ncmpcpp # music client visualizer
@@ -81,12 +90,14 @@ in
       nitch # A system fetch utility that displays system information in a visually appealing way
       xorg.xdpyinfo # X11 display information utility
       waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
-			udict # Urban Dictionary CLI client
-			quick-lookup # Wikimedia dictionary client
-			smartmontools # tools for monitoring storage devices
-			file # file type identification utility
-			crow-translate # Translation tool
-			cachix # Nix cache client
+      udict # Urban Dictionary CLI client
+      quick-lookup # Wikimedia dictionary client
+      smartmontools # tools for monitoring storage devices
+      file # file type identification utility
+      crow-translate # Translation tool
+      cachix # Nix cache client
+			sem # Semantic diff tool
+			input-remapper # Tool to remap input devices on Linux
 
       # Productivity & Note-taking
       zotero_7 # reference manager and reader
@@ -97,10 +108,9 @@ in
       anki # Spaced repetition flashcard program
       gnome-pomodoro # Gnome Pomodoro timer
       # fabric-ai # AI assistant for terminal
-			kdePackages.kdenlive # video editor
+      kdePackages.kdenlive # video editor
       # libreoffice-qt
-      obs-studio # Free and open source software for video recording and live streaming
-			ffmpeg-full
+      ffmpeg-full
 
       # System Monitoring & Information
       inxi # system info tool
@@ -129,6 +139,8 @@ in
       mpv # General-purpose media player, fork of MPlayer and mplayer2
       stremio # p2p video streaming
       # spotify # Play music from the Spotify music service
+			scrcpy # display and control your Android device
+			android-tools # Android platform tools (adb, fastboot, etc.)
 
       # File Management & Browsers
       nautilus # file manager

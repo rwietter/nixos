@@ -130,6 +130,9 @@
     ];
   };
 
+  # Tool to running pre-compiled dynamic binaries because of NixOS not following FHS.
+  programs.nix-ld.enable = true;
+
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
@@ -152,6 +155,11 @@
 
       # Xorg
       # xorg.xdpyinfo
+
+      # support 64-bit only
+      wine64
+      wineWow64Packages.staging # wine-staging (version with experimental features)
+      winetricks # winetricks (all versions)
 
       # Libs
       imlib2 # image loading and rendering library
@@ -231,7 +239,9 @@
   virtualisation.waydroid.enable = true;
 
   # Tailscale
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
+
+	# Networking
   services.tailscale.useRoutingFeatures = "both";
   networking.firewall.checkReversePath = "loose";
   networking.nameservers = [
@@ -266,4 +276,7 @@
     "root"
     "rwietter"
   ];
+
+  # My mouse is broken, so I need to remap the buttons. This is a workaround until I can get a new mouse.
+  services.libinput.mouse.buttonMapping = "0 3 1";
 }

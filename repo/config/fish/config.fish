@@ -17,9 +17,9 @@ set -g fish_cursor_visual line blink           # Set cursor to line and blink in
 
 # ----------------- Zellij ---------------------
 # ----------------------------------------------
-# if status is-interactive
-#     eval (zellij setup --generate-auto-start fish | string collect)
-# end
+if status is-interactive
+    # eval (zellij setup --generate-auto-start fish | string collect)
+end
 
 # -------------- Theme Colors ------------------
 # ----------------------------------------------
@@ -94,6 +94,7 @@ end
 # ----------------------------------------------
 bind -M insert \cb backward-kill-path-component  # For each path component, delete it
 bind -M insert \cz undo                          # Undo any typed command
+bind -M insert \cy complete                 		 # Complete the command
 
 # -- git
 # bind -M insert \cs fcp    # Ctrl + S -> git cherry-pick
@@ -102,16 +103,16 @@ bind -M insert \cz undo                          # Undo any typed command
 # bind -M insert \el flo    # Alt + L -> git log
 
 # -- tmux
-function start_tmux
-	if not set -q TMUX
-		tmux new-session -A -s main
-	else
-		echo "Already in a tmux session."
-	end
-end
-if status is-interactive
-    bind -M insert \ea start_tmux  # Ctrl + A -> start tmux session
-end
+# function start_tmux
+# 	if not set -q TMUX
+# 		tmux new-session -A -s main
+# 	else
+# 		echo "Already in a tmux session."
+# 	end
+# end
+# if status is-interactive
+#     bind -M insert \ea start_tmux  # Ctrl + A -> start tmux session
+# end
 
 # \c -> ctrl (case sensitive)
 # \e -> esc | alt (case insensitive)
@@ -146,6 +147,7 @@ alias pweb="lsof -i -n -P"
 alias power="systemctl power"
 alias mergevid='ffmpeg -loglevel error -i "$invideo" -i "$inaudio" -strict -2 -codec copy "$outputfile"'
 alias memd='ps -A --sort -rsz -o comm,pmem,pcpu | awk "NR<=20" | spin'
+alias op="opencode ."
 
 # ---------------- References ------------------
 # ----------------------------------------------

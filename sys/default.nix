@@ -16,6 +16,7 @@
     ./niri.nix
     ./homelab.nix
     ./blueman.nix
+		./tailscale.nix
     # ./dns.nix
   ];
 }

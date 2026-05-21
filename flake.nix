@@ -34,6 +34,9 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [
+          (import ./overlays/sem.nix)
+        ];
         config.permittedInsecurePackages = [
           "beekeeper-studio-5.1.5"
         ];
