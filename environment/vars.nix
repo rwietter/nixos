@@ -1,6 +1,8 @@
 {
   appearance = {
     colorscheme = "amarena-pastel"; # "eink", "everforest", "hypfrost", "monochrome", "amarena-pastel"
+		palette = "grayscale"; # "eink", "everforest", "grayscale", "monochrome", "amarena-pastel"
+		mode = "dark"; # "light", "dark"
     theme = "dark"; # Or "light", "dark".
   };
   git = {

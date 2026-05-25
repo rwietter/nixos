@@ -28,9 +28,8 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      mylib = import ./lib { inherit lib builtins; };
+      lib = nixpkgs.lib;
       vars = import ./environment/vars.nix;
-      theme = (import ./ui/colorscheme { inherit mylib vars; }).theme;
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -41,6 +40,16 @@
           "beekeeper-studio-5.1.5"
         ];
       };
+      mylib = import ./lib {
+        inherit lib builtins;
+      };
+      theme =
+        (import ./ui/colorscheme {
+          inherit mylib vars;
+        }).theme;
+      newTheme = import ./theme {
+        inherit vars pkgs;
+      };
       unstable = import inputs.unstable {
         inherit system;
         config.allowUnfree = true;
@@ -49,7 +58,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      lib = pkgs.lib;
     in
     {
       # NixOS home-manager integration
@@ -62,6 +70,7 @@
               vars
               mylib
               theme
+              newTheme
               unstable
               nixpkgs-unstable
               ;
@@ -80,6 +89,7 @@
                     vars
                     mylib
                     theme
+                    newTheme
                     pkgs
                     unstable
                     nixpkgs-unstable
@@ -116,6 +126,7 @@
               vars
               mylib
               theme
+              newTheme
               pkgs
               unstable
               nixpkgs-unstable

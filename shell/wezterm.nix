@@ -1,53 +1,55 @@
 {
-  vars,
   lib,
-  theme,
+  newTheme,
   ...
 }:
 
 let
-  colors = theme.scheme.variants."${vars.appearance.theme}";
-in
-# Use lastest version; fixed textures issue
-# nix profile install 'github:wez/wezterm/main?dir=nix'
- {
+  t = newTheme.tokens;
+in {
   programs.wezterm = {
-    enable = false; # [BUG]: textures broken
+    enable = false;
   };
 
   xdg.configFile = lib.mkForce {
     "wezterm/theme.lua" = {
       force = true;
+
       text = ''
         return {
-          background = "${colors.bg.root}",
-          foreground = "${colors.fg.root}",
-          cursor_bg =  "${colors.fg.root}",
-          cursor_fg = "${colors.fg.shift}",
-          cursor_border = "${colors.bg.root}",
-          selection_bg = "${colors.fg.root}",
-          selection_fg = "${colors.bg.root}",
-          scrollbar_thumb = "${colors.fg.shift}",
-          split = "${colors.fg.shift}",
+          foreground = "${t.fg.base}",
+          background = "${t.bg.base}",
+
+          cursor_bg = "${t.fg.base}",
+          cursor_fg = "${t.bg.base}",
+          cursor_border = "${t.fg.base}",
+
+          selection_bg = "${t.bg.highlight}",
+          selection_fg = "${t.fg.emphasis}",
+
+          scrollbar_thumb = "${t.bg.surface}",
+          split = "${t.border}",
+
           ansi = {
-            "${colors.black.root}",
-            "${colors.red.root}",
-            "${colors.green.root}",
-            "${colors.yellow.root}",
-            "${colors.blue.root}",
-            "${colors.magenta.root}",
-            "${colors.cyan.root}",
-            "${colors.white.root}",
+            "${t.color.black}",
+            "${t.color.red}",
+            "${t.color.green}",
+            "${t.color.yellow}",
+            "${t.color.blue}",
+            "${t.color.magenta}",
+            "${t.color.cyan}",
+            "${t.fg.base}",
           },
+
           brights = {
-            "${colors.black.shift}",
-            "${colors.red.shift}",
-            "${colors.green.shift}",
-            "${colors.yellow.shift}",
-            "${colors.blue.shift}",
-            "${colors.magenta.shift}",
-            "${colors.cyan.shift}",
-            "${colors.white.shift}",
+            "${t.fg.subtle}",
+            "${t.color.red}",
+            "${t.color.green}",
+            "${t.color.yellow}",
+            "${t.color.blue}",
+            "${t.color.magenta}",
+            "${t.color.cyan}",
+            "${t.color.white}",
           },
         }
       '';
@@ -57,6 +59,7 @@ in
       text = ''
         ${lib.fileContents ../repo/config/wezterm/wezterm.lua}
       '';
+
       force = true;
     };
   };

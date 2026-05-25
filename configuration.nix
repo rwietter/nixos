@@ -136,17 +136,17 @@
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "beekeeper-studio-5.1.5"
-    ];
+    # permittedInsecurePackages = [
+    #   "beekeeper-studio-5.1.5"
+    # ];
   };
 
   # List packages installed in system profile.
   # https://github.com/nix-community/browser-previews
   environment.systemPackages =
     (with inputs.browser-previews.packages.${pkgs.system}; [
-      google-chrome-beta # Beta Release
-      google-chrome-dev # Dev Release
+      # google-chrome-beta # Beta Release
+      # google-chrome-dev # Dev Release
     ])
     ++ (with pkgs; [
       wget

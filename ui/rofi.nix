@@ -1,13 +1,10 @@
 {
   lib,
-  theme,
-  vars,
+	newTheme,
   config,
   pkgs,
   ...
 }:
-let colors = theme.scheme.variants."${vars.appearance.theme}";
-in
 {
   options = {
     rofi.enable = lib.mkOption {
@@ -28,12 +25,12 @@ in
       "awesome/misc/rofi/window/colors.rasi" = {
         text = ''
             * {
-              background:     ${colors.bg.root};
-              background-alt: ${colors.bg.shift};
-              foreground:     ${colors.fg.root};
-              selected:       ${colors.fg.root};
-              active:         ${colors.bg.echo};
-              urgent:         ${colors.fg.echo};
+              background:     ${newTheme.tokens.bg.base};
+              background-alt: ${newTheme.tokens.bg.surface};
+              foreground:     ${newTheme.tokens.fg.base};
+              selected:       ${newTheme.tokens.bg.highlight};
+              active:         ${newTheme.tokens.bg.highlight};
+              urgent:         ${newTheme.tokens.feedback.warning};
             }
         '';
         force = true;
