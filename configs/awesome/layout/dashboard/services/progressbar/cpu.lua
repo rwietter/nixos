@@ -25,7 +25,7 @@ local cpu_bar = awful.widget.watch(
 		forced_height = dpi(60),
 		forced_width = dpi(60),
 		border_color = beautiful.bg_4,
-		color = beautiful.accent, -- beautiful.red_4,
+		color = beautiful.accent .. "CC", -- beautiful.red_4,
 		widget = wibox.container.radialprogressbar,
 	})
 )
@@ -104,7 +104,7 @@ local cpu_widget_container = wibox.widget({
 	widget = wibox.container.background,
 	forced_width = dpi(175),
 	forced_height = dpi(105),
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "33",
 })
 
 return cpu_widget_container

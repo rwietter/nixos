@@ -137,14 +137,14 @@ local lock_screen_box = wibox({
     visible = false,
     ontop = true,
     type = "splash",
-    bg = beautiful.bg_color .. "99",
+    bg = beautiful.bg_color .. "D9",
     fg = beautiful.fg_color,
     screen = screen.primary
 })
 
 -- Create the lock screen wibox (extra)
 local function create_extender(s)
-    
+
 
 local lock_screen_box_ext wibox({
     visible = false,
@@ -239,7 +239,7 @@ local function grab_password()
         exe_callback = function(input)
             -- compare input
             if lock_screen.authenticate(input) then
-                -- YAY 
+                -- YAY
                 reset()
                 set_visibility(false)
             else

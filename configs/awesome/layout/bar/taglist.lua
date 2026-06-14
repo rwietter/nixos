@@ -50,20 +50,20 @@ local get_taglist = function(s)
 			spacing = dpi(10),
 			border_width = dpi(0),
 			widget = wibox.container.background,
-			bg = beautiful.bg_color,
-			fg = beautiful.fg_color,
+			bg = beautiful.bg_color .. "CC",
+			fg = beautiful.fg_color .. "CC",
 			font = beautiful.font_var,
 
-			bg_focus = beautiful.bg_3,
-			bg_occupied = beautiful.bg_4,
-			bg_empty = beautiful.bg_color,
-			bg_urgent = beautiful.red,
+			bg_focus = beautiful.bg_3 .. "CC",
+			bg_occupied = beautiful.bg_4 .. "CC",
+			bg_empty = beautiful.bg_color .. "00",
+			bg_urgent = beautiful.red ,
 
-			fg_occupied = beautiful.fg_color,
-			fg_urgent = beautiful.fg_color,
-			fg_normal = beautiful.fg_color,
-			fg_empty = beautiful.fg_color,
-			fg_focus = beautiful.fg_color,
+			fg_occupied = beautiful.fg_color .. "CC",
+			fg_urgent = beautiful.fg_color .. "CC",
+			fg_normal = beautiful.fg_color .. "CC",
+			fg_empty = beautiful.fg_color .. "CC",
+			fg_focus = beautiful.fg_color .. "CC",
 
 			align = "center",
 			valign = "center"
@@ -97,7 +97,7 @@ local get_taglist = function(s)
 				widget = wibox.container.margin,
 			},
 			id = "background_role",
-			bg = beautiful.bg_color,
+			bg = beautiful.bg_color .. "CC",
 			widget = wibox.container.background,
 			create_callback = function(self, c3, _)
 				self:connect_signal(
@@ -121,21 +121,21 @@ local get_taglist = function(s)
 				)
 
 				if c3.selected then
-					self:get_children_by_id("background_role")[1].bg = beautiful.bg_3
+					self:get_children_by_id("background_role")[1].bg = beautiful.bg_3  .. "CC"
 				elseif #c3:clients() == 0 then
-					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "33"
+ 					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "CC"
 				else
-					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "99"
+ 					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "CC"
 				end
 			end,
 			update_callback = function(self, c3, _)
 				if c3.selected then
 					self:get_children_by_id("background_role")[1].bg = beautiful.bg_3
 				elseif #c3:clients() == 0 then
-					self.bg = beautiful.fg_color .. "33"
-					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "33"
+ 					self.bg = beautiful.fg_color .. "CC"
+ 					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "CC"
 				else
-					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "99"
+ 					self:get_children_by_id("background_role")[1].bg = beautiful.fg_color .. "CC"
 				end
 			end
 		},

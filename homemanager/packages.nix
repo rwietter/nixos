@@ -10,7 +10,9 @@ let
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
     unstable.vscode
+    unstable.logseq # Privacy-first, open-source platform for knowledge management and collaboration
     nixpkgs-unstable.chromium
+		unstable.zotero # Reference manager and reader
 		unstable.obs-studio # Free and open source software for video recording and live streaming
 		unstable.opencode # Agentic development platform, evolving the IDE into the agent-first era
     # nixpkgs-unstable.gemini-cli # AI agent for the terminal
@@ -100,7 +102,7 @@ in
 			input-remapper # Tool to remap input devices on Linux
 
       # Productivity & Note-taking
-      zotero_7 # reference manager and reader
+      # zotero_7 # reference manager and reader
       obsidian # note taking
       # chromium # Web Browser
       # librewolf # Firefox fork focused on privacy
@@ -160,6 +162,9 @@ in
 
       # Scripts
       # (writeShellScriptBin "coretemps" (builtins.readFile ../repo/config/awesome/scripts/coretemps.sh))
+
+			# Research & Data Analysis
+			mendeley
     ]
     ++ unstablePackages;
 }

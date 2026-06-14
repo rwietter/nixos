@@ -1,6 +1,6 @@
 {
   lib,
-	newTheme,
+  newTheme,
   config,
   pkgs,
   ...
@@ -24,14 +24,16 @@
     xdg.configFile = lib.mkForce {
       "awesome/misc/rofi/window/colors.rasi" = {
         text = ''
-            * {
-              background:     ${newTheme.tokens.bg.base};
-              background-alt: ${newTheme.tokens.bg.surface};
-              foreground:     ${newTheme.tokens.fg.base};
-              selected:       ${newTheme.tokens.bg.highlight};
-              active:         ${newTheme.tokens.bg.highlight};
-              urgent:         ${newTheme.tokens.feedback.warning};
-            }
+          * {
+            background:     ${newTheme.tokens.bg.base};
+            background-alt: ${newTheme.tokens.bg.surface};
+
+            foreground:     ${newTheme.tokens.fg.base};
+
+            selected:       ${newTheme.tokens.bg.highlight};
+            active:         ${newTheme.tokens.state.active};
+            urgent:         ${newTheme.tokens.state.urgent};
+          }
         '';
         force = true;
       };

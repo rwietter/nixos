@@ -79,8 +79,8 @@
 -- local pbar = wibox.widget {
 -- 	widget = wibox.widget.progressbar,
 -- 	forced_height = dpi(4),
--- 	color = beautiful.accent,
--- 	background_color = beautiful.accent .. "4D",
+-- 	color = beautiful.accent .. "CC",
+-- 	background_color = beautiful.accent .. "CC" .. "4D",
 -- 	value = 50,
 -- 	max_value = 100,
 -- 	halign = "left",

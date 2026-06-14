@@ -79,7 +79,7 @@ local alright = wibox.widget{
     border_color = beautiful.fg_color .. "33",
     forced_width = dpi(110),
     forced_height = dpi(110),
-    bg = beautiful.bg_3 .. "BF"
+    bg = beautiful.bg_3 .. "33"
 }
 
 
@@ -111,7 +111,7 @@ local alright = wibox.widget{
           animation_button_opacity:set(0)
           require("layout.ding.extra.short")("", "Notifs enabled")
       end
-      
+
   end
 
 
@@ -134,12 +134,12 @@ local alright = wibox.widget{
 
 
   alright:buttons(gears.table.join(
-              awful.button( {}, 1, function () 
+              awful.button( {}, 1, function ()
                   awesome_dnd_state = not awesome_dnd_state
                   readwrite.write("dnd_state", tostring(_G.awesome_dnd_state))
                   update_things()
               end)
       )
   )
-  
+
   return alright

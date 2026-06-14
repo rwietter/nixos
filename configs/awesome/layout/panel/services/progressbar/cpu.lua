@@ -24,19 +24,22 @@ local cpu_bar = awful.widget.watch(
 		value = 10,
 		forced_height = dpi(60),
 		forced_width = dpi(60),
-		border_color = beautiful.bg_4,
-		color = beautiful.accent, -- beautiful.red_4,
+		border_color = beautiful.bg_3 .. "4D",
+		direction = "east",
+		color = beautiful.accent .. "CC", -- beautiful.red_4,
 		widget = wibox.container.radialprogressbar,
 	})
 )
 
-awful.widget.progressbar.forced_direction = "clockwise"
+-- # direção horário
+awful.widget.progressbar.forced_direction = "east"
 
 local cpu_icon = wibox.widget({
 	{
 		image = beautiful.images.cpu_icon,
 		widget = wibox.widget.imagebox,
 	},
+
 	widget = wibox.container.background,
 	forced_width = dpi(45),
 	forced_height = dpi(45),
@@ -104,7 +107,7 @@ local cpu_widget_container = wibox.widget({
 	widget = wibox.container.background,
 	forced_width = dpi(175),
 	forced_height = dpi(105),
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "33",
 })
 
 return cpu_widget_container

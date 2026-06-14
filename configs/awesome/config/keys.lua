@@ -221,7 +221,7 @@ awful.keyboard.append_global_keybindings({
 		group = "client",
 	}),
 
-	awful.key({ alt }, "w", function()
+	awful.key({ modkey }, "g", function()
 		awesome.emit_signal("bling::window_switcher::turn_on")
 	end, {
 		description = "window switcher",
@@ -333,7 +333,7 @@ awful.keyboard.append_global_keybindings({
 		group = "layout",
 	}), -- layout machi
 
-	awful.key({ modkey }, "g", function()
+	awful.key({ modkey, alt }, "g", function()
 		lmachi.default_editor.start_interactive()
 	end, {
 		description = "edit current layout",

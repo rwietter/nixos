@@ -181,7 +181,7 @@ return wibox.widget {
 	},
 	widget = wibox.container.background,
 	forced_height = dpi(110),
-	bg = beautiful.bg_3 .. "99",
+	bg = beautiful.bg_3 .. "33",
 	border_color = beautiful.fg_color .. "33",
 	shape = helpers.rrect(beautiful.rounded)
 }

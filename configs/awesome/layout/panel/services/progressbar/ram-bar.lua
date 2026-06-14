@@ -22,9 +22,9 @@ local ram_bar = awful.widget.watch(
 		forced_height = dpi(60),
 		forced_width = dpi(60),
 		min_value = 1,
-		border_color = beautiful.bg_4,
+		border_color = beautiful.bg_3 .. "4D",
 		border_width = dpi(12),
-		color = beautiful.accent, -- beautiful.accent_4,
+		color = beautiful.accent .. "CC", -- beautiful.accent_4,
 		widget = wibox.container.radialprogressbar,
 	})
 )

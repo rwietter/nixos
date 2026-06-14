@@ -33,7 +33,9 @@ theme.bg_3 = colors.bg_3
 theme.bg_4 = colors.bg_4
 
 -- foreground colors
+theme.emphasis = colors.emphasis
 theme.fg_color = colors.foreground
+theme.subtle = colors.subtle
 
 -- base red colors
 theme.red_color = colors.red

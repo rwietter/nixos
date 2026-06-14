@@ -40,6 +40,7 @@
 	tmux.enable = true; # Terminal multiplexer
 	up.enable = true; # Ultimate Plumber
 	discord.enable = true; # Discord
+	glance.enable = true; # A self-hosted dashboard
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

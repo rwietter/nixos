@@ -21,10 +21,10 @@ local brightness = wibox.widget {
 	bar_shape = gears.shape.rounded_bar,
 	bar_color = beautiful.fg_color .. "33",
 	bar_margins = { bottom = dpi(18), top = dpi(18) },
-	bar_active_color = beautiful.accent,
+	bar_active_color = beautiful.accent .. "CC",
 	handle_width = dpi(14),
 	handle_shape = gears.shape.circle,
-	handle_color = beautiful.accent,
+	handle_color = beautiful.accent .. "CC",
 	handle_border_width = 3,
 	handle_border_color = beautiful.bg_3
 }
@@ -78,10 +78,10 @@ local volume = wibox.widget {
 	bar_shape = gears.shape.rounded_bar,
 	bar_color = beautiful.fg_color .. "33",
 	bar_margins = { bottom = dpi(18), top = dpi(18) },
-	bar_active_color = beautiful.accent,
+	bar_active_color = beautiful.accent .. "CC",
 	handle_width = dpi(14),
 	handle_shape = gears.shape.circle,
-	handle_color = beautiful.accent,
+	handle_color = beautiful.accent .. "CC",
 	handle_border_width = 3,
 	handle_border_color = beautiful.bg_3
 }
@@ -138,7 +138,7 @@ return wibox.widget {
 	},
 	widget = wibox.container.background,
 	forced_height = dpi(120),
-	bg = beautiful.bg_3 .. "99",
+	bg = beautiful.bg_3 .. "33",
 	border_color = beautiful.fg_color .. "33",
 	shape = helpers.rrect(beautiful.rounded)
 

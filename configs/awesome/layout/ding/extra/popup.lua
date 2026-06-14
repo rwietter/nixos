@@ -116,8 +116,8 @@ awesome.connect_signal("signal::volume", function(value, muted)
 			bar.bar_active_color = beautiful.red_color
 			icon.markup = "<span foreground='" .. beautiful.red_color .. "'></span>"
 		else
-			bar.handle_color = beautiful.accent
-			bar.bar_active_color = beautiful.accent
+			bar.handle_color = beautiful.accent .. "CC"
+			bar.bar_active_color = beautiful.accent .. "CC"
 		end
 
 		toggle_pop()
@@ -132,8 +132,8 @@ awesome.connect_signal("signal::brightness", function(value)
 		first_B = false
 	else
 		icon.markup = "<span foreground='" .. beautiful.accent .. "'></span>"
-		bar.handle_color = beautiful.accent
-		bar.bar_active_color = beautiful.accent
+		bar.handle_color = beautiful.accent .. "CC"
+		bar.bar_active_color = beautiful.accent .. "CC"
 		bar.value = value
 		toggle_pop()
 	end

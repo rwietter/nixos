@@ -1,7 +1,7 @@
 {
   appearance = {
     colorscheme = "amarena-pastel"; # "eink", "everforest", "hypfrost", "monochrome", "amarena-pastel"
-		palette = "grayscale"; # "eink", "everforest", "grayscale", "monochrome", "amarena-pastel"
+		palette = "catppuccin-mocha"; # "eink", "midnight-violet", "sunset-noir", "catppuccin-mocha"
 		mode = "dark"; # "light", "dark"
     theme = "dark"; # Or "light", "dark".
   };

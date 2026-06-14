@@ -30,7 +30,7 @@ local zram_bar = awful.widget.watch(
 		},
 		shape = gears.shape.rounded_bar,
 		border_width = 0,
-		color = beautiful.accent,
+		color = beautiful.accent .. "CC",
 		background_color = beautiful.bg_4,
 		paddings = 0,
 		widget = wibox.widget.progressbar,

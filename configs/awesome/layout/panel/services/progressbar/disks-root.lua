@@ -30,8 +30,9 @@ local disks_root_bar = awful.widget.watch(
 		},
 		shape = gears.shape.rounded_bar,
 		border_width = 0,
-		color = beautiful.accent,
-		background_color = beautiful.bg_4,
+		border_color = beautiful.bg_3 .. "4D",
+		color = beautiful.accent .. "CC",
+		background_color = beautiful.bg_3 .. "4D",
 		paddings = 0,
 		widget = wibox.widget.progressbar,
 	})
@@ -69,7 +70,7 @@ local disks_root_widget = wibox.widget({
 	forced_height = dpi(35),
 	layout = wibox.layout.fixed.horizontal,
 	widget = wibox.container.background,
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "99",
 })
 
 return disks_root_widget

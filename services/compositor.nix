@@ -22,35 +22,61 @@ lib.mkIf (vars.os.desktop == "awesome") {
       "95:class_g = 'Alacritty'"
     ];
     package = pkgs.picom;
-    settings = {
-      shadow = true;
-      shadow-opacity = 0.6;
-      shadow-offsets = [
-        (-15)
-        (-15)
-      ];
-      shadow-exclude = [
-        "class_g ?= 'Dunst'"
-        "_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'" # Exclude sticky windows
-        "override_redirect = true"
-        "class_g = 'xdg-desktop-portal-gnome'"
-      ];
-      vSync = true;
-      blur = {
-        method = "dual_kawase";
-        strength = 5;
-        deviation = 5;
-      };
-      blur-background-exclude = [
-        "window_type = 'menu'"
-        "window_type = 'dropdown_menu'"
-        "window_type = 'popup_menu'"
-        "window_type = 'tooltip'"
-        "_GTK_FRAME_EXTENTS@:c" # fix gtk borders in some apps
-      ];
-      transparent-clipping = false;
-      corner-radius = 0;
-    };
+		settings = {
+			shadow = true;
+			shadow-opacity = 0.45;
+
+			shadow-radius = 18;
+
+			shadow-offsets = [
+				(-12)
+				(-12)
+			];
+
+			vSync = true;
+
+			blur = {
+				method = "dual_kawase";
+				strength = 12;
+				deviation = 12;
+			};
+
+			active-opacity = 0.72;
+			inactive-opacity = 0.65;
+
+			frame-opacity = 0.70;
+
+			opacityRules = [
+				"70:class_g = 'Alacritty'"
+				"70:class_g = 'org.wezfurlong.wezterm'"
+				"75:class_g = 'kitty'"
+			];
+
+			blur-background = true;
+
+			blur-background-exclude = [
+				"window_type = 'dock'"
+				"window_type = 'desktop'"
+				"window_type = 'menu'"
+				"window_type = 'dropdown_menu'"
+				"window_type = 'popup_menu'"
+				"window_type = 'tooltip'"
+				"_GTK_FRAME_EXTENTS@:c"
+			];
+
+			transparent-clipping = false;
+
+			detect-client-opacity = true;
+
+			corner-radius = 12;
+
+			use-damage = false;
+
+			resize-damage = 6;
+
+			glx-no-stencil = true;
+			glx-no-rebind-pixmap = true;
+		};
   };
 
   xdg.configFile = lib.mkForce {

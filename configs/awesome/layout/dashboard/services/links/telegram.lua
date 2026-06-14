@@ -48,7 +48,7 @@ local telegram_widget = wibox.widget({
 	border_color = beautiful.fg_color .. "33",
 	forced_width = dpi(50),
 	forced_height = dpi(50),
-	bg = beautiful.bg_3 .. "BF",
+	bg = beautiful.bg_3 .. "33",
 })
 
 telegram_widget:buttons(gears.table.join({

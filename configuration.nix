@@ -270,6 +270,7 @@
   services.udev.extraRules = ''
     		SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
     	'';
+  services.flatpak.enable = true;
 
   # Cachix
   nix.settings.trusted-users = [

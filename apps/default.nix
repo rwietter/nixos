@@ -8,5 +8,6 @@
     ./brave.nix
     ./vscode.nix
 		./discord.nix
+		./glance.nix
   ];
 }

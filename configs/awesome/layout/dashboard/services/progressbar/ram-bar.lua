@@ -24,7 +24,7 @@ local ram_bar = awful.widget.watch(
 		min_value = 1,
 		border_color = beautiful.bg_4,
 		border_width = dpi(12),
-		color = beautiful.accent, -- beautiful.accent_4,
+		color = beautiful.accent .. "CC", -- beautiful.accent_4,
 		widget = wibox.container.radialprogressbar,
 	})
 )
@@ -101,7 +101,7 @@ local ram_widget_container = wibox.widget({
 	widget = wibox.container.background,
 	forced_width = dpi(175),
 	forced_height = dpi(105),
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "33",
 })
 
 return ram_widget_container

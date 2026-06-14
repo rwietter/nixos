@@ -321,7 +321,7 @@ awful.screen.connect_for_each_screen(
 				type = "dock",
 				width = s.geometry.width, -- - beautiful.useless_gap * 4,
 				shape = gears.shape.rectangle, -- helpers.rrect(beautiful.rounded - 4),
-				bg = beautiful.bg_color .. "66",
+				bg = beautiful.bg_color .. "D9",
 				height = dpi(40)
 			}
 		)

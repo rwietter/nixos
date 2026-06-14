@@ -62,7 +62,7 @@ local wakatime_widget = wibox.widget({
 	widget = wibox.container.background,
 	forced_width = dpi(105),
 	forced_height = dpi(105),
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "33",
 })
 
 return wakatime_widget

@@ -46,7 +46,7 @@ awful.screen.connect_for_each_screen(function(s)
 	-- icons:  "⌘"
 	local panel_system = wibox.widget({
 		widget = wibox.widget.textbox,
-		markup = helpers.colorize_text("", beautiful.fg_color),
+		markup = helpers.colorize_text("⌘", beautiful.fg_color),
 		font = beautiful.icon_var .. "15",
 		align = "center",
 		valign = "center",
@@ -218,7 +218,7 @@ awful.screen.connect_for_each_screen(function(s)
 		type = "dock",
 		width = dpi(theme.bar_size), -- beautiful.useless_gap * 4,
 		shape = helpers.rrect(beautiful.rounded - 4),
-		bg = beautiful.bg_color,
+		bg = beautiful.bg_color .. "D9",
 		height = screen_height - beautiful.useless_gap * 4
 	})
 

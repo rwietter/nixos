@@ -62,7 +62,7 @@ local repositories_widget = wibox.widget({
 	border_color = beautiful.fg_color .. "33",
 	forced_width = dpi(105),
 	forced_height = dpi(105),
-	bg = beautiful.bg_3 .. "40",
+	bg = beautiful.bg_3 .. "33",
 })
 
 return repositories_widget

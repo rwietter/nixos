@@ -78,7 +78,7 @@ local alright = wibox.widget{
     border_color = beautiful.fg_color .. "33",
     forced_width = dpi(110),
     forced_height = dpi(110),
-    bg = beautiful.bg_3 .. "BF"
+    bg = beautiful.bg_3 .. "33"
 }
 
 

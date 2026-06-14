@@ -6,6 +6,7 @@
 
 let
   t = newTheme.tokens;
+  p = t.palette;
 in {
   programs.wezterm = {
     enable = false;
@@ -28,28 +29,28 @@ in {
           selection_fg = "${t.fg.emphasis}",
 
           scrollbar_thumb = "${t.bg.surface}",
-          split = "${t.border}",
+          split = "${t.border.normal}",
 
           ansi = {
-            "${t.color.black}",
-            "${t.color.red}",
-            "${t.color.green}",
-            "${t.color.yellow}",
-            "${t.color.blue}",
-            "${t.color.magenta}",
-            "${t.color.cyan}",
-            "${t.fg.base}",
+            "${p.base00}",
+            "${p.base08}",
+            "${p.base0B}",
+            "${p.base0A}",
+            "${p.base0D}",
+            "${p.base0E}",
+            "${p.base0C}",
+            "${p.base05}",
           },
 
           brights = {
-            "${t.fg.subtle}",
-            "${t.color.red}",
-            "${t.color.green}",
-            "${t.color.yellow}",
-            "${t.color.blue}",
-            "${t.color.magenta}",
-            "${t.color.cyan}",
-            "${t.color.white}",
+            "${p.base03}",
+            "${p.base08}",
+            "${p.base0B}",
+            "${p.base0A}",
+            "${p.base0D}",
+            "${p.base0E}",
+            "${p.base0C}",
+            "${p.base07}",
           },
         }
       '';
