@@ -29,7 +29,7 @@ awful.screen.connect_for_each_screen(function(s)
 		shape = helpers.rrect(beautiful.rounded),
 		screen = s,
 		width = dpi(420),
-		bg = beautiful.bg_color .. "D9",
+		bg = beautiful.bg_color,
 		margins = 20,
 		ontop = true,
 		visible = true
@@ -70,7 +70,7 @@ awful.screen.connect_for_each_screen(function(s)
 		if not screen then screen = s end
 
 		-- control center x position
-		control_c.x = screen.geometry.x + (dpi(45) + beautiful.useless_gap * 4) -- left / right position
+		control_c.x = screen.geometry.x -- + (dpi(45) + beautiful.useless_gap * 4) -- left / right position
 
 		-- toggle visibility
 		if control_c.visible then

@@ -11,14 +11,14 @@ let
 in
 {
   options = {
-    rmpc.enable = lib.mkOption {
+    rw.rmpc.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable rmpc (Remote Music Player Client)";
     };
   };
 
-  config = lib.mkIf config.rmpc.enable {
+  config = lib.mkIf config.rw.rmpc.enable {
     programs.rmpc = {
       enable = true;
       package = unstable.rmpc;

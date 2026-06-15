@@ -15,18 +15,6 @@
   home.username = vars.os.hostname;
   home.homeDirectory = vars.os.homeDirectory;
 
-  # set cursor size and dpi for 4k monitor
-  xresources.properties = {
-    "Xcursor.size" = 16;
-    "Xft.dpi" = 70;
-    "Xft.autohint" = 0;
-    "Xft.lcdfilter" = "lcddefault";
-    "Xft.hintstyle" = "hintfull";
-    "Xft.hinting" = 1;
-    "Xft.antialias" = 1;
-    "Xft.rgba" = "rgb";
-  };
-
   # Enable/Disable Options
   fish.enable = true; # Fish shell
   direnv.enable = true; # A shell extension that loads/unloads environment variables depending on the current directory
@@ -36,11 +24,12 @@
   playerctl.enable = true; # media player control
   code.enable = true; # Visual Studio Code
   rofi.enable = true; # A window switcher, application launcher and dmenu replacement
-  rmpc.enable = true; # Remote Music Player Client\
 	tmux.enable = true; # Terminal multiplexer
 	up.enable = true; # Ultimate Plumber
-	discord.enable = true; # Discord
 	glance.enable = true; # A self-hosted dashboard
+  rw.rmpc.enable = true; # Remote Music Player Client\
+	rw.discord.enable = true; # Discord
+	rw.gtk.enable = true; # GTK integration
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

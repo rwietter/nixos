@@ -1,5 +1,5 @@
-require("layout.bar")
--- require("layout.topBar")
+-- require("layout.bar")
+require("layout.topBar")
 require("layout.panel") -- info panel on the right
 require("layout.controlCenter") -- dashboard on the left
 -- require("layout.dashboard") -- dashboard on the left

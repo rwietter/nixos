@@ -25,7 +25,8 @@ end
 
 
 local applications = {
-	"picom --config $HOME/.config/picom.conf &"
+	"picom --config $HOME/.config/picom.conf &",
+	"clipse -listen-x11 >> $HOME/.config/clipse/awesome-listener.log 2>&1 &",
 	-- "picom --config $HOME/.config/awesome/misc/picom/panthom.conf &",
 }
 

@@ -6,14 +6,14 @@
 }:
 {
   options = {
-    discord.enable = lib.mkOption {
+    rw.discord.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "Enable Discord browser";
     };
   };
 
-  config = lib.mkIf config.discord.enable {
+  config = lib.mkIf config.rw.discord.enable {
     home.packages = [
       pkgs.discord
     ];

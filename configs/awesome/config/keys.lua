@@ -80,6 +80,13 @@ awful.keyboard.append_global_keybindings({
 		group = "launcher",
 	}),
 
+	awful.key({ modkey, shift }, "v", function()
+		awful.spawn("wezterm start --class clipse clipse", false)
+	end, {
+		description = "open clipse",
+		group = "launcher",
+	}),
+
 	awful.key({ modkey }, "w", function()
 		awful.spawn(home_var .. "/.config/awesome/scripts/wallpaper a", {
 			args = { "x" },

@@ -137,7 +137,7 @@ local lock_screen_box = wibox({
     visible = false,
     ontop = true,
     type = "splash",
-    bg = beautiful.bg_color .. "D9",
+    bg = beautiful.bg_color,
     fg = beautiful.fg_color,
     screen = screen.primary
 })

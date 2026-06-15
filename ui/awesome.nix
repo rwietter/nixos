@@ -47,8 +47,8 @@ lib.mkIf (vars.os.desktop == "awesome") {
         -- Accent colors
         ------------------------------------------------------------------------
 
-        colors.accent = "${newTheme.tokens.accent.primary}"
-        colors.accent_alt = "${newTheme.tokens.accent.secondary}"
+        colors.accent = "${newTheme.tokens.fg.base}"
+        colors.accent_alt = "${newTheme.tokens.fg.emphasis}"
 
         ------------------------------------------------------------------------
         -- Base16 palette passthrough

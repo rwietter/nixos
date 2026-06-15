@@ -42,9 +42,9 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         id         = "floating",
         rule_any   = {
-            class    = { "Sxiv", "Galculator", "Xarchiver" },
+            class    = { "Sxiv", "Galculator", "Xarchiver", "clipse" },
             role     = { "pop-up" },
-            instance = { "spad", "discord", "music" }
+            instance = { "spad", "discord", "music", "clipse" }
         },
         properties = { floating = true, placement = awful.placement.centered }
     }

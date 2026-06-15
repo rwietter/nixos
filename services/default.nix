@@ -6,5 +6,6 @@
     ./dunst.nix
     ./espanso.nix
     ./playerctl.nix
+		./clipse.nix
   ];
 }

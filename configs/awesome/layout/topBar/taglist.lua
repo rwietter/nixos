@@ -50,9 +50,9 @@ local get_taglist = function(s)
 			border_width = dpi(0),
 			layout = wibox.layout.fixed.horizontal,
 			widget = wibox.container.background,
-			bg_occupied = beautiful.bg_3 .. '00',
-			bg_empty = beautiful.bg_2 .. '00',
-			bg_urgent = beautiful.bg_4 .. '00',
+			bg_occupied = beautiful.bg_2,
+			bg_empty = beautiful.bg_color,
+			bg_urgent = beautiful.bg_4,
 			bg_focus = beautiful.fg_color,
 
 			fg_occupied = beautiful.fg_color,

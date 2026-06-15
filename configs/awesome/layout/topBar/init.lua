@@ -321,14 +321,14 @@ awful.screen.connect_for_each_screen(
 				type = "dock",
 				width = s.geometry.width, -- - beautiful.useless_gap * 4,
 				shape = gears.shape.rectangle, -- helpers.rrect(beautiful.rounded - 4),
-				bg = beautiful.bg_color .. "D9",
+				bg = beautiful.bg_color,
 				height = dpi(40)
 			}
 		)
 
 		-- wibar placement
 		awful.placement.top(s.wibar_wid, { margins = dpi(0) })
-		s.wibar_wid:struts({ top = s.wibar_wid.height + beautiful.useless_gap - 4, left = dpi(10), right = 0, bottom = 0 })
+		s.wibar_wid:struts({ top = s.wibar_wid.height + beautiful.useless_gap - 4, left = dpi(0), right = dpi(8), bottom = dpi(3) })
 
 		beautiful.systray_icon_spacing = dpi(10)
 		local systray =

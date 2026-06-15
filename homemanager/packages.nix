@@ -10,7 +10,7 @@ let
     unstable.yt-dlp # YouTube downloader
     unstable.zellij
     unstable.vscode
-    unstable.logseq # Privacy-first, open-source platform for knowledge management and collaboration
+		nixpkgs-unstable.clipse-x11 # clipboard manager TUI for Unix on X11
     nixpkgs-unstable.chromium
 		unstable.zotero # Reference manager and reader
 		unstable.obs-studio # Free and open source software for video recording and live streaming
@@ -26,7 +26,6 @@ in
       # nap # code snippets in the terminal
       tokei # code statistics
       strace # system call monitoring
-      clipse # clipboard manager TUI for Unix
       ltrace # library call monitoring
       kubectl # Kubernetes CLI
       neovim # Vim text editor fork focused on extensibility and agility
@@ -97,7 +96,7 @@ in
       smartmontools # tools for monitoring storage devices
       file # file type identification utility
       crow-translate # Translation tool
-      cachix # Nix cache client
+      # cachix # Nix cache client
 			sem # Semantic diff tool
 			input-remapper # Tool to remap input devices on Linux
 
@@ -113,6 +112,7 @@ in
       kdePackages.kdenlive # video editor
       # libreoffice-qt
       ffmpeg-full
+			foliate # Simple and modern GTK eBook reader
 
       # System Monitoring & Information
       inxi # system info tool
@@ -149,7 +149,8 @@ in
 
       # User Interface & Desktop Tools
       lxappearance # GTK theme switcher
-      # dconf-editor # GUI for `dconf`
+			papirus-folders # Tool to change papirus icon theme color
+      dconf-editor # GUI for `dconf`
 
       # Communication & Social
       telegram-desktop # messaging

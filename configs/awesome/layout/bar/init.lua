@@ -218,7 +218,7 @@ awful.screen.connect_for_each_screen(function(s)
 		type = "dock",
 		width = dpi(theme.bar_size), -- beautiful.useless_gap * 4,
 		shape = helpers.rrect(beautiful.rounded - 4),
-		bg = beautiful.bg_color .. "D9",
+		bg = beautiful.bg_color,
 		height = screen_height - beautiful.useless_gap * 4
 	})
 
